@@ -85,7 +85,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="LinkedList," />
 
 
 
@@ -98,16 +98,20 @@
 
 
 
-<meta name="description" content="Java程序媛的学习手册">
-<meta property="og:type" content="website">
-<meta property="og:title" content="M&amp;Y">
-<meta property="og:url" content="blog.jiangdongyu.space/tags/位运算/index.html">
+<meta name="description" content="dummy node的运用 merge linked list一定要会  题目列表LinkedList题大体可分为三类：reverse类、Merge类、快慢针类">
+<meta name="keywords" content="LinkedList">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LinkedList">
+<meta property="og:url" content="blog.jiangdongyu.space/2018/04/07/LinkedList/index.html">
 <meta property="og:site_name" content="M&amp;Y">
-<meta property="og:description" content="Java程序媛的学习手册">
+<meta property="og:description" content="dummy node的运用 merge linked list一定要会  题目列表LinkedList题大体可分为三类：reverse类、Merge类、快慢针类">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://p9fh1pach.bkt.clouddn.com/List%20Cycle%20II.png">
+<meta property="og:updated_time" content="2018-05-28T11:13:52.572Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="M&amp;Y">
-<meta name="twitter:description" content="Java程序媛的学习手册">
+<meta name="twitter:title" content="LinkedList">
+<meta name="twitter:description" content="dummy node的运用 merge linked list一定要会  题目列表LinkedList题大体可分为三类：reverse类、Merge类、快慢针类">
+<meta name="twitter:image" content="http://p9fh1pach.bkt.clouddn.com/List%20Cycle%20II.png">
 
 
 
@@ -137,13 +141,13 @@
 
 
 
-  <link rel="canonical" href="blog.jiangdongyu.space/tags/位运算/"/>
+  <link rel="canonical" href="blog.jiangdongyu.space/2018/04/07/LinkedList/"/>
 
 
 
 
 
-  <title>标签: 位运算 | M&Y</title>
+  <title>LinkedList | M&Y</title>
   
 
 
@@ -162,7 +166,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <a href="https://github.com/12301068JiangDongyu" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
@@ -292,54 +296,448 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>位运算<small>标签</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="blog.jiangdongyu.space/2018/04/07/LinkedList/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Agnes">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/handsomeme.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="M&Y">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/04/07/位运算/" itemprop="url">
-              
-                <span itemprop="name">位运算</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">LinkedList</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-04-07T17:52:00+08:00"
-              content="2018-04-07" >
-          04-07
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-07T17:52:00+08:00">
+                2018-04-07
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/算法与数据结构/" itemprop="url" rel="index">
+                    <span itemprop="name">算法与数据结构</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/算法与数据结构/算法/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/04/07/LinkedList/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/04/07/LinkedList/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/04/07/LinkedList/" class="leancloud_visitors" data-flag-title="LinkedList">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,207 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  5 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <ul>
+<li>dummy node的运用</li>
+<li>merge linked list一定要会</li>
+</ul>
+<p><strong>题目列表</strong><br>LinkedList题大体可分为三类：reverse类、Merge类、快慢针类<br><a id="more"></a></p>
+<ul>
+<li>Rotate List</li>
+<li>Copy list with random pointers</li>
+<li>Convert sorted list to Binary Search Tree </li>
+<li>Remove Duplicates</li>
+<li>Remove Duplicates II</li>
+<li>Add Two Numbers</li>
+<li>insertion sort list use a dummy node to add node to new list one at a time</li>
+</ul>
+<p><strong>reverse类</strong></p>
+<ul>
+<li>reverse linked list </li>
+<li>reverse print list</li>
+<li>reverse nodes in k group </li>
+<li>swap nodes in pairs </li>
+<li>palindrome list</li>
+<li>reorder list</li>
+</ul>
+<p><strong>Merge类</strong></p>
+<ul>
+<li>merge linked list </li>
+<li>merge K sorted List</li>
+</ul>
+<p><strong>快慢针类</strong></p>
+<ul>
+<li>list cycle I, II</li>
+<li>get kth node ( get middle node)</li>
+<li>intersection of two lists</li>
+<li>remove nth node from end of list</li>
+</ul>
+<h2 id="Add-Two-Numbers"><a href="#Add-Two-Numbers" class="headerlink" title="Add Two Numbers"></a>Add Two Numbers</h2><blockquote>
+<p>Input: (2 -&gt; 4 -&gt; 3) + (5 -&gt; 6 -&gt; 4)</p>
+<p>Output: 7 -&gt; 0 -&gt; 8</p>
+<p>Explanation: 342 + 465 = 807.</p>
+</blockquote>
+<p>dummy node的使用，sum &amp; carry</p>
+<p>最后要对carry进行判断</p>
+<h2 id="Remove-Duplicates"><a href="#Remove-Duplicates" class="headerlink" title="Remove Duplicates"></a>Remove Duplicates</h2><blockquote>
+<p>For example,</p>
+<p>Given 1-&gt;1-&gt;2, return 1-&gt;2.</p>
+<p>Given 1-&gt;1-&gt;2-&gt;3-&gt;3, return 1-&gt;2-&gt;3.</p>
+</blockquote>
+<p>保留重复的值，可用cur = head,判断cur.val == cur.next.val ? </p>
+<h2 id="Remove-Duplicates-II"><a href="#Remove-Duplicates-II" class="headerlink" title="Remove Duplicates II"></a>Remove Duplicates II</h2><blockquote>
+<p>For example,</p>
+<p>Given 1-&gt;2-&gt;3-&gt;3-&gt;4-&gt;4-&gt;5, return 1-&gt;2-&gt;5.</p>
+<p>Given 1-&gt;1-&gt;1-&gt;2-&gt;3, return 2-&gt;3.</p>
+</blockquote>
+<p>删除重复的值，需要dummy node，cur = dummy,需要记录cur.next.val进行循环删除</p>
+<h2 id="Merge类"><a href="#Merge类" class="headerlink" title="Merge类"></a>Merge类</h2><h3 id="Merge-Two-Sorted-Lists"><a href="#Merge-Two-Sorted-Lists" class="headerlink" title="Merge Two Sorted Lists"></a>Merge Two Sorted Lists</h3><ul>
+<li>递归</li>
+<li>非递归</li>
+</ul>
+<h3 id="Merge-K-Sorted-Lists"><a href="#Merge-K-Sorted-Lists" class="headerlink" title="Merge K Sorted Lists"></a>Merge K Sorted Lists</h3><ul>
+<li>二分+递归</li>
+<li>使用堆（优先队列），将K个链表的头结点全部添加到队列，由于优先级队列采用了最小堆数据结构，堆顶为队列的最小元素，我们将其取出添加到结果链表中，取出元素对应的链表下移一个节点，并将这个节点添加到优先级队列中；然后我们继续取出堆顶元素，…，直到优先级队列为空，那么其中所有元素取尽，K个链表的元素已经全部排序到结果链表。</li>
+</ul>
+<h2 id="快慢针类"><a href="#快慢针类" class="headerlink" title="快慢针类"></a>快慢针类</h2><h3 id="List-Cycle"><a href="#List-Cycle" class="headerlink" title="List Cycle"></a>List Cycle</h3><ul>
+<li>快慢指针，最后是否相遇 fast.next != null &amp;&amp; fast.next.next != null</li>
+</ul>
+<h3 id="List-Cycle-II"><a href="#List-Cycle-II" class="headerlink" title="List Cycle II"></a>List Cycle II</h3><blockquote>
+<p>找到环开始的地方</p>
+</blockquote>
+<p><img src="http://p9fh1pach.bkt.clouddn.com/List%20Cycle%20II.png" alt="avatar"></p>
+<p>假设从起点到环开始的地方长度为x,相遇点距离环起点为k，环长为L</p>
+<p>d = x + m*L + k</p>
+<p>2d = x + n*L +k</p>
+<p>则 x + (2m -n)*L +k = 0</p>
+<p>所以 x = (L-k) + (n-2m-1)*L</p>
+<p>所以 一指针从开始出发，一指针从相遇点出发，最终会在环开始的地方相遇</p>
+<h3 id="Remove-Nth-Node-From-End"><a href="#Remove-Nth-Node-From-End" class="headerlink" title="Remove Nth Node From End"></a>Remove Nth Node From End</h3><blockquote>
+<p>删除从尾部开始数的第n个结点</p>
+</blockquote>
+<ul>
+<li>快慢指针，快指针先走n步</li>
+</ul>
+<h3 id="Partition-List"><a href="#Partition-List" class="headerlink" title="Partition List"></a>Partition List</h3><blockquote>
+<p>给定一个链表，一个整数x，将链表分开确定一边比x小，另一表不小于x，并保持原来的链表的相对顺序</p>
+</blockquote>
+<ul>
+<li>需要dummy node</li>
+<li>可以新建一个链表用来存小于x的node,并将原来对应的node删掉，最后将原来的list接在现在的之后</li>
+</ul>
+<h2 id="reverse类"><a href="#reverse类" class="headerlink" title="reverse类"></a>reverse类</h2><h3 id="Reverse-Linked-List"><a href="#Reverse-Linked-List" class="headerlink" title="Reverse Linked List"></a>Reverse Linked List</h3><ul>
+<li>头插法</li>
+<li>递归</li>
+</ul>
+<h3 id="Reverse-Linked-List-II"><a href="#Reverse-Linked-List-II" class="headerlink" title="Reverse Linked List II"></a>Reverse Linked List II</h3><blockquote>
+<p>将链表m到n的位置的结点逆置</p>
+</blockquote>
+<ul>
+<li>dummy node</li>
+<li>找到开始反转的前一个node pre 维持不变，以及找到真正开始反转的结点start，下一个结点 then</li>
+</ul>
+<h3 id="Palindrome-List"><a href="#Palindrome-List" class="headerlink" title="Palindrome List"></a>Palindrome List</h3><ul>
+<li>双指针，判断fast.next是否为null，不是则slow = slow.next</li>
+<li>对slow进行逆置</li>
+<li>一一比较两个链表的值</li>
+</ul>
+<h3 id="Swap-Nodes-in-Pairs"><a href="#Swap-Nodes-in-Pairs" class="headerlink" title="Swap Nodes in Pairs"></a>Swap Nodes in Pairs</h3><blockquote>
+<p>For example,<br>Given 1-&gt;2-&gt;3-&gt;4, you should return the list as 2-&gt;1-&gt;4-&gt;3.</p>
+</blockquote>
+<ul>
+<li>dummy node</li>
+<li>三个node的使用，cur first second </li>
+<li>cur = cur.next.next</li>
+</ul>
+<h3 id="Reorder-List"><a href="#Reorder-List" class="headerlink" title="Reorder List"></a>Reorder List</h3><blockquote>
+<p>Given a singly linked list L: L0→L1→…→Ln-1→Ln,</p>
+<p>reorder it to: L0→Ln→L1→Ln-1→L2→Ln-2→…</p>
+</blockquote>
+<ul>
+<li>找到中点，前半部分结尾设为null</li>
+<li>将后半部分reverse</li>
+<li>再merge</li>
+</ul>
+<h2 id="Rotate-List"><a href="#Rotate-List" class="headerlink" title="Rotate List"></a>Rotate List</h2><blockquote>
+<p>Given 1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;NULL and k = 2,</p>
+</blockquote>
+<blockquote>
+<p>return 4-&gt;5-&gt;1-&gt;2-&gt;3-&gt;NULL.</p>
+</blockquote>
+<ul>
+<li>two pointer</li>
+<li>找到length-k个，注意k可能大于length(%),并将next设为null</li>
+<li>将原来链表的end的next设为head</li>
+<li>返回原来的length-k+1个</li>
+</ul>
+<h2 id="Copy-List-with-Random-Pointer"><a href="#Copy-List-with-Random-Pointer" class="headerlink" title="Copy List with Random Pointer"></a>Copy List with Random Pointer</h2><blockquote>
+<p>如果要copy一个带有random pointer的list，主要的问题就是有可能这个random指向的位置还没有被copy到，所以解决方法都是多次扫描list。</p>
+</blockquote>
+<p><strong>使用HashMap，HashMap的key存原始pointer，value存新的pointer。</strong></p>
+<ul>
+<li>hashmap，一次遍历put(node,new RandomListNode(node.label))</li>
+<li>再次遍历，对next，random指针进行修改</li>
+</ul>
+<p><strong>3次遍历list，时间复杂度为O(3n)=O(n)。</strong></p>
+<ul>
+<li><p>对每个node进行复制，并插入其原始node的后面，新旧交替，变成重复链表。如：原始：1-&gt;2-&gt;3-&gt;null，复制后：1-&gt;1-&gt;2-&gt;2-&gt;3-&gt;3-&gt;null</p>
+</li>
+<li><p>遍历每个旧node，把旧node的random的复制给新node的random，因为链表已经是新旧交替的。所以复制方法为：</p>
+<pre><code>node.next.random = node.random.next
+</code></pre><p>前面是说旧node的next的random，就是新node的random，后面是旧node的random的next，正好是新node，是从旧random复制来的。</p>
+</li>
+<li><p>把新旧两个表拆开，返回新的表即可。</p>
+</li>
+</ul>
+<h2 id="Convert-Sorted-List-to-Binary-Search-Tree"><a href="#Convert-Sorted-List-to-Binary-Search-Tree" class="headerlink" title="Convert Sorted List to Binary Search Tree"></a>Convert Sorted List to Binary Search Tree</h2><p><strong>递归</strong></p>
+<ul>
+<li>找到中点</li>
+<li>递归</li>
+</ul>
+<p><strong>中序遍历</strong></p>
+<p>左子树-根-右子树</p>
+<h2 id="Intersection-of-Two-Linked-List"><a href="#Intersection-of-Two-Linked-List" class="headerlink" title="Intersection of Two Linked List"></a>Intersection of Two Linked List</h2><p>For example, the following two linked lists:</p>
+<blockquote>
+<p>A:          a1 → a2 → c1 → c2 → c3  </p>
+<p>B:      b1 → b2 → b3 → c1 → c2 → c3 </p>
+</blockquote>
+<p>begin to intersect at node c1.</p>
+<p>获得两个链表的长度差x，较长的先往前x，再一起往前，直到相等</p>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Agnes 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="Agnes 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Agnes
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="blog.jiangdongyu.space/2018/04/07/LinkedList/" title="LinkedList">blog.jiangdongyu.space/2018/04/07/LinkedList/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/LinkedList/" rel="tag"><i class="fa fa-tag"></i> LinkedList</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/03/HashMap&ConcurrentHashMap/" rel="next" title="HashMap & ConcurrentHashMap">
+                <i class="fa fa-chevron-left"></i> HashMap & ConcurrentHashMap
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/04/07/位运算/" rel="prev" title="位运算">
+                位运算 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -347,6 +745,18 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      
+        <div onclick="showGitment()" id="gitment-display-button">显示 Gitment 评论</div>
+        <div id="gitment-container" style="display:none"></div>
+      
+    </div>
+
+  
+
+
 
         </div>
         
@@ -367,8 +777,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -387,7 +806,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">27</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -409,7 +828,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -476,6 +895,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Add-Two-Numbers"><span class="nav-number">1.</span> <span class="nav-text">Add Two Numbers</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Remove-Duplicates"><span class="nav-number">2.</span> <span class="nav-text">Remove Duplicates</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Remove-Duplicates-II"><span class="nav-number">3.</span> <span class="nav-text">Remove Duplicates II</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Merge类"><span class="nav-number">4.</span> <span class="nav-text">Merge类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Merge-Two-Sorted-Lists"><span class="nav-number">4.1.</span> <span class="nav-text">Merge Two Sorted Lists</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Merge-K-Sorted-Lists"><span class="nav-number">4.2.</span> <span class="nav-text">Merge K Sorted Lists</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#快慢针类"><span class="nav-number">5.</span> <span class="nav-text">快慢针类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#List-Cycle"><span class="nav-number">5.1.</span> <span class="nav-text">List Cycle</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#List-Cycle-II"><span class="nav-number">5.2.</span> <span class="nav-text">List Cycle II</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Remove-Nth-Node-From-End"><span class="nav-number">5.3.</span> <span class="nav-text">Remove Nth Node From End</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Partition-List"><span class="nav-number">5.4.</span> <span class="nav-text">Partition List</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#reverse类"><span class="nav-number">6.</span> <span class="nav-text">reverse类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Reverse-Linked-List"><span class="nav-number">6.1.</span> <span class="nav-text">Reverse Linked List</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Reverse-Linked-List-II"><span class="nav-number">6.2.</span> <span class="nav-text">Reverse Linked List II</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Palindrome-List"><span class="nav-number">6.3.</span> <span class="nav-text">Palindrome List</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Swap-Nodes-in-Pairs"><span class="nav-number">6.4.</span> <span class="nav-text">Swap Nodes in Pairs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Reorder-List"><span class="nav-number">6.5.</span> <span class="nav-text">Reorder List</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Rotate-List"><span class="nav-number">7.</span> <span class="nav-text">Rotate List</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Copy-List-with-Random-Pointer"><span class="nav-number">8.</span> <span class="nav-text">Copy List with Random Pointer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Convert-Sorted-List-to-Binary-Search-Tree"><span class="nav-number">9.</span> <span class="nav-text">Convert Sorted List to Binary Search Tree</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Intersection-of-Two-Linked-List"><span class="nav-number">10.</span> <span class="nav-text">Intersection of Two Linked List</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -503,7 +938,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">33.4k</span>
+    <span title="Site words total count">39.2k</span>
   
 </div>
 
@@ -653,6 +1088,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -704,6 +1143,34 @@
       </style>
     
 
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname, 
+            owner: '12301068JiangDongyu',
+            repo: '12301068JiangDongyu.github.io',
+            
+            lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: 'c52fa72283c1a59993097b4b3b48badec76a2048',
+            
+                client_id: '2b3e8f73fd5f90f351d0'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      function showGitment(){
+        document.getElementById("gitment-display-button").style.display = "none";
+        document.getElementById("gitment-container").style.display = "block";
+        renderGitment();
+      }
+      
+      </script>
     
 
 
@@ -1177,26 +1644,6 @@
   
 
   
-  
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
-
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
   
 
 
