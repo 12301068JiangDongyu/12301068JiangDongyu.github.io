@@ -85,7 +85,7 @@
 
 
 
-  <meta name="keywords" content="Map," />
+  <meta name="keywords" content="Array,TwoPointer," />
 
 
 
@@ -98,21 +98,20 @@
 
 
 
-<meta name="description" content="HashMap实现原理HashMap即是采用了链地址法，也就是数组+链表的方式 HashMap的主干是一个Entry数组。Entry是HashMap的基本组成单元，每一个Entry包含一个key-value键值对。">
-<meta name="keywords" content="Map">
+<meta name="description" content="双指针法的常见应用所谓双指针，指的是在遍历对象的过程中，不是普通的使用单个指针进行访问，而是使用两个相同方向或者相反方向的指针进行扫描，从而达到相应的目的。 换言之，双指针法充分使用了数组有序这一特征，从而在某些情况下能够简化一些运算。 (注：这里的指针，并非专指c中指针的概念，而是指索引，游标或指针，可迭代对象等)">
+<meta name="keywords" content="Array,TwoPointer">
 <meta property="og:type" content="article">
-<meta property="og:title" content="HashMap &amp; ConcurrentHashMap">
-<meta property="og:url" content="blog.jiangdongyu.space/2018/04/03/HashMap&ConcurrentHashMap/index.html">
+<meta property="og:title" content="Two Pointer">
+<meta property="og:url" content="blog.jiangdongyu.space/2018/05/31/TwoPointer/index.html">
 <meta property="og:site_name" content="M&amp;Y">
-<meta property="og:description" content="HashMap实现原理HashMap即是采用了链地址法，也就是数组+链表的方式 HashMap的主干是一个Entry数组。Entry是HashMap的基本组成单元，每一个Entry包含一个key-value键值对。">
+<meta property="og:description" content="双指针法的常见应用所谓双指针，指的是在遍历对象的过程中，不是普通的使用单个指针进行访问，而是使用两个相同方向或者相反方向的指针进行扫描，从而达到相应的目的。 换言之，双指针法充分使用了数组有序这一特征，从而在某些情况下能够简化一些运算。 (注：这里的指针，并非专指c中指针的概念，而是指索引，游标或指针，可迭代对象等)">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://p9fh1pach.bkt.clouddn.com/1024555-20161113235348670-746615111.png">
-<meta property="og:image" content="http://p9fh1pach.bkt.clouddn.com/1024555-20170514174100832-1891630860.png">
-<meta property="og:updated_time" content="2018-05-28T11:49:12.579Z">
+<meta property="og:image" content="http://p9fh1pach.bkt.clouddn.com/rainwatertrap.png">
+<meta property="og:updated_time" content="2018-06-04T03:28:24.209Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="HashMap &amp; ConcurrentHashMap">
-<meta name="twitter:description" content="HashMap实现原理HashMap即是采用了链地址法，也就是数组+链表的方式 HashMap的主干是一个Entry数组。Entry是HashMap的基本组成单元，每一个Entry包含一个key-value键值对。">
-<meta name="twitter:image" content="http://p9fh1pach.bkt.clouddn.com/1024555-20161113235348670-746615111.png">
+<meta name="twitter:title" content="Two Pointer">
+<meta name="twitter:description" content="双指针法的常见应用所谓双指针，指的是在遍历对象的过程中，不是普通的使用单个指针进行访问，而是使用两个相同方向或者相反方向的指针进行扫描，从而达到相应的目的。 换言之，双指针法充分使用了数组有序这一特征，从而在某些情况下能够简化一些运算。 (注：这里的指针，并非专指c中指针的概念，而是指索引，游标或指针，可迭代对象等)">
+<meta name="twitter:image" content="http://p9fh1pach.bkt.clouddn.com/rainwatertrap.png">
 
 
 
@@ -142,13 +141,13 @@
 
 
 
-  <link rel="canonical" href="blog.jiangdongyu.space/2018/04/03/HashMap&ConcurrentHashMap/"/>
+  <link rel="canonical" href="blog.jiangdongyu.space/2018/05/31/TwoPointer/"/>
 
 
 
 
 
-  <title>HashMap & ConcurrentHashMap | M&Y</title>
+  <title>Two Pointer | M&Y</title>
   
 
 
@@ -311,7 +310,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="blog.jiangdongyu.space/2018/04/03/HashMap&ConcurrentHashMap/">
+    <link itemprop="mainEntityOfPage" href="blog.jiangdongyu.space/2018/05/31/TwoPointer/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Agnes">
@@ -328,7 +327,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">HashMap & ConcurrentHashMap</h1>
+          <h1 class="post-title" itemprop="name headline">Two Pointer</h1>
         
 
         <div class="post-meta">
@@ -340,8 +339,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-03T16:23:00+08:00">
-                2018-04-03
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-31T15:28:00+08:00">
+                2018-05-31
               </time>
             
 
@@ -374,8 +373,19 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/算法与数据结构/数据结构/" itemprop="url" rel="index">
-                    <span itemprop="name">数据结构</span>
+                  <a href="/categories/算法与数据结构/算法/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/算法与数据结构/算法/LeetCode-Category/" itemprop="url" rel="index">
+                    <span itemprop="name">LeetCode Category</span>
                   </a>
                 </span>
 
@@ -392,8 +402,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/04/03/HashMap&ConcurrentHashMap/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/04/03/HashMap&ConcurrentHashMap/" itemprop="commentsCount"></span>
+                <a href="/2018/05/31/TwoPointer/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/05/31/TwoPointer/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -401,7 +411,7 @@
 
           
           
-             <span id="/2018/04/03/HashMap&ConcurrentHashMap/" class="leancloud_visitors" data-flag-title="HashMap & ConcurrentHashMap">
+             <span id="/2018/05/31/TwoPointer/" class="leancloud_visitors" data-flag-title="Two Pointer">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -426,7 +436,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,310 字
+                  1,464 字
                 </span>
               
 
@@ -442,7 +452,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  5 分钟
+                  8 分钟
                 </span>
               
             </div>
@@ -463,38 +473,111 @@
       
 
       
-        <h2 id="HashMap实现原理"><a href="#HashMap实现原理" class="headerlink" title="HashMap实现原理"></a>HashMap实现原理</h2><p>HashMap即是采用了链地址法，也就是<strong>数组+链表</strong>的方式</p>
-<p>HashMap的主干是一个Entry数组。Entry是HashMap的基本组成单元，每一个Entry包含一个key-value键值对。</p>
+        <h2 id="双指针法的常见应用"><a href="#双指针法的常见应用" class="headerlink" title="双指针法的常见应用"></a>双指针法的常见应用</h2><p>所谓双指针，指的是在<strong>遍历对象</strong>的过程中，不是普通的使用单个指针进行访问，而是使用<strong>两个</strong>相同方向或者相反方向的指针进行扫描，从而达到相应的目的。</p>
+<p>换言之，双指针法充分使用了<strong>数组有序</strong>这一特征，从而在某些情况下能够简化一些运算。</p>
+<p>(注：这里的<strong>指针</strong>，并非专指c中指针的概念，而是指<strong>索引，游标或指针，可迭代对象等</strong>)</p>
 <a id="more"></a>
-<p>所以，HashMap的整体结构如下</p>
-<p><img src="http://p9fh1pach.bkt.clouddn.com/1024555-20161113235348670-746615111.png" alt="avatar"></p>
-<p>简单来说，HashMap由数组+链表组成的，<strong>数组</strong>是HashMap的<strong>主体</strong>，<strong>链表</strong>则是主要为了解决<strong>哈希冲突</strong>而存在的，如果定位到的数组位置不含链表（当前entry的next指向null）,那么对于查找，添加等操作很快，仅需一次寻址即可；如果定位到的数组包含链表，对于添加操作，其时间复杂度依然为O(1)，因为最新的Entry会插入链表头部，仅需简单改变引用链即可，而对于查找操作来讲，此时就需要遍历链表，然后通过key对象的equals方法逐一比对查找。所以，性能考虑，HashMap中的<strong>链表出现越少，性能才会越好</strong>。</p>
-<p>其他几个重要字段</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//实际存储的key-value键值对的个数</span></span><br><span class="line"><span class="keyword">transient</span> <span class="keyword">int</span> size;</span><br><span class="line"><span class="comment">//阈值，当table == &#123;&#125;时，该值为初始容量（初始容量默认为16）；当table被填充了，也就是为table分配内存空间后，threshold一般为 capacity*loadFactory。HashMap在进行扩容时需要参考threshold，后面会详细谈到</span></span><br><span class="line"><span class="keyword">int</span> threshold;</span><br><span class="line"><span class="comment">//负载因子，代表了table的填充度有多少，默认是0.75</span></span><br><span class="line"><span class="keyword">final</span> <span class="keyword">float</span> loadFactor;</span><br><span class="line"><span class="comment">//用于快速失败，由于HashMap非线程安全，在对HashMap进行迭代时，如果期间其他线程的参与导致HashMap的结构发生变化了（比如put，remove等操作），需要抛出异常ConcurrentModificationException</span></span><br><span class="line"><span class="keyword">transient</span> <span class="keyword">int</span> modCount;</span><br></pre></td></tr></table></figure>
-<p>HashMap有4个构造器，其他构造器如果用户没有传入initialCapacity 和loadFactor这两个参数，会使用默认值</p>
-<p><strong>initialCapacity默认为16，loadFactory默认为0.75</strong></p>
-<p><strong>在常规构造器中，没有为数组table分配内存空间（有一个入参为指定Map的构造器例外），而是在执行put操作的时候才真正构建table数组</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> V <span class="title">put</span><span class="params">(K key, V value)</span> </span>&#123;</span><br><span class="line">    <span class="comment">//如果table数组为空数组&#123;&#125;，进行数组填充（为table分配实际内存空间），入参为threshold，此时threshold为initialCapacity 默认是1&lt;&lt;4(24=16)</span></span><br><span class="line">    <span class="keyword">if</span> (table == EMPTY_TABLE) &#123;</span><br><span class="line">        inflateTable(threshold);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//如果key为null，存储位置为table[0]或table[0]的冲突链上</span></span><br><span class="line">    <span class="keyword">if</span> (key == <span class="keyword">null</span>)</span><br><span class="line">        <span class="keyword">return</span> putForNullKey(value);</span><br><span class="line">        <span class="keyword">int</span> hash = hash(key);<span class="comment">//对key的hashcode进一步计算，确保散列均匀</span></span><br><span class="line">        <span class="keyword">int</span> i = indexFor(hash, table.length);<span class="comment">//获取在table中的实际位置</span></span><br><span class="line">        <span class="keyword">for</span> (Entry&lt;K,V&gt; e = table[i]; e != <span class="keyword">null</span>; e = e.next) &#123;</span><br><span class="line">        <span class="comment">//如果该对应数据已存在，执行覆盖操作。用新value替换旧value，并返回旧value</span></span><br><span class="line">            Object k;</span><br><span class="line">            <span class="keyword">if</span> (e.hash == hash &amp;&amp; ((k = e.key) == key || key.equals(k))) &#123;</span><br><span class="line">                V oldValue = e.value;</span><br><span class="line">                e.value = value;</span><br><span class="line">                e.recordAccess(<span class="keyword">this</span>);</span><br><span class="line">                <span class="keyword">return</span> oldValue;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    modCount++;<span class="comment">//保证并发访问时，若HashMap内部结构发生变化，快速响应失败</span></span><br><span class="line">    addEntry(hash, key, value, i);<span class="comment">//新增一个entry</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>通过以上代码能够得知，当发生哈希冲突并且size大于阈值的时候，需要进行数组扩容，扩容时，需要新建一个长度为之前数组2倍的新的数组，然后将当前的Entry数组中的元素全部传输过去，扩容后的新数组长度为之前的2倍，所以扩容相对来说是个耗资源的操作。</p>
-<p><strong>HashMap的数组长度一定是2的次幂</strong></p>
+<h3 id="209-Minimum-Size-Subarray-Sum"><a href="#209-Minimum-Size-Subarray-Sum" class="headerlink" title="209.Minimum Size Subarray Sum"></a>209.Minimum Size Subarray Sum</h3><p>Given an array of n positive integers and a positive integer s, find the minimal length of a subarray of which the sum ≥ s. If there isn’t one, return 0 instead.</p>
+<p>For example, given the array [2,3,1,2,4,3] and s = 7, the subarray [4,3] has the minimal length under the problem constraint.</p>
 <ul>
-<li>如果数组进行扩容，数组长度发生变化，而存储位置 index = h&amp;(length-1),index也可能会发生变化，需要重新计算index</li>
-<li>扩容后只有一位差异，也就是多出了最左位的1，这样在通过 h&amp;(length-1)的时候，只要h对应的最左边的那一个差异位为0，就能保证得到的新的数组索引和老数组索引一致(大大减少了之前已经散列良好的老数组的数据位置重新调换)</li>
-<li>数组长度保持2的次幂，length-1的低位都为1，会使得获得的数组索引index更加均匀</li>
+<li>最短子串和</li>
 </ul>
-<p><strong>多线程下使用HashMap</strong></p>
-<p>JDK1.7 存在死循环</p>
-<h2 id="ConcurrentHashMap实现原理"><a href="#ConcurrentHashMap实现原理" class="headerlink" title="ConcurrentHashMap实现原理"></a>ConcurrentHashMap实现原理</h2><p><strong>分段锁</strong></p>
-<p><img src="http://p9fh1pach.bkt.clouddn.com/1024555-20170514174100832-1891630860.png" alt="avatar"></p>
-<p>ConcurrentHashMap采用了非常精妙的”分段锁”策略，ConcurrentHashMap的主干是个Segment数组。</p>
-<p>在ConcurrentHashMap，一个Segment就是一个<strong>子哈希表</strong>，Segment里维护了一个HashEntry数组，并发环境下，对于不同Segment的数据进行操作是不用考虑锁竞争的。</p>
-<p>所以，对于<strong>同一个Segment的操作才需考虑线程同步，不同的Segment则无需考虑</strong>。</p>
-<p>Segment数组的大小ssize是由concurrentLevel来决定的，但是却不一定等于concurrentLevel，ssize一定是大于或等于concurrentLevel的最小的2的次幂。</p>
-<p>put的主要逻辑也就两步：</p>
-<p>1.定位segment并确保定位的Segment已初始化 </p>
-<p>2.调用Segment的put方法。</p>
-<p>Segment的get方法无需加锁，由于其中涉及到的共享变量都使用<strong>volatile</strong>修饰，volatile可以保证<strong>内存可见性</strong>，所以不会读取到过期数据。</p>
-<p>Segment上的put方法，Segment中的put方法是要<strong>加锁</strong>的。只不过是<strong>锁粒度细</strong>了而已。</p>
+<p><strong>思路一</strong></p>
+<ul>
+<li>Two Pointer<ul>
+<li>是用两个指针形成一个移动窗口</li>
+<li>当sum的值小于s时，将右边界向右扩张，sum += arr[right++]</li>
+<li>当sum的值大于s时，则将左边届右移，判断取较小的count</li>
+<li>循环条件是right &lt;= length, left &lt;= right</li>
+</ul>
+</li>
+</ul>
+<p><strong>代码</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">minSubArrayLen</span><span class="params">(<span class="keyword">int</span> s, <span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(nums == <span class="keyword">null</span> || nums.length == <span class="number">0</span> ) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> left = <span class="number">0</span>, right = <span class="number">0</span>, sum = <span class="number">0</span>, count = nums.length + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(right &lt;= nums.length &amp;&amp; left &lt;= right)&#123;</span><br><span class="line">            <span class="keyword">if</span>(sum &lt; s)&#123;</span><br><span class="line">                <span class="keyword">if</span>(right &lt; nums.length)&#123;</span><br><span class="line">                    sum += nums[right];</span><br><span class="line">                &#125;</span><br><span class="line">                right++;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                count = Math.min(count,right - left);</span><br><span class="line">                sum -= nums[left];</span><br><span class="line">                left++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> count &lt;= nums.length? count:<span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>思路二</strong></p>
+<ul>
+<li>二分法(适用subarray sum问题)<ul>
+<li>构造sum数组，sum[i+1] = sum[i]+nums[i]</li>
+<li>sum数组递增</li>
+<li>遍历数组sum，对每一个i，寻找j(右边界)，使得i～j区间的值大于s</li>
+<li>不断更新找出最小值</li>
+</ul>
+</li>
+</ul>
+<p><strong>代码</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">minSubArrayLen</span><span class="params">(<span class="keyword">int</span> s, <span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>, min = Integer.MAX_VALUE;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span>[] sums = <span class="keyword">new</span> <span class="keyword">int</span>[nums.length];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++)</span><br><span class="line">            sums[i] = nums[i] + (i == <span class="number">0</span> ? <span class="number">0</span> : sums[i - <span class="number">1</span>]);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> j = findWindowEnd(i, sums, s);</span><br><span class="line">            <span class="keyword">if</span> (j == nums.length) <span class="keyword">break</span>;</span><br><span class="line">            min = Math.min(j - i + <span class="number">1</span>, min);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> min == Integer.MAX_VALUE ? <span class="number">0</span> : min;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">findWindowEnd</span><span class="params">(<span class="keyword">int</span> start, <span class="keyword">int</span>[] sums, <span class="keyword">int</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i = start, j = sums.length - <span class="number">1</span>, offset = start == <span class="number">0</span> ? <span class="number">0</span> : sums[start - <span class="number">1</span>];</span><br><span class="line">        <span class="keyword">while</span> (i &lt;= j) &#123;</span><br><span class="line">            <span class="keyword">int</span> m = (i + j) / <span class="number">2</span>;</span><br><span class="line">            <span class="keyword">int</span> sum = sums[m] - offset;</span><br><span class="line">            <span class="keyword">if</span> (sum &gt;= s) j = m - <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span> i = m + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> i;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Valid-Palindrome"><a href="#Valid-Palindrome" class="headerlink" title="Valid Palindrome"></a>Valid Palindrome</h3><h4 id="125-I"><a href="#125-I" class="headerlink" title="125.I"></a>125.I</h4><p>Given a string, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases.</p>
+<p>Note: For the purpose of this problem, we define empty string as valid palindrome.</p>
+<p><strong>Example 1:</strong></p>
+<pre><code>Input: &quot;A man, a plan, a canal: Panama&quot;
+Output: true
+</code></pre><p><strong>Example 2:</strong></p>
+<pre><code>Input: &quot;race a car&quot;
+Output: false
+</code></pre><ul>
+<li>双指针，首尾</li>
+<li>注意大小写转换</li>
+<li>isValid(char c)判断是否是a-z||A-Z||0-9</li>
+</ul>
+<h4 id="680-II"><a href="#680-II" class="headerlink" title="680.II"></a>680.II</h4><p>Given a non-empty string s, you may delete <strong>at most one</strong> character. Judge whether you can make it a palindrome.</p>
+<p><strong>Example 1:</strong></p>
+<pre><code>Input: &quot;aba&quot;
+Output: True
+</code></pre><p><strong>Example 2:</strong></p>
+<pre><code>Input: &quot;abca&quot;
+Output: True
+Explanation: You could delete the character &apos;c&apos;.
+</code></pre><ul>
+<li>String的题</li>
+<li>一个用于判断是否是回文的方法</li>
+<li>主函数判断start和end的值是否相等</li>
+<li>不相等，则判断start+1和end||start和end-1的值是否相等</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">validPalindrome</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> start = <span class="number">0</span>, end = s.length() - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(start &lt;= end)&#123;</span><br><span class="line">            <span class="keyword">if</span>(s.charAt(start) != s.charAt(end))&#123;</span><br><span class="line">                <span class="keyword">return</span> isValid(s, start+<span class="number">1</span>, end) || isValid(s, start, end-<span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            start++;</span><br><span class="line">            end--;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isValid</span><span class="params">(String s, <span class="keyword">int</span> i, <span class="keyword">int</span> j)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">while</span>(i &lt;= j)&#123;</span><br><span class="line">            <span class="keyword">if</span>(s.charAt(i) != s.charAt(j))&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            i++;</span><br><span class="line">            j--;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="11-Container-with-Most-Water"><a href="#11-Container-with-Most-Water" class="headerlink" title="11.Container with Most Water"></a>11.Container with Most Water</h3><p>Given n non-negative integers a1, a2, …, an, where each represents a point at coordinate (i, ai). n vertical lines are drawn such that the two endpoints of line i is at (i, ai) and (i, 0). Find two lines, which together with x-axis forms a container, such that the container contains the most water.</p>
+<p>Note: You may not slant the container and n is at least 2.</p>
+<p><strong>问题转换成数列中选两个值使得中间的面积最大</strong></p>
+<ul>
+<li>首尾指针，遍历</li>
+<li>求局部面积</li>
+<li>如果左边较低，则将左边向中间移一点</li>
+<li>如果右边较低，则将右边向中间移一点</li>
+</ul>
+<p><strong>代码</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxArea</span><span class="params">(<span class="keyword">int</span>[] height)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> maxArea = <span class="number">0</span>, left = <span class="number">0</span>, right = height.length - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(left &lt; right)&#123;</span><br><span class="line">            maxArea = Math.max(maxArea,Math.min(height[left],height[right]) * (right-left));</span><br><span class="line">            <span class="keyword">if</span>(height[left] &gt; height[right])&#123;</span><br><span class="line">                right--;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                left++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> maxArea;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="42-Trapping-Rain-Water"><a href="#42-Trapping-Rain-Water" class="headerlink" title="42.Trapping Rain Water"></a>42.Trapping Rain Water</h3><p>Given n non-negative integers representing an elevation map where the width of each bar is 1, compute how much water it is able to trap after raining.</p>
+<p><img src="http://p9fh1pach.bkt.clouddn.com/rainwatertrap.png" alt="avatar"></p>
+<p>The above elevation map is represented by array [0,1,0,2,1,0,1,3,2,1,2,1]. In this case, 6 units of rain water (blue section) are being trapped. Thanks Marcos for contributing this image!</p>
+<p><strong>Example:</strong></p>
+<pre><code>Input: [0,1,0,2,1,0,1,3,2,1,2,1]
+Output: 6
+</code></pre><p><strong>解题方法</strong></p>
+<p>从两边开始灌水，总是从低的一边开始灌，高的地方保持不动，同时记录下可以灌的水的总量，不断更新</p>
+<p><strong>代码</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">trap</span><span class="params">(<span class="keyword">int</span>[] height)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(height == <span class="keyword">null</span> || height.length &lt; <span class="number">3</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> left = <span class="number">0</span>, right = height.length - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> leftbound = height[left], rightbound = height[right];</span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span>(left &lt; right)&#123;</span><br><span class="line">            <span class="keyword">if</span>(leftbound &lt; rightbound)&#123;</span><br><span class="line">                <span class="comment">//左边低，从左边开始灌</span></span><br><span class="line">                left++;</span><br><span class="line">                <span class="keyword">if</span>(height[left] &lt;= leftbound)&#123;</span><br><span class="line">                    <span class="comment">//比现有的bound低，可以灌</span></span><br><span class="line">                    res += leftbound - height[left];</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                    <span class="comment">//比现有的bound高，更新左边的bound</span></span><br><span class="line">                    leftbound = height[left];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                right--;</span><br><span class="line">                <span class="keyword">if</span>(height[right] &lt;= rightbound)&#123;</span><br><span class="line">                    res += rightbound - height[right];</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                    rightbound = height[right];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="61-Rotate-List"><a href="#61-Rotate-List" class="headerlink" title="61.Rotate List"></a>61.Rotate List</h3><p>Given a linked list, rotate the list to the right by k places, where k is non-negative.</p>
+<p><strong>Example 1:</strong></p>
+<pre><code>Input: 1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;NULL, k = 2
+Output: 4-&gt;5-&gt;1-&gt;2-&gt;3-&gt;NULL
+Explanation:
+rotate 1 steps to the right: 5-&gt;1-&gt;2-&gt;3-&gt;4-&gt;NULL
+rotate 2 steps to the right: 4-&gt;5-&gt;1-&gt;2-&gt;3-&gt;NULL
+</code></pre><p><strong>Example 2:</strong></p>
+<pre><code>Input: 0-&gt;1-&gt;2-&gt;NULL, k = 4
+Output: 2-&gt;0-&gt;1-&gt;NULL
+Explanation:
+rotate 1 steps to the right: 2-&gt;0-&gt;1-&gt;NULL
+rotate 2 steps to the right: 1-&gt;2-&gt;0-&gt;NULL
+rotate 3 steps to the right: 0-&gt;1-&gt;2-&gt;NULL
+rotate 4 steps to the right: 2-&gt;0-&gt;1-&gt;NULL
+</code></pre><ul>
+<li>获得链表的长度n，k%n才是需要移动的</li>
+<li>找到最后结果的链表的tail:first,循环n-k-1次找next即可</li>
+<li>遍历找到原链表的tail:second</li>
+<li>second.next = head</li>
+<li>result = first.next</li>
+<li>first.next = null</li>
+</ul>
 
       
     </div>
@@ -544,7 +627,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="blog.jiangdongyu.space/2018/04/03/HashMap&ConcurrentHashMap/" title="HashMap & ConcurrentHashMap">blog.jiangdongyu.space/2018/04/03/HashMap&ConcurrentHashMap/</a>
+    <a href="blog.jiangdongyu.space/2018/05/31/TwoPointer/" title="Two Pointer">blog.jiangdongyu.space/2018/05/31/TwoPointer/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -559,7 +642,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Map/" rel="tag"><i class="fa fa-tag"></i> Map</a>
+            <a href="/tags/Array/" rel="tag"><i class="fa fa-tag"></i> Array</a>
+          
+            <a href="/tags/TwoPointer/" rel="tag"><i class="fa fa-tag"></i> TwoPointer</a>
           
         </div>
       
@@ -572,8 +657,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/02/数学操作/" rel="next" title="Math相关">
-                <i class="fa fa-chevron-left"></i> Math相关
+              <a href="/2018/05/18/商汤Java实习生/" rel="next" title="商汤">
+                <i class="fa fa-chevron-left"></i> 商汤
               </a>
             
           </div>
@@ -581,10 +666,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/04/07/LinkedList/" rel="prev" title="LinkedList">
-                LinkedList <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -771,7 +852,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#HashMap实现原理"><span class="nav-number">1.</span> <span class="nav-text">HashMap实现原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ConcurrentHashMap实现原理"><span class="nav-number">2.</span> <span class="nav-text">ConcurrentHashMap实现原理</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#双指针法的常见应用"><span class="nav-number">1.</span> <span class="nav-text">双指针法的常见应用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#209-Minimum-Size-Subarray-Sum"><span class="nav-number">1.1.</span> <span class="nav-text">209.Minimum Size Subarray Sum</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Valid-Palindrome"><span class="nav-number">1.2.</span> <span class="nav-text">Valid Palindrome</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#125-I"><span class="nav-number">1.2.1.</span> <span class="nav-text">125.I</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#680-II"><span class="nav-number">1.2.2.</span> <span class="nav-text">680.II</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-Container-with-Most-Water"><span class="nav-number">1.3.</span> <span class="nav-text">11.Container with Most Water</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#42-Trapping-Rain-Water"><span class="nav-number">1.4.</span> <span class="nav-text">42.Trapping Rain Water</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#61-Rotate-List"><span class="nav-number">1.5.</span> <span class="nav-text">61.Rotate List</span></a></li></ol></li></ol></div>
             
 
           </div>
