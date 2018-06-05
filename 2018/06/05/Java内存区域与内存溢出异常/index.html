@@ -14,8 +14,8 @@
 
 <script>
     (function(){
-        if('laolaozuimei'){
-            if (prompt('请输入文章密码') !== 'laolaozuimei'){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
                 alert('密码错误！');
                 history.back();
             }
@@ -85,7 +85,7 @@
 
 
 
-  <meta name="keywords" content="Java," />
+  <meta name="keywords" content="JVM,Java," />
 
 
 
@@ -98,18 +98,23 @@
 
 
 
-<meta name="description" content="腾讯后台开发实习生暑期实习面试">
-<meta name="keywords" content="Java">
+<meta name="description" content="Java技术体系Java程序设计语言、Java虚拟机、Java API类库三部分统称为JDK，JDK是用于支持Java程序开发的最小环境。Java API类库中的Java SE API子集和Java虚拟机这两个部分统称为JRE，JRE是支持Java程序运行的标准环境。">
+<meta name="keywords" content="JVM,Java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="腾讯">
-<meta property="og:url" content="blog.jiangdongyu.space/2018/04/16/腾讯/index.html">
+<meta property="og:title" content="Java内存区域与内存溢出异常">
+<meta property="og:url" content="blog.jiangdongyu.space/2018/06/05/Java内存区域与内存溢出异常/index.html">
 <meta property="og:site_name" content="M&amp;Y">
-<meta property="og:description" content="腾讯后台开发实习生暑期实习面试">
+<meta property="og:description" content="Java技术体系Java程序设计语言、Java虚拟机、Java API类库三部分统称为JDK，JDK是用于支持Java程序开发的最小环境。Java API类库中的Java SE API子集和Java虚拟机这两个部分统称为JRE，JRE是支持Java程序运行的标准环境。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-28T10:54:24.511Z">
+<meta property="og:image" content="http://p9fh1pach.bkt.clouddn.com/Java2.png">
+<meta property="og:image" content="http://p9fh1pach.bkt.clouddn.com/%E5%A0%86%E6%A0%88%E6%96%B9%E6%B3%95%E5%8C%BA.jpg">
+<meta property="og:image" content="http://p9fh1pach.bkt.clouddn.com/WechatIMG239.jpeg">
+<meta property="og:image" content="http://p9fh1pach.bkt.clouddn.com/WechatIMG240.jpeg">
+<meta property="og:updated_time" content="2018-06-05T08:29:52.638Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="腾讯">
-<meta name="twitter:description" content="腾讯后台开发实习生暑期实习面试">
+<meta name="twitter:title" content="Java内存区域与内存溢出异常">
+<meta name="twitter:description" content="Java技术体系Java程序设计语言、Java虚拟机、Java API类库三部分统称为JDK，JDK是用于支持Java程序开发的最小环境。Java API类库中的Java SE API子集和Java虚拟机这两个部分统称为JRE，JRE是支持Java程序运行的标准环境。">
+<meta name="twitter:image" content="http://p9fh1pach.bkt.clouddn.com/Java2.png">
 
 
 
@@ -139,13 +144,13 @@
 
 
 
-  <link rel="canonical" href="blog.jiangdongyu.space/2018/04/16/腾讯/"/>
+  <link rel="canonical" href="blog.jiangdongyu.space/2018/06/05/Java内存区域与内存溢出异常/"/>
 
 
 
 
 
-  <title>腾讯 | M&Y</title>
+  <title>Java内存区域与内存溢出异常 | M&Y</title>
   
 
 
@@ -308,7 +313,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="blog.jiangdongyu.space/2018/04/16/腾讯/">
+    <link itemprop="mainEntityOfPage" href="blog.jiangdongyu.space/2018/06/05/Java内存区域与内存溢出异常/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Agnes">
@@ -325,7 +330,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">腾讯</h1>
+          <h1 class="post-title" itemprop="name headline">Java内存区域与内存溢出异常</h1>
         
 
         <div class="post-meta">
@@ -337,8 +342,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-16T11:26:00+08:00">
-                2018-04-16
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-05T14:00:00+08:00">
+                2018-06-05
               </time>
             
 
@@ -360,8 +365,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/实习面试经历/" itemprop="url" rel="index">
-                    <span itemprop="name">实习面试经历</span>
+                  <a href="/categories/Java基础/" itemprop="url" rel="index">
+                    <span itemprop="name">Java基础</span>
                   </a>
                 </span>
 
@@ -371,8 +376,19 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/实习面试经历/2018/" itemprop="url" rel="index">
-                    <span itemprop="name">2018</span>
+                  <a href="/categories/Java基础/深入理解Java虚拟机/" itemprop="url" rel="index">
+                    <span itemprop="name">深入理解Java虚拟机</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java基础/深入理解Java虚拟机/自动内存管理机制/" itemprop="url" rel="index">
+                    <span itemprop="name">自动内存管理机制</span>
                   </a>
                 </span>
 
@@ -389,8 +405,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/04/16/腾讯/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/04/16/腾讯/" itemprop="commentsCount"></span>
+                <a href="/2018/06/05/Java内存区域与内存溢出异常/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/06/05/Java内存区域与内存溢出异常/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -398,7 +414,7 @@
 
           
           
-             <span id="/2018/04/16/腾讯/" class="leancloud_visitors" data-flag-title="腾讯">
+             <span id="/2018/06/05/Java内存区域与内存溢出异常/" class="leancloud_visitors" data-flag-title="Java内存区域与内存溢出异常">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -423,7 +439,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  114 字
+                  889 字
                 </span>
               
 
@@ -439,7 +455,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1 分钟
+                  3 分钟
                 </span>
               
             </div>
@@ -460,21 +476,72 @@
       
 
       
-        <p>腾讯后台开发实习生暑期实习面试<br><a id="more"></a></p>
-<ul>
-<li>自我介绍</li>
-<li>写hql <ul>
-<li>给定腾讯新闻数据，三个表</li>
-<li>第一个表：腾讯新闻版面id，文章id</li>
-<li>第二个表，浏览行为数据：时间戳，版面id，文章id</li>
-<li>第三个表，评论行为数据：时间戳，版面id，文章id</li>
-<li>求每天文章/版面的曝光</li>
-<li>曝光 = 评论/浏览</li>
+        <h2 id="Java技术体系"><a href="#Java技术体系" class="headerlink" title="Java技术体系"></a>Java技术体系</h2><p>Java程序设计语言、Java虚拟机、Java API类库三部分统称为<strong>JDK</strong>，JDK是用于支持Java程序开发的最小环境。Java API类库中的Java SE API子集和Java虚拟机这两个部分统称为<strong>JRE</strong>，JRE是支持Java程序运行的标准环境。</p>
+<a id="more"></a>
+<h2 id="运行时数据区域"><a href="#运行时数据区域" class="headerlink" title="运行时数据区域"></a>运行时数据区域</h2><p><img src="http://p9fh1pach.bkt.clouddn.com/Java2.png" alt="avatar"></p>
+<h3 id="程序计数器"><a href="#程序计数器" class="headerlink" title="程序计数器"></a>程序计数器</h3><p>线程独立，唯一没有规定OutOfMemoryError的区域</p>
+<h3 id="Java虚拟机栈"><a href="#Java虚拟机栈" class="headerlink" title="Java虚拟机栈"></a>Java虚拟机栈</h3><ul>
+<li>线程私有，生命周期和线程相同</li>
+<li>平时所谓的堆、栈、方法区，栈就是指<strong>虚拟机栈</strong>，或者说是其中的<strong>局部变量表</strong>部分</li>
+<li>两种异常状况<ul>
+<li>StackOverflowError: 线程请求栈深度大于所允许</li>
+<li>OutOfMemoryError: 扩展无法申请足够内存</li>
 </ul>
 </li>
-<li>求两个数组的交集<ul>
-<li>hashset</li>
-<li>排序，再比较</li>
+</ul>
+<h3 id="本地方法栈"><a href="#本地方法栈" class="headerlink" title="本地方法栈"></a>本地方法栈</h3><p>和虚拟机栈发挥作用相似</p>
+<h3 id="Java堆"><a href="#Java堆" class="headerlink" title="Java堆"></a>Java堆</h3><ul>
+<li>线程共享，虚拟机启动时创建，<strong>存放对象实例</strong></li>
+<li>GC管理的主要区域</li>
+<li>内存空间不连续</li>
+<li>OutOfMemoryError: 堆中没有内存完成实例分配并且无法扩展时</li>
+</ul>
+<h3 id="方法区"><a href="#方法区" class="headerlink" title="方法区"></a>方法区</h3><ul>
+<li>线程共享</li>
+<li>存放类信息、常量、静态变量、即时编译器编译后的代码</li>
+<li>OutOfMemoryError: 无法满足内存分配需求时</li>
+</ul>
+<h3 id="JVM实例"><a href="#JVM实例" class="headerlink" title="JVM实例"></a>JVM实例</h3><p><img src="http://p9fh1pach.bkt.clouddn.com/%E5%A0%86%E6%A0%88%E6%96%B9%E6%B3%95%E5%8C%BA.jpg" alt="avatar"></p>
+<h2 id="HotSpot虚拟机对象揭秘"><a href="#HotSpot虚拟机对象揭秘" class="headerlink" title="HotSpot虚拟机对象揭秘"></a>HotSpot虚拟机对象揭秘</h2><p>HotSpot虚拟机在Java堆中对象分配、布局、访问的全过程</p>
+<h3 id="对象创建"><a href="#对象创建" class="headerlink" title="对象创建"></a>对象创建</h3><ul>
+<li>虚拟机遇到new指令，检查指令的参数能否在常量池中定位到一个类的符号引用</li>
+<li>检查所代表的类是否已被加载、解析和初始化过</li>
+<li>没有，则先执行类加载过程</li>
+<li>虚拟机为新生对象分配内存，对象所需内存大小在类加载完成后便可确定<ul>
+<li>指针碰撞: 假设Java堆内存绝对规整，用过的内存和没用过的严格分开，有一个指针作为分界点的指示器，移动指针即可</li>
+<li>空闲列表: 内存不规整，维护列表，记录是否可用，需要在列表中找一块足够大的区域</li>
+</ul>
+</li>
+<li>对象创建频繁，可能会导致在并发情况下线程不安全<ul>
+<li>对分配内存动作加上同步处理: CAS+失败重试</li>
+<li>按线程划分在不同空间，每个线程预先分配<strong>本地线程分配缓冲(TLAB)</strong>，哪个线程需要分配内存，就在哪个线程的TLAB分配，只有在用完并分配新的TLAB时才同步锁定</li>
+</ul>
+</li>
+<li>将分配到的内存空间初始化为零值</li>
+<li>根据<strong>对象头</strong>对对象进行必要的设置</li>
+<li>执行<init>方法</init></li>
+</ul>
+<h3 id="对象的内存布局"><a href="#对象的内存布局" class="headerlink" title="对象的内存布局"></a>对象的内存布局</h3><p>HotSpot中分3块区域: 对象头、实例数据、对齐填充</p>
+<ul>
+<li>对象头<ol>
+<li>存储对象自身运行时数据: 哈希码、GC分代年龄…</li>
+<li>类型指针，对象指向其类原数据的指针，<strong>确定对象是哪个类的实例</strong>（不是所有虚拟机实现都必须保留该指针）</li>
+</ol>
+</li>
+<li>实例数据: 在代码中定义的各种类型的字段内容<ul>
+<li>HotSpot默认相同宽度字段被分配到一起，比如shorts/chars，父类的变量在子类之前</li>
+</ul>
+</li>
+<li>对齐填充(不一定存在，占位作用)</li>
+</ul>
+<h3 id="对象的访问定位"><a href="#对象的访问定位" class="headerlink" title="对象的访问定位"></a>对象的访问定位</h3><p>使用对象需要通过<strong>栈</strong>上的reference来操作<strong>堆</strong>上的具体对象，引用如何去定位，主流有两种：</p>
+<ul>
+<li>句柄（稳定）<ul>
+<li>reference存储对象的句柄地址，句柄中包含对象实例数据和类型数据的具体信息<br><img src="http://p9fh1pach.bkt.clouddn.com/WechatIMG239.jpeg" alt="avatar"></li>
+</ul>
+</li>
+<li>直接指针（速度快，HotSpot）<ul>
+<li>reference存储对象的地址<br><img src="http://p9fh1pach.bkt.clouddn.com/WechatIMG240.jpeg" alt="avatar"></li>
 </ul>
 </li>
 </ul>
@@ -527,7 +594,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="blog.jiangdongyu.space/2018/04/16/腾讯/" title="腾讯">blog.jiangdongyu.space/2018/04/16/腾讯/</a>
+    <a href="blog.jiangdongyu.space/2018/06/05/Java内存区域与内存溢出异常/" title="Java内存区域与内存溢出异常">blog.jiangdongyu.space/2018/06/05/Java内存区域与内存溢出异常/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -542,6 +609,8 @@
       
         <div class="post-tags">
           
+            <a href="/tags/JVM/" rel="tag"><i class="fa fa-tag"></i> JVM</a>
+          
             <a href="/tags/Java/" rel="tag"><i class="fa fa-tag"></i> Java</a>
           
         </div>
@@ -555,8 +624,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/12/BinaryTree/" rel="next" title="Binary Tree">
-                <i class="fa fa-chevron-left"></i> Binary Tree
+              <a href="/2018/06/04/QuickSelect/" rel="next" title="Quick Select">
+                <i class="fa fa-chevron-left"></i> Quick Select
               </a>
             
           </div>
@@ -564,10 +633,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/04/18/DFS/" rel="prev" title="DFS">
-                DFS <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -627,8 +692,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -735,6 +809,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Java技术体系"><span class="nav-number">1.</span> <span class="nav-text">Java技术体系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运行时数据区域"><span class="nav-number">2.</span> <span class="nav-text">运行时数据区域</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#程序计数器"><span class="nav-number">2.1.</span> <span class="nav-text">程序计数器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java虚拟机栈"><span class="nav-number">2.2.</span> <span class="nav-text">Java虚拟机栈</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#本地方法栈"><span class="nav-number">2.3.</span> <span class="nav-text">本地方法栈</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java堆"><span class="nav-number">2.4.</span> <span class="nav-text">Java堆</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法区"><span class="nav-number">2.5.</span> <span class="nav-text">方法区</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JVM实例"><span class="nav-number">2.6.</span> <span class="nav-text">JVM实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HotSpot虚拟机对象揭秘"><span class="nav-number">3.</span> <span class="nav-text">HotSpot虚拟机对象揭秘</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#对象创建"><span class="nav-number">3.1.</span> <span class="nav-text">对象创建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对象的内存布局"><span class="nav-number">3.2.</span> <span class="nav-text">对象的内存布局</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对象的访问定位"><span class="nav-number">3.3.</span> <span class="nav-text">对象的访问定位</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

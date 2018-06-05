@@ -2,13 +2,6 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <url>
-        <loc>blog.jiangdongyu.space/tags/Java/</loc>
-        <lastmod>2018-05-28T10:56:09.817Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>blog.jiangdongyu.space/tags/%E7%AE%80%E5%8E%86/</loc>
         <lastmod>2018-05-28T11:48:34.187Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -18,13 +11,6 @@
     <url>
         <loc>blog.jiangdongyu.space/tags/%E5%B7%A5%E4%BD%9C/</loc>
         <lastmod>2018-05-28T11:48:47.069Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>blog.jiangdongyu.space/tags/JVM/</loc>
-        <lastmod>2018-05-28T11:49:02.016Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -60,13 +46,6 @@
     <url>
         <loc>blog.jiangdongyu.space/tags/BackTracking/</loc>
         <lastmod>2018-05-29T15:45:55.334Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>blog.jiangdongyu.space/tags/Binary-Search/</loc>
-        <lastmod>2018-05-29T15:46:08.532Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -128,15 +107,36 @@
     </url>
 
     <url>
-        <loc>blog.jiangdongyu.space/tags/Array/</loc>
-        <lastmod>2018-06-05T05:10:35.532Z</lastmod>
+        <loc>blog.jiangdongyu.space/tags/QuickSelect/</loc>
+        <lastmod>2018-06-05T06:49:00.451Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>blog.jiangdongyu.space/tags/QuickSelect/</loc>
-        <lastmod>2018-06-05T05:10:35.532Z</lastmod>
+        <loc>blog.jiangdongyu.space/tags/JVM/</loc>
+        <lastmod>2018-06-05T08:29:52.638Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>blog.jiangdongyu.space/tags/Java/</loc>
+        <lastmod>2018-06-05T08:29:52.638Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>blog.jiangdongyu.space/tags/Array/</loc>
+        <lastmod>2018-06-05T08:31:11.807Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>blog.jiangdongyu.space/tags/BinarySearch/</loc>
+        <lastmod>2018-06-05T08:31:11.807Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

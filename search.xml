@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[QuickSelect]]></title>
+    <title><![CDATA[Java内存区域与内存溢出异常]]></title>
+    <url>%2F2018%2F06%2F05%2FJava%E5%86%85%E5%AD%98%E5%8C%BA%E5%9F%9F%E4%B8%8E%E5%86%85%E5%AD%98%E6%BA%A2%E5%87%BA%E5%BC%82%E5%B8%B8%2F</url>
+    <content type="text"><![CDATA[Java技术体系Java程序设计语言、Java虚拟机、Java API类库三部分统称为JDK，JDK是用于支持Java程序开发的最小环境。Java API类库中的Java SE API子集和Java虚拟机这两个部分统称为JRE，JRE是支持Java程序运行的标准环境。 运行时数据区域 程序计数器线程独立，唯一没有规定OutOfMemoryError的区域 Java虚拟机栈 线程私有，生命周期和线程相同 平时所谓的堆、栈、方法区，栈就是指虚拟机栈，或者说是其中的局部变量表部分 两种异常状况 StackOverflowError: 线程请求栈深度大于所允许 OutOfMemoryError: 扩展无法申请足够内存 本地方法栈和虚拟机栈发挥作用相似 Java堆 线程共享，虚拟机启动时创建，存放对象实例 GC管理的主要区域 内存空间不连续 OutOfMemoryError: 堆中没有内存完成实例分配并且无法扩展时 方法区 线程共享 存放类信息、常量、静态变量、即时编译器编译后的代码 OutOfMemoryError: 无法满足内存分配需求时 JVM实例 HotSpot虚拟机对象揭秘HotSpot虚拟机在Java堆中对象分配、布局、访问的全过程 对象创建 虚拟机遇到new指令，检查指令的参数能否在常量池中定位到一个类的符号引用 检查所代表的类是否已被加载、解析和初始化过 没有，则先执行类加载过程 虚拟机为新生对象分配内存，对象所需内存大小在类加载完成后便可确定 指针碰撞: 假设Java堆内存绝对规整，用过的内存和没用过的严格分开，有一个指针作为分界点的指示器，移动指针即可 空闲列表: 内存不规整，维护列表，记录是否可用，需要在列表中找一块足够大的区域 对象创建频繁，可能会导致在并发情况下线程不安全 对分配内存动作加上同步处理: CAS+失败重试 按线程划分在不同空间，每个线程预先分配本地线程分配缓冲(TLAB)，哪个线程需要分配内存，就在哪个线程的TLAB分配，只有在用完并分配新的TLAB时才同步锁定 将分配到的内存空间初始化为零值 根据对象头对对象进行必要的设置 执行方法 对象的内存布局HotSpot中分3块区域: 对象头、实例数据、对齐填充 对象头 存储对象自身运行时数据: 哈希码、GC分代年龄… 类型指针，对象指向其类原数据的指针，确定对象是哪个类的实例（不是所有虚拟机实现都必须保留该指针） 实例数据: 在代码中定义的各种类型的字段内容 HotSpot默认相同宽度字段被分配到一起，比如shorts/chars，父类的变量在子类之前 对齐填充(不一定存在，占位作用) 对象的访问定位使用对象需要通过栈上的reference来操作堆上的具体对象，引用如何去定位，主流有两种： 句柄（稳定） reference存储对象的句柄地址，句柄中包含对象实例数据和类型数据的具体信息 直接指针（速度快，HotSpot） reference存储对象的地址]]></content>
+      <categories>
+        <category>Java基础</category>
+        <category>深入理解Java虚拟机</category>
+        <category>自动内存管理机制</category>
+      </categories>
+      <tags>
+        <tag>JVM</tag>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Quick Select]]></title>
     <url>%2F2018%2F06%2F04%2FQuickSelect%2F</url>
     <content type="text"><![CDATA[说明Quick Select是由quick sort而来，只是它只用了quick sort前面partition的部分 平均时间复杂度：O(n),最差: O(n^2) 模板思路选最后一个 每次选一个pivot，可以选最后一个 两个变量，一个存比pivot小的数left，一个存比pivot大的数right 初始化: left = 0, right = length - 1 left == right则break 核心代码 123456789101112while(true)&#123; while(nums[left] &lt; pivot &amp;&amp; left &lt; right)&#123; left++; &#125; while(nums[right] &gt;= pivot &amp;&amp; left &lt; right)&#123; right--; &#125; if(left == right) &#123; break; &#125; swap(nums, left, right);&#125; 选第一个 每次选一个pivot，可以选第一个 两个变量，一个存比pivot小的数left，一个存比pivot大的数right 初始化: left = 0, right = length - 1 p从0开始遇到right结束 核心代码 while(p &lt;= right){ if(nums[left] &lt; pivot){ swap(nums, left, p); left++; p++; }else if(nums[right] == pivot){ p++; }else{ swap(nums, right, p); right--; } } 215.Kth Largest Element in an ArrayFind the kth largest element in an unsorted array. Note that it is the kth largest element in the sorted order, not the kth distinct element. Example 1: Input: [3,2,1,5,6,4] and k = 2 Output: 5 Example 2: Input: [3,2,3,1,2,4,5,5,6] and k = 4 Output: 4 Note:You may assume k is always valid, 1 ≤ k ≤ array’s length. 直接排序，返回排序后nums[nums.length-k] 建小顶堆(默认)，size大于k则poll，最后返回堆顶元素 QuickSelect QuickSelect方法代码 123456789101112131415161718public int findKth(int[] nums, int k, int start, int end) &#123; int pivot = nums[end]; int left = start, right = end; while(true)&#123; while(nums[left] &lt; pivot &amp;&amp; left &lt; right)&#123; left++; &#125; while(nums[right] &gt;= pivot &amp;&amp; left &lt; right)&#123; right--; &#125; if(left == right) break; swap(nums,left,right); &#125; swap(nums,left,end); if(left+1 == k) return pivot; else if(left+1 &lt; k) return findKth(nums, k, left+1, end); else return findKth(nums, k, start, left-1);&#125; 75.Sort Color 3种颜色(0,1,2)，排序使得相同颜色相邻 直接使用模板方法即可 143.Sort Color II(Lintcode) k种颜色(1-k)，排序使得相同颜色相邻 可以仍然使用以上模板方法，变化的只是需要每次找数组中的最大最小值 123456789101112131415161718192021222324252627public void sortColors2(int[] colors, int k) &#123; // write your code here int count = 0,start = 0,end = colors.length-1; while(count &lt; k)&#123; int min = Integer.MAX_VALUE,max = Integer.MIN_VALUE; for(int i = start;i &lt;= end;i++)&#123; min = Math.min(min,colors[i]); max = Math.max(max,colors[i]); &#125; int left = start,right = end, p = start; while(p &lt;= right)&#123; if(colors[p] == min)&#123; swap(colors,p,left); p++; left++; &#125;else if(colors[p] &gt; min &amp;&amp; colors[p] &lt; max)&#123; p++; &#125;else&#123; swap(colors,p,right); right--; &#125; &#125; count += 2; start = left; end = right; &#125; &#125;]]></content>
       <categories>
@@ -61,8 +75,8 @@
         <category>LeetCode Category</category>
       </categories>
       <tags>
-        <tag>Array</tag>
         <tag>BackTracking</tag>
+        <tag>Array</tag>
         <tag>DFS</tag>
       </tags>
   </entry>
@@ -130,8 +144,8 @@
         <category>LeetCode Category</category>
       </categories>
       <tags>
-        <tag>Binary Search</tag>
         <tag>Array</tag>
+        <tag>BinarySearch</tag>
       </tags>
   </entry>
   <entry>
