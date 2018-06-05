@@ -93,14 +93,14 @@
     </url>
 
     <url>
-        <loc>blog.jiangdongyu.space/tags/Greedy/</loc>
+        <loc>blog.jiangdongyu.space/tags/DynamicProgramming/</loc>
         <lastmod>2018-05-29T15:46:35.208Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>blog.jiangdongyu.space/tags/DynamicProgramming/</loc>
+        <loc>blog.jiangdongyu.space/tags/Greedy/</loc>
         <lastmod>2018-05-29T15:46:35.208Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -121,15 +121,22 @@
     </url>
 
     <url>
-        <loc>blog.jiangdongyu.space/tags/Array/</loc>
+        <loc>blog.jiangdongyu.space/tags/TwoPointer/</loc>
         <lastmod>2018-06-04T03:28:24.209Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>blog.jiangdongyu.space/tags/TwoPointer/</loc>
-        <lastmod>2018-06-04T03:28:24.209Z</lastmod>
+        <loc>blog.jiangdongyu.space/tags/Array/</loc>
+        <lastmod>2018-06-05T05:10:35.532Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>blog.jiangdongyu.space/tags/QuickSelect/</loc>
+        <lastmod>2018-06-05T05:10:35.532Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

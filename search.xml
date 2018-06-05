@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[QuickSelect]]></title>
+    <url>%2F2018%2F06%2F04%2FQuickSelect%2F</url>
+    <content type="text"><![CDATA[说明Quick Select是由quick sort而来，只是它只用了quick sort前面partition的部分 平均时间复杂度：O(n),最差: O(n^2) 模板思路选最后一个 每次选一个pivot，可以选最后一个 两个变量，一个存比pivot小的数left，一个存比pivot大的数right 初始化: left = 0, right = length - 1 left == right则break 核心代码 123456789101112while(true)&#123; while(nums[left] &lt; pivot &amp;&amp; left &lt; right)&#123; left++; &#125; while(nums[right] &gt;= pivot &amp;&amp; left &lt; right)&#123; right--; &#125; if(left == right) &#123; break; &#125; swap(nums, left, right);&#125; 选第一个 每次选一个pivot，可以选第一个 两个变量，一个存比pivot小的数left，一个存比pivot大的数right 初始化: left = 0, right = length - 1 p从0开始遇到right结束 核心代码 while(p &lt;= right){ if(nums[left] &lt; pivot){ swap(nums, left, p); left++; p++; }else if(nums[right] == pivot){ p++; }else{ swap(nums, right, p); right--; } } 215.Kth Largest Element in an ArrayFind the kth largest element in an unsorted array. Note that it is the kth largest element in the sorted order, not the kth distinct element. Example 1: Input: [3,2,1,5,6,4] and k = 2 Output: 5 Example 2: Input: [3,2,3,1,2,4,5,5,6] and k = 4 Output: 4 Note:You may assume k is always valid, 1 ≤ k ≤ array’s length. 直接排序，返回排序后nums[nums.length-k] 建小顶堆(默认)，size大于k则poll，最后返回堆顶元素 QuickSelect QuickSelect方法代码 123456789101112131415161718public int findKth(int[] nums, int k, int start, int end) &#123; int pivot = nums[end]; int left = start, right = end; while(true)&#123; while(nums[left] &lt; pivot &amp;&amp; left &lt; right)&#123; left++; &#125; while(nums[right] &gt;= pivot &amp;&amp; left &lt; right)&#123; right--; &#125; if(left == right) break; swap(nums,left,right); &#125; swap(nums,left,end); if(left+1 == k) return pivot; else if(left+1 &lt; k) return findKth(nums, k, left+1, end); else return findKth(nums, k, start, left-1);&#125; 75.Sort Color 3种颜色(0,1,2)，排序使得相同颜色相邻 直接使用模板方法即可 143.Sort Color II(Lintcode) k种颜色(1-k)，排序使得相同颜色相邻 可以仍然使用以上模板方法，变化的只是需要每次找数组中的最大最小值 123456789101112131415161718192021222324252627public void sortColors2(int[] colors, int k) &#123; // write your code here int count = 0,start = 0,end = colors.length-1; while(count &lt; k)&#123; int min = Integer.MAX_VALUE,max = Integer.MIN_VALUE; for(int i = start;i &lt;= end;i++)&#123; min = Math.min(min,colors[i]); max = Math.max(max,colors[i]); &#125; int left = start,right = end, p = start; while(p &lt;= right)&#123; if(colors[p] == min)&#123; swap(colors,p,left); p++; left++; &#125;else if(colors[p] &gt; min &amp;&amp; colors[p] &lt; max)&#123; p++; &#125;else&#123; swap(colors,p,right); right--; &#125; &#125; count += 2; start = left; end = right; &#125; &#125;]]></content>
+      <categories>
+        <category>算法与数据结构</category>
+        <category>算法</category>
+        <category>LeetCode Category</category>
+      </categories>
+      <tags>
+        <tag>Array</tag>
+        <tag>QuickSelect</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Two Pointer]]></title>
     <url>%2F2018%2F05%2F31%2FTwoPointer%2F</url>
     <content type="text"><![CDATA[双指针法的常见应用所谓双指针，指的是在遍历对象的过程中，不是普通的使用单个指针进行访问，而是使用两个相同方向或者相反方向的指针进行扫描，从而达到相应的目的。 换言之，双指针法充分使用了数组有序这一特征，从而在某些情况下能够简化一些运算。 (注：这里的指针，并非专指c中指针的概念，而是指索引，游标或指针，可迭代对象等) 209.Minimum Size Subarray SumGiven an array of n positive integers and a positive integer s, find the minimal length of a subarray of which the sum ≥ s. If there isn’t one, return 0 instead. For example, given the array [2,3,1,2,4,3] and s = 7, the subarray [4,3] has the minimal length under the problem constraint. 最短子串和 思路一 Two Pointer 是用两个指针形成一个移动窗口 当sum的值小于s时，将右边界向右扩张，sum += arr[right++] 当sum的值大于s时，则将左边届右移，判断取较小的count 循环条件是right &lt;= length, left &lt;= right 代码 12345678910111213141516171819class Solution &#123; public int minSubArrayLen(int s, int[] nums) &#123; if(nums == null || nums.length == 0 ) return 0; int left = 0, right = 0, sum = 0, count = nums.length + 1; while(right &lt;= nums.length &amp;&amp; left &lt;= right)&#123; if(sum &lt; s)&#123; if(right &lt; nums.length)&#123; sum += nums[right]; &#125; right++; &#125;else&#123; count = Math.min(count,right - left); sum -= nums[left]; left++; &#125; &#125; return count &lt;= nums.length? count:0; &#125;&#125; 思路二 二分法(适用subarray sum问题) 构造sum数组，sum[i+1] = sum[i]+nums[i] sum数组递增 遍历数组sum，对每一个i，寻找j(右边界)，使得i～j区间的值大于s 不断更新找出最小值 代码 12345678910111213141516171819202122232425262728class Solution &#123; public int minSubArrayLen(int s, int[] nums) &#123; int sum = 0, min = Integer.MAX_VALUE; int[] sums = new int[nums.length]; for (int i = 0; i &lt; nums.length; i++) sums[i] = nums[i] + (i == 0 ? 0 : sums[i - 1]); for (int i = 0; i &lt; nums.length; i++) &#123; int j = findWindowEnd(i, sums, s); if (j == nums.length) break; min = Math.min(j - i + 1, min); &#125; return min == Integer.MAX_VALUE ? 0 : min; &#125; private int findWindowEnd(int start, int[] sums, int s) &#123; int i = start, j = sums.length - 1, offset = start == 0 ? 0 : sums[start - 1]; while (i &lt;= j) &#123; int m = (i + j) / 2; int sum = sums[m] - offset; if (sum &gt;= s) j = m - 1; else i = m + 1; &#125; return i; &#125;&#125; Valid Palindrome125.IGiven a string, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases. Note: For the purpose of this problem, we define empty string as valid palindrome. Example 1: Input: &quot;A man, a plan, a canal: Panama&quot; Output: true Example 2: Input: &quot;race a car&quot; Output: false 双指针，首尾 注意大小写转换 isValid(char c)判断是否是a-z||A-Z||0-9 680.IIGiven a non-empty string s, you may delete at most one character. Judge whether you can make it a palindrome. Example 1: Input: &quot;aba&quot; Output: True Example 2: Input: &quot;abca&quot; Output: True Explanation: You could delete the character &apos;c&apos;. String的题 一个用于判断是否是回文的方法 主函数判断start和end的值是否相等 不相等，则判断start+1和end||start和end-1的值是否相等 123456789101112131415161718192021222324class Solution &#123; public boolean validPalindrome(String s) &#123; int start = 0, end = s.length() - 1; while(start &lt;= end)&#123; if(s.charAt(start) != s.charAt(end))&#123; return isValid(s, start+1, end) || isValid(s, start, end-1); &#125; start++; end--; &#125; return true; &#125; public boolean isValid(String s, int i, int j) &#123; while(i &lt;= j)&#123; if(s.charAt(i) != s.charAt(j))&#123; return false; &#125; i++; j--; &#125; return true; &#125;&#125; 11.Container with Most WaterGiven n non-negative integers a1, a2, …, an, where each represents a point at coordinate (i, ai). n vertical lines are drawn such that the two endpoints of line i is at (i, ai) and (i, 0). Find two lines, which together with x-axis forms a container, such that the container contains the most water. Note: You may not slant the container and n is at least 2. 问题转换成数列中选两个值使得中间的面积最大 首尾指针，遍历 求局部面积 如果左边较低，则将左边向中间移一点 如果右边较低，则将右边向中间移一点 代码 1234567891011121314class Solution &#123; public int maxArea(int[] height) &#123; int maxArea = 0, left = 0, right = height.length - 1; while(left &lt; right)&#123; maxArea = Math.max(maxArea,Math.min(height[left],height[right]) * (right-left)); if(height[left] &gt; height[right])&#123; right--; &#125;else&#123; left++; &#125; &#125; return maxArea; &#125;&#125; 42.Trapping Rain WaterGiven n non-negative integers representing an elevation map where the width of each bar is 1, compute how much water it is able to trap after raining. The above elevation map is represented by array [0,1,0,2,1,0,1,3,2,1,2,1]. In this case, 6 units of rain water (blue section) are being trapped. Thanks Marcos for contributing this image! Example: Input: [0,1,0,2,1,0,1,3,2,1,2,1] Output: 6 解题方法 从两边开始灌水，总是从低的一边开始灌，高的地方保持不动，同时记录下可以灌的水的总量，不断更新 代码 123456789101112131415161718192021222324252627282930class Solution &#123; public int trap(int[] height) &#123; if(height == null || height.length &lt; 3) return 0; int left = 0, right = height.length - 1; int leftbound = height[left], rightbound = height[right]; int res = 0; while(left &lt; right)&#123; if(leftbound &lt; rightbound)&#123; //左边低，从左边开始灌 left++; if(height[left] &lt;= leftbound)&#123; //比现有的bound低，可以灌 res += leftbound - height[left]; &#125;else&#123; //比现有的bound高，更新左边的bound leftbound = height[left]; &#125; &#125;else&#123; right--; if(height[right] &lt;= rightbound)&#123; res += rightbound - height[right]; &#125;else&#123; rightbound = height[right]; &#125; &#125; &#125; return res; &#125;&#125; 61.Rotate ListGiven a linked list, rotate the list to the right by k places, where k is non-negative. Example 1: Input: 1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;NULL, k = 2 Output: 4-&gt;5-&gt;1-&gt;2-&gt;3-&gt;NULL Explanation: rotate 1 steps to the right: 5-&gt;1-&gt;2-&gt;3-&gt;4-&gt;NULL rotate 2 steps to the right: 4-&gt;5-&gt;1-&gt;2-&gt;3-&gt;NULL Example 2: Input: 0-&gt;1-&gt;2-&gt;NULL, k = 4 Output: 2-&gt;0-&gt;1-&gt;NULL Explanation: rotate 1 steps to the right: 2-&gt;0-&gt;1-&gt;NULL rotate 2 steps to the right: 1-&gt;2-&gt;0-&gt;NULL rotate 3 steps to the right: 0-&gt;1-&gt;2-&gt;NULL rotate 4 steps to the right: 2-&gt;0-&gt;1-&gt;NULL 获得链表的长度n，k%n才是需要移动的 找到最后结果的链表的tail:first,循环n-k-1次找next即可 遍历找到原链表的tail:second second.next = head result = first.next first.next = null]]></content>
@@ -47,8 +61,8 @@
         <category>LeetCode Category</category>
       </categories>
       <tags>
-        <tag>BackTracking</tag>
         <tag>Array</tag>
+        <tag>BackTracking</tag>
         <tag>DFS</tag>
       </tags>
   </entry>
@@ -116,8 +130,8 @@
         <category>LeetCode Category</category>
       </categories>
       <tags>
-        <tag>Array</tag>
         <tag>Binary Search</tag>
+        <tag>Array</tag>
       </tags>
   </entry>
   <entry>
@@ -172,9 +186,9 @@
       </categories>
       <tags>
         <tag>Array</tag>
+        <tag>DynamicProgramming</tag>
         <tag>Greedy</tag>
         <tag>Sort</tag>
-        <tag>DynamicProgramming</tag>
       </tags>
   </entry>
   <entry>
