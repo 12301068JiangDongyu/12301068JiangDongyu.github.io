@@ -44,13 +44,6 @@
     </url>
 
     <url>
-        <loc>blog.jiangdongyu.space/tags/BackTracking/</loc>
-        <lastmod>2018-05-29T15:45:55.334Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>blog.jiangdongyu.space/tags/BFS/</loc>
         <lastmod>2018-05-29T15:46:17.961Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -65,21 +58,14 @@
     </url>
 
     <url>
-        <loc>blog.jiangdongyu.space/tags/DFS/</loc>
-        <lastmod>2018-05-29T15:46:23.582Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>blog.jiangdongyu.space/tags/Greedy/</loc>
+        <loc>blog.jiangdongyu.space/tags/DynamicProgramming/</loc>
         <lastmod>2018-05-29T15:46:35.208Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>blog.jiangdongyu.space/tags/DynamicProgramming/</loc>
+        <loc>blog.jiangdongyu.space/tags/Greedy/</loc>
         <lastmod>2018-05-29T15:46:35.208Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -121,22 +107,8 @@
     </url>
 
     <url>
-        <loc>blog.jiangdongyu.space/tags/Array/</loc>
-        <lastmod>2018-06-06T08:58:05.395Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>blog.jiangdongyu.space/tags/String/</loc>
-        <lastmod>2018-06-06T08:58:05.395Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>blog.jiangdongyu.space/tags/HashTable/</loc>
-        <lastmod>2018-06-06T08:58:05.395Z</lastmod>
+        <loc>blog.jiangdongyu.space/tags/Java/</loc>
+        <lastmod>2018-06-08T12:22:08.360Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -149,8 +121,36 @@
     </url>
 
     <url>
-        <loc>blog.jiangdongyu.space/tags/Java/</loc>
-        <lastmod>2018-06-08T12:22:08.360Z</lastmod>
+        <loc>blog.jiangdongyu.space/tags/BackTracking/</loc>
+        <lastmod>2018-06-09T13:35:12.073Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>blog.jiangdongyu.space/tags/DFS/</loc>
+        <lastmod>2018-06-09T13:35:12.073Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>blog.jiangdongyu.space/tags/Array/</loc>
+        <lastmod>2018-06-09T14:42:09.192Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>blog.jiangdongyu.space/tags/String/</loc>
+        <lastmod>2018-06-09T14:42:09.192Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>blog.jiangdongyu.space/tags/HashTable/</loc>
+        <lastmod>2018-06-09T14:42:09.192Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
