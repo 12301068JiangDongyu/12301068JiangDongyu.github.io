@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="blog.jiangdongyu.space/"/>
-  <updated>2018-06-19T12:59:20.099Z</updated>
+  <updated>2018-06-20T11:01:23.628Z</updated>
   <id>blog.jiangdongyu.space/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>HTTP中GET与POST的区别</title>
+    <link href="blog.jiangdongyu.space/2018/06/20/HTTP/"/>
+    <id>blog.jiangdongyu.space/2018/06/20/HTTP/</id>
+    <published>2018-06-20T10:50:00.000Z</published>
+    <updated>2018-06-20T11:01:23.628Z</updated>
+    
+    <content type="html"><![CDATA[<p>GET和POST是HTTP请求的两种基本方法，最直观的区别就是GET把<strong>参数</strong>包含在URL中，POST通过request body传递参数。</p><p>你轻轻松松的给出了一个<strong>“标准答案”</strong>：</p><a id="more"></a><ul><li>GET在浏览器回退时是无害的，而POST会再次提交请求。 </li><li>GET产生的URL地址可以被Bookmark，而POST不可以。 </li><li>GET请求会被浏览器主动cache，而POST不会，除非手动设置。 </li><li>GET请求只能进行url编码，而POST支持多种编码方式。 </li><li>GET请求参数会被完整保留在浏览器历史记录里，而POST中的参数不会被保留。 </li><li>GET请求在URL中传送的参数是有长度限制的，而POST没有。 </li><li>对参数的数据类型，GET只接受ASCII字符，而POST没有限制。 </li><li>GET比POST更不安全，因为参数直接暴露在URL上，所以不能用来传递敏感信息。 </li><li>GET参数通过URL传递，POST放在Request body中。</li></ul><p><strong>GET和POST是什么?</strong></p><p>HTTP协议中的两种发送请求的方法。</p><p><strong>HTTP是什么?</strong></p><p>HTTP是基于TCP/IP的关于数据如何在万维网中如何通信的协议。</p><p>HTTP的底层是TCP/IP。所以GET和POST的底层也是TCP/IP，也就是说，GET/POST都是TCP链接。GET和POST能做的事情是一样一样的。你要给GET加上request body，给POST带上url参数，技术上是完全行的通的。</p><p>那么，“标准答案”里的那些区别是怎么回事?</p><p>在我大万维网世界中，TCP就像汽车，我们用TCP来运输数据，它很可靠，从来不会发生丢件少件的现象。但是如果路上跑的全是看起来一模一样的汽车，那这个世界看起来是一团混乱，送急件的汽车可能被前面满载货物的汽车拦堵在路上，整个交通系统一定会瘫痪。为了避免这种情况发生，交通规则HTTP诞生了。HTTP给汽车运输设定了好几个服务类别，有GET, POST, PUT, DELETE等等，HTTP规定，当执行GET请求的时候，要给汽车贴上GET的标签(设置method为GET)，而且要求把传送的数据放在车顶上(url中)以方便记录。如果是POST请求，就要在车上贴上POST的标签，并把货物放在车厢里。当然，你也可以在GET的时候往车厢内偷偷藏点货物，但是这是很不光彩;也可以在POST的时候在车顶上也放一些数据，让人觉得傻乎乎的。HTTP只是个行为准则，而TCP才是GET和POST怎么实现的基本。<br>但是，我们只看到HTTP对GET和POST参数的传送渠道(url还是requrest body)提出了要求。“标准答案”里关于参数大小的限制又是从哪来的呢?</p><p>在我大万维网世界中，还有另一个重要的角色：运输公司。不同的浏览器(发起http请求)和服务器(接受http请求)就是不同的运输公司。虽然理论上，你可以在车顶上无限的堆货物(url中无限加参数)。但是运输公司可不傻，装货和卸货也是有很大成本的，他们会限制单次运输量来控制风险，数据量太大对浏览器和服务器都是很大负担。业界不成文的规定是，<strong>(大多数)浏览器通常都会限制url长度在2K个字节，而(大多数)服务器最多处理64K大小的url。</strong>超过的部分，恕不处理。如果你用GET服务，在request body偷偷藏了数据，不同服务器的处理方式也是不同的，有些服务器会帮你卸货，读出数据，有些服务器直接忽略，所以，虽然GET可以带request body，也不能保证一定能被接收到哦。<br>好了，现在你知道，<strong>GET和POST本质上就是TCP链接，并无差别。但是由于HTTP的规定和浏览器/服务器的限制，导致他们在应用过程中体现出一些不同</strong>。</p><p>GET和POST还有一个<strong>重大区别</strong>，简单的说：</p><ul><li>GET产生一个TCP数据包;POST产生两个TCP数据包。</li></ul><p>长的说：</p><ul><li>对于GET方式的请求，浏览器会把http header和data一并发送出去，服务器响应200(返回数据);</li><li>而对于POST，浏览器先发送header，服务器响应100 continue，浏览器再发送data，服务器响应200 ok(返回数据)。</li></ul><p>也就是说，GET只需要汽车跑一趟就把货送到了，而POST得跑两趟，第一趟，先去和服务器打个招呼“嗨，我等下要送一批货来，你们打开门迎接我”，然后再回头把货送过去。</p><p>因为POST需要两步，时间上消耗的要多一点，看起来GET比POST更有效。因此Yahoo团队有推荐用GET替换POST来优化网站性能。但这是一个坑!跳入需谨慎。为什么?</p><ol><li>GET与POST都有自己的语义，不能随便混用。</li><li>据研究，在网络环境好的情况下，发一次包的时间和发两次包的时间差别基本可以无视。而在网络环境差的情况下，两次包的TCP在验证数据包完整性上，有非常大的优点。</li><li>并不是所有浏览器都会在POST中发送两次包，Firefox就只发送一次。</li></ol><p><a href="http://www.techweb.com.cn/network/system/2016-10-11/2407736.shtml" target="_blank" rel="noopener">本文参考地址</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;GET和POST是HTTP请求的两种基本方法，最直观的区别就是GET把&lt;strong&gt;参数&lt;/strong&gt;包含在URL中，POST通过request body传递参数。&lt;/p&gt;
+&lt;p&gt;你轻轻松松的给出了一个&lt;strong&gt;“标准答案”&lt;/strong&gt;：&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Java面试" scheme="blog.jiangdongyu.space/categories/Java%E9%9D%A2%E8%AF%95/"/>
+    
+      <category term="HTTP" scheme="blog.jiangdongyu.space/categories/Java%E9%9D%A2%E8%AF%95/HTTP/"/>
+    
+    
+      <category term="计算机网络" scheme="blog.jiangdongyu.space/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+      <category term="HTTP" scheme="blog.jiangdongyu.space/tags/HTTP/"/>
+    
+  </entry>
   
   <entry>
     <title>计算机网络 -- 传输层</title>
@@ -159,9 +186,9 @@
       <category term="自动内存管理机制" scheme="blog.jiangdongyu.space/categories/Java%E5%9F%BA%E7%A1%80/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Java%E8%99%9A%E6%8B%9F%E6%9C%BA/%E8%87%AA%E5%8A%A8%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/"/>
     
     
-      <category term="JVM" scheme="blog.jiangdongyu.space/tags/JVM/"/>
-    
       <category term="Java" scheme="blog.jiangdongyu.space/tags/Java/"/>
+    
+      <category term="JVM" scheme="blog.jiangdongyu.space/tags/JVM/"/>
     
   </entry>
   
@@ -187,9 +214,9 @@
       <category term="自动内存管理机制" scheme="blog.jiangdongyu.space/categories/Java%E5%9F%BA%E7%A1%80/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Java%E8%99%9A%E6%8B%9F%E6%9C%BA/%E8%87%AA%E5%8A%A8%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/"/>
     
     
-      <category term="JVM" scheme="blog.jiangdongyu.space/tags/JVM/"/>
-    
       <category term="Java" scheme="blog.jiangdongyu.space/tags/Java/"/>
+    
+      <category term="JVM" scheme="blog.jiangdongyu.space/tags/JVM/"/>
     
   </entry>
   
@@ -326,9 +353,9 @@
       <category term="LeetCode Category" scheme="blog.jiangdongyu.space/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AE%97%E6%B3%95/LeetCode-Category/"/>
     
     
-      <category term="BackTracking" scheme="blog.jiangdongyu.space/tags/BackTracking/"/>
-    
       <category term="Array" scheme="blog.jiangdongyu.space/tags/Array/"/>
+    
+      <category term="BackTracking" scheme="blog.jiangdongyu.space/tags/BackTracking/"/>
     
       <category term="DFS" scheme="blog.jiangdongyu.space/tags/DFS/"/>
     
@@ -479,9 +506,9 @@
       <category term="LeetCode Category" scheme="blog.jiangdongyu.space/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AE%97%E6%B3%95/LeetCode-Category/"/>
     
     
-      <category term="Array" scheme="blog.jiangdongyu.space/tags/Array/"/>
-    
       <category term="BinarySearch" scheme="blog.jiangdongyu.space/tags/BinarySearch/"/>
+    
+      <category term="Array" scheme="blog.jiangdongyu.space/tags/Array/"/>
     
   </entry>
   
@@ -564,40 +591,6 @@
       <category term="BinaryTree" scheme="blog.jiangdongyu.space/tags/BinaryTree/"/>
     
       <category term="DFS" scheme="blog.jiangdongyu.space/tags/DFS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Greedy</title>
-    <link href="blog.jiangdongyu.space/2018/04/11/Greedy/"/>
-    <id>blog.jiangdongyu.space/2018/04/11/Greedy/</id>
-    <published>2018-04-11T11:52:00.000Z</published>
-    <updated>2018-05-29T15:46:35.208Z</updated>
-    
-    <content type="html"><![CDATA[<p>贪心的奥义就是每一步都选择<strong>当前</strong>回合”可见范围“（即可得知的信息）内的<strong>最优</strong>，而在每一步都仅选择当前回合”可见范围“内的最优这一策略下能够导致<strong>全局最优</strong>的结果的情况使用贪心就会是正确的，否则不适用贪心（或不适用当前对贪心中的最优的定义）。</p><p>因此，贪心一个点是选择<strong>当前最优</strong>，另一个点是这个最优要怎么定义，比如是选使得A最小的还是选使得A-B或A/B最小的等等。</p><p>贪心的正确性其实都要通过<strong>归纳法或反证法</strong>等手段进行严格地证明，而这也是算法分析课程的一个重要讲授内容。</p><a id="more"></a><h2 id="Jump-Game"><a href="#Jump-Game" class="headerlink" title="Jump Game"></a>Jump Game</h2><blockquote><p>For example:</p><p>A = [2,3,1,1,4], return true.</p><p>A = [3,2,1,0,4], return false.</p></blockquote><p>数组里的每个元素表示从该位置可以跳出的最远距离，要求问从第一个元素（index=0）开始，能否达到数组的最后一个元素</p><ul><li>贪心<ul><li>设一个值max，遍历更新max = Math.max(max,i+nums[i])</li><li>最后判断max是否大于等于nums.length-1</li></ul></li><li>动态规划<ul><li>dp[i] i处可到的最远距离</li><li>dp[i] = Math.max(dp[i-1],i+nums[i]) i可达</li><li>dp[i] = dp[i-1] i不可达</li></ul></li></ul><h2 id="Jump-Game-II"><a href="#Jump-Game-II" class="headerlink" title="Jump Game II"></a>Jump Game II</h2><blockquote><p>给定一个非负整数数组，给定的初始化位置在数组的起始位置。数组中的每个元素代表着你能都在此位置跳跃的最大的距离。你的目标是用最少的跳跃数达到数组的末尾</p></blockquote><ul><li>贪心<ul><li>一次循环判断，当前所能到达的最远位置</li><li>如果到不了当前位置，则step加1</li></ul></li></ul><ul><li>动态规划<ul><li>dp[i] 到达i处的最少步数</li><li>两重循环，dp[i]&gt;dp[j]+1 ？dp[i]=dp[j]+1：dp[i] （i &gt; j ,i from 0 to n, j+nums[j] &gt;= i）</li></ul></li></ul><h2 id="Gas-Station"><a href="#Gas-Station" class="headerlink" title="Gas Station"></a>Gas Station</h2><blockquote><p>在一个圆形路径上有N个加油站，在位置 i 上的汽油的数目为gas[i].</p></blockquote><blockquote><p>你有一个汽车，这个汽车的油箱是无限容量的，它从加油站 i 到 加油站 （i+1）需要耗费的汽油数为cost[i]. 开始这段旅程的时候，你的起始状态是在加油站中的一个，油箱为空的.</p></blockquote><blockquote><p>若一次性完成整个的圆形路途，返回你的其实加油站的序号，若不能完成整个路途，返回-1.</p></blockquote><ol><li><p>如果total为<strong>负数</strong>，则无论如何都开不完一圈。</p></li><li><p><strong>如果从一个加油站i出发，开到加油站j所属路段的时候油耗尽，那么从i,j之间的任一个加油站出发都会在j路段或j之前路段耗尽油(相邻的加油站到达必须剩余油量&gt;=0)</strong></p></li></ol><ul><li>循环计算走一环的total和到某站点i的sum</li><li>如果sum&lt;0，则开始的站点变为i+1</li><li>最后判断total</li></ul><h2 id="Candy"><a href="#Candy" class="headerlink" title="Candy"></a>Candy</h2><blockquote><p>多个小朋友站成一排，根据他们的得分分发糖果，得分高的小朋友要比旁边得分低的小朋友得到的糖果多，每个小朋友至少得到一枚糖果，问最少要准备多少糖果？</p></blockquote><ul><li>每个人初始为1</li><li>先从左到右扫描一遍，使得右边比左边得分高的小朋友糖果数比左边多。</li><li>再从右到左扫描一遍，使得左边比右边得分高的小朋友糖果数比右边多。</li></ul><h2 id="Product-of-Array-Except-Self"><a href="#Product-of-Array-Except-Self" class="headerlink" title="Product of Array Except Self"></a>Product of Array Except Self</h2><blockquote><p>除本身之外的数组之积 O(n) 不能用除法</p></blockquote><ul><li>两次遍历</li><li>对result[i]来说，先保存从左到右计算0 ~ i-1的乘积x</li><li>再从右到左计算i+1 ~ n的乘积y,计算x与y的乘积即可</li></ul><h2 id="Meeting-Rooms-II"><a href="#Meeting-Rooms-II" class="headerlink" title="Meeting Rooms II"></a>Meeting Rooms II</h2><p>因为要知道之前有overlap的最小的end，所以可以用一个<strong>min heap</strong>。每次检查<strong>新的start是否比heap的top元素小，是的话就把保存原来的end，同时放进新的end；否则就放新的end同时poll出原来的</strong>，因为没有overlap且新的end较大。最后heap的大小就是需要的房间数。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">minMeetingRooms</span><span class="params">(Interval[] intervals)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(intervals==<span class="keyword">null</span>||intervals.length==<span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"> </span><br><span class="line">    Arrays.sort(intervals, <span class="keyword">new</span> Comparator&lt;Interval&gt;()&#123;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(Interval i1, Interval i2)</span></span>&#123;</span><br><span class="line">            <span class="keyword">return</span> i1.start-i2.start;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//Arrays.sort可替换成：</span></span><br><span class="line">    <span class="comment">//Arrays.sort(intervals, (a, b) -&gt; a.start == b.start ? a.end - b.end : a.start - b.start);</span></span><br><span class="line"> </span><br><span class="line">    PriorityQueue&lt;Integer&gt; queue = <span class="keyword">new</span> PriorityQueue&lt;Integer&gt;();</span><br><span class="line">    <span class="keyword">int</span> count=<span class="number">1</span>;</span><br><span class="line">    queue.offer(intervals[<span class="number">0</span>].end);</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;intervals.length; i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(intervals[i].start &gt;= queue.peek())&#123;</span><br><span class="line">            queue.poll();</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        queue.offer(intervals[i].end);</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">return</span> queue.size();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="Task-Scheduler"><a href="#Task-Scheduler" class="headerlink" title="Task Scheduler"></a>Task Scheduler</h2><blockquote><p>安排CPU的任务，规定在两个相同任务之间至少隔n个时间点</p></blockquote><p>Input: tasks = [‘A’,’A’,’A’,’B’,’B’,’B’], n = 2</p><p>Output: 8</p><p>Explanation: A -&gt; B -&gt; idle -&gt; A -&gt; B -&gt; idle -&gt; A -&gt; B.</p><p>我们首先考虑出现<strong>频率最高</strong>的task，我们仍假设为A，出现的频率为x，我们知道，要满足A的时间需求，我们至少应该有 x-1个n的间隔。对于频率小于x的任务，假设为B，我们按序插入任务B，可以发现，这样的插入也是满足要求的。</p><p>AB-AB-AB<br><strong>模块的次数为任务最大次数减1，模块的长度为n+1，最后加上的字母个数为出现次数最多的任务，可能有多个并列。</strong></p><p>如例题中模块AB-的次数为2，长度为3，结果即为2*3+2</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">leastInterval</span><span class="params">(<span class="keyword">char</span>[] tasks, <span class="keyword">int</span> n)</span> </span>&#123;  </span><br><span class="line">  </span><br><span class="line">        <span class="keyword">int</span>[] c = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">26</span>];  </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">char</span> t : tasks)&#123;  </span><br><span class="line">            c[t - <span class="string">'A'</span>]++;  </span><br><span class="line">        &#125;  </span><br><span class="line">        Arrays.sort(c);  </span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">25</span>;  </span><br><span class="line">        <span class="keyword">while</span>(i &gt;= <span class="number">0</span> &amp;&amp; c[i] == c[<span class="number">25</span>]) i--;  </span><br><span class="line">  </span><br><span class="line">        <span class="keyword">return</span> Math.max(tasks.length, (c[<span class="number">25</span>] - <span class="number">1</span>) * (n + <span class="number">1</span>) + <span class="number">25</span> - i);  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;贪心的奥义就是每一步都选择&lt;strong&gt;当前&lt;/strong&gt;回合”可见范围“（即可得知的信息）内的&lt;strong&gt;最优&lt;/strong&gt;，而在每一步都仅选择当前回合”可见范围“内的最优这一策略下能够导致&lt;strong&gt;全局最优&lt;/strong&gt;的结果的情况使用贪心就会是正确的，否则不适用贪心（或不适用当前对贪心中的最优的定义）。&lt;/p&gt;
-&lt;p&gt;因此，贪心一个点是选择&lt;strong&gt;当前最优&lt;/strong&gt;，另一个点是这个最优要怎么定义，比如是选使得A最小的还是选使得A-B或A/B最小的等等。&lt;/p&gt;
-&lt;p&gt;贪心的正确性其实都要通过&lt;strong&gt;归纳法或反证法&lt;/strong&gt;等手段进行严格地证明，而这也是算法分析课程的一个重要讲授内容。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="算法与数据结构" scheme="blog.jiangdongyu.space/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="算法" scheme="blog.jiangdongyu.space/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="LeetCode Category" scheme="blog.jiangdongyu.space/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AE%97%E6%B3%95/LeetCode-Category/"/>
-    
-    
-      <category term="Array" scheme="blog.jiangdongyu.space/tags/Array/"/>
-    
-      <category term="Greedy" scheme="blog.jiangdongyu.space/tags/Greedy/"/>
-    
-      <category term="Sort" scheme="blog.jiangdongyu.space/tags/Sort/"/>
-    
-      <category term="DynamicProgramming" scheme="blog.jiangdongyu.space/tags/DynamicProgramming/"/>
     
   </entry>
   
