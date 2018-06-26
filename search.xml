@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[类文件结构]]></title>
+    <url>%2F2018%2F06%2F25%2F%E7%B1%BB%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84%2F</url>
+    <content type="text"><![CDATA[Class类文件的结构 Class文件的头4个字节称为魔数(magic),用于确定文件是否是能被虚拟机接收的Class文件。0xCAFEBABE 代表Java 紧接着的是Class文件的版本号：第5和第6字节是次版本号(minor_version),第7和第8字节是主版本号(major_version) 紧接着主次版本号之后的是常量池入口，由于常量数量不固定，需要放置常量池容量计数值(constant_pool_count), 计数从1开始, (0用来表示“不引用任何一个常量池项目”) 常量池中存放两大类常量：字面量和符号引用。字面量接近Java中常量的概念，而符号引用则属于编译原理方面的概念，包含三大类： 类和接口的全限定名 字段的名称和描述符 方法的名称和描述符 JDK的bin目录中，javap工具-verbose可用于输出常量表 常量池结束之后，是访问标志(access_flags), 用于识别一些类或者接口的访问信息。包括是否public、final、abstract等 类索引(this_class)、父类索引(super_class)分别确定类、父类的全限定名。接口索引集合(interfaces), 由这三项数据确定类的继承关系。 字段表(field_info)用于描述接口或者类中声明的变量，字段包括类级变量以及实例级变量。 方法表和字段表相似，结构也包含上述的4个部分，仅在访问标志和属性表集合的可选项中有些区别，方法里面的代码存放在属性表集合中“Code”属性中。 属性表集合，不需要严格顺序，几个常用属性讲解： Code属性 使用位置：方法表，Java代码编译成的字节码指令 Exceptions属性 列出方法中可能抛出的异常，即throws关键字后列举的异常 LineNumberTable属性 描述Java源码行号和字节码行号之间的对应关系，选择不生成，则抛出异常时没有出错行号 LocalVariableTable属性 描述栈帧中局部变量表中的变量和Java源代码中定义的变量之间的关系，如果不生成，当别人引用该方法时，参数名称会丢失，IDE使用args1等占位符替代，带来不便 SourceFile属性 记录生成这个Class文件的源码文件名称，选择不生成，则抛出异常时，不显示出错代码的文件名 ConstantValue属性 通知虚拟机为静态变量赋值 非static变量，在实例构造器init中进行 类变量，类构造器clinit中/使用ConstantValue Sun Javac中，如果同时使用static和final修饰，并且是基本数据类型或者String时，生成ConstantValue来进行初始化，如果没有被final修饰或者类型不符，则在clinit中初始化 InnerClasses属性 记录内部类和宿主类之间的关联。如果一个类中定义了内部类，编译器会为它以及它所包含的内部类生成该属性 Deprecated及Synthetic属性 标志类型的布尔类型 Deprecated表示类、字段或方法，已经被程序作者定为不再推荐使用，可以使用@ deprecated注解设置 Synthetic表示字段或者方法不是由Java源码直接产生的，而是由编译器添加的。所有由非用户生成的类、方法及字段都应该至少设置Synthetic属性或者ACC_SYNTHETIC标志位，但是实例构造器init和类构造器clinit除外 StackMapTable属性 位于Code属性的属性表中，在虚拟机类加载的字节码验证阶段被新类型检查验证器使用，用于代替之前比较消耗性能的基于数据流分析的类型推导验证器 一个方法的Code属性醉倒只能有一个StackMapTable Signature属性 记录泛型类型，Java采用的是擦除法实现的伪泛型，泛型信息编译之后会被擦除，比如运行前做反射时无法得到泛型类型 字节码指令简介Java虚拟机的指令由一个字节长度的、代表着某种特定操作含义的数字(操作码)以及紧随其后的零至多个代表此操作所需参数(操作数)而构成。Java虚拟机采用操作数栈，大多数质量都不包含操作数。 加载和存储指令 将数据在栈帧中的局部变量表和操作数栈之间来回传输 运算指令 用于对两个操作数栈上的值进行某种特定运算，并把结果重新存入操作栈顶 类型转换指令 将两种不同的数值类型进行转换，显式类型转换 对象创建与访问指令 针对类实例和数组 操作数栈管理指令 直接操作操作数栈，类似操作数据结构中的堆栈 控制转移指令 让Java虚拟机有条件或无条件地从指定的位置指令而不是控制转移指令的下一条指令继续执行程序。(条件分支ifeq、复合条件分支、无条件分支goto) 方法调用和返回指令 方法调用(分派、执行过程)指令与数据类型无关，方法返回指令根据返回值的类型区分 异常处理指令 Java中显式抛出异常的操作(throw)都由athrow来实现，很多运行时异常会在检测到时自动抛出 Java虚拟机中，处理异常(catch)，采用异常表来完成 同步指令 支持方法级的同步和方法内部一段指令序列的同步，都使用管程(Monitor)来支持 方法级同步时隐式的，实现在方法调用和返回操作之中。虚拟机得知是否为同步方法，方法调用时，检查ACC_SYNCHRONIZED访问标志是否被设置，设置则要求成功持有管程，然后才能执行方法，方法完成(成功/失败)时释放管程。方法执行期间，其他线程无法获得该管程。如果同步期间抛出异常，并在内部无法处理，则管程会在异常抛出到同步方法之外时释放 同步一段指令序列通过synchronized语句块来表示，Java指令集中monitorenter和monitorexit来支持synchronized语义]]></content>
+      <categories>
+        <category>Java基础</category>
+        <category>深入理解Java虚拟机</category>
+        <category>虚拟机执行子系统</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>Class</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[HTTP中GET与POST的区别]]></title>
     <url>%2F2018%2F06%2F20%2FHTTP%2F</url>
     <content type="text"><![CDATA[GET和POST是HTTP请求的两种基本方法，最直观的区别就是GET把参数包含在URL中，POST通过request body传递参数。 你轻轻松松的给出了一个“标准答案”： GET在浏览器回退时是无害的，而POST会再次提交请求。 GET产生的URL地址可以被Bookmark，而POST不可以。 GET请求会被浏览器主动cache，而POST不会，除非手动设置。 GET请求只能进行url编码，而POST支持多种编码方式。 GET请求参数会被完整保留在浏览器历史记录里，而POST中的参数不会被保留。 GET请求在URL中传送的参数是有长度限制的，而POST没有。 对参数的数据类型，GET只接受ASCII字符，而POST没有限制。 GET比POST更不安全，因为参数直接暴露在URL上，所以不能用来传递敏感信息。 GET参数通过URL传递，POST放在Request body中。 GET和POST是什么? HTTP协议中的两种发送请求的方法。 HTTP是什么? HTTP是基于TCP/IP的关于数据如何在万维网中如何通信的协议。 HTTP的底层是TCP/IP。所以GET和POST的底层也是TCP/IP，也就是说，GET/POST都是TCP链接。GET和POST能做的事情是一样一样的。你要给GET加上request body，给POST带上url参数，技术上是完全行的通的。 那么，“标准答案”里的那些区别是怎么回事? 在我大万维网世界中，TCP就像汽车，我们用TCP来运输数据，它很可靠，从来不会发生丢件少件的现象。但是如果路上跑的全是看起来一模一样的汽车，那这个世界看起来是一团混乱，送急件的汽车可能被前面满载货物的汽车拦堵在路上，整个交通系统一定会瘫痪。为了避免这种情况发生，交通规则HTTP诞生了。HTTP给汽车运输设定了好几个服务类别，有GET, POST, PUT, DELETE等等，HTTP规定，当执行GET请求的时候，要给汽车贴上GET的标签(设置method为GET)，而且要求把传送的数据放在车顶上(url中)以方便记录。如果是POST请求，就要在车上贴上POST的标签，并把货物放在车厢里。当然，你也可以在GET的时候往车厢内偷偷藏点货物，但是这是很不光彩;也可以在POST的时候在车顶上也放一些数据，让人觉得傻乎乎的。HTTP只是个行为准则，而TCP才是GET和POST怎么实现的基本。但是，我们只看到HTTP对GET和POST参数的传送渠道(url还是requrest body)提出了要求。“标准答案”里关于参数大小的限制又是从哪来的呢? 在我大万维网世界中，还有另一个重要的角色：运输公司。不同的浏览器(发起http请求)和服务器(接受http请求)就是不同的运输公司。虽然理论上，你可以在车顶上无限的堆货物(url中无限加参数)。但是运输公司可不傻，装货和卸货也是有很大成本的，他们会限制单次运输量来控制风险，数据量太大对浏览器和服务器都是很大负担。业界不成文的规定是，(大多数)浏览器通常都会限制url长度在2K个字节，而(大多数)服务器最多处理64K大小的url。超过的部分，恕不处理。如果你用GET服务，在request body偷偷藏了数据，不同服务器的处理方式也是不同的，有些服务器会帮你卸货，读出数据，有些服务器直接忽略，所以，虽然GET可以带request body，也不能保证一定能被接收到哦。好了，现在你知道，GET和POST本质上就是TCP链接，并无差别。但是由于HTTP的规定和浏览器/服务器的限制，导致他们在应用过程中体现出一些不同。 GET和POST还有一个重大区别，简单的说： GET产生一个TCP数据包;POST产生两个TCP数据包。 长的说： 对于GET方式的请求，浏览器会把http header和data一并发送出去，服务器响应200(返回数据); 而对于POST，浏览器先发送header，服务器响应100 continue，浏览器再发送data，服务器响应200 ok(返回数据)。 也就是说，GET只需要汽车跑一趟就把货送到了，而POST得跑两趟，第一趟，先去和服务器打个招呼“嗨，我等下要送一批货来，你们打开门迎接我”，然后再回头把货送过去。 因为POST需要两步，时间上消耗的要多一点，看起来GET比POST更有效。因此Yahoo团队有推荐用GET替换POST来优化网站性能。但这是一个坑!跳入需谨慎。为什么? GET与POST都有自己的语义，不能随便混用。 据研究，在网络环境好的情况下，发一次包的时间和发两次包的时间差别基本可以无视。而在网络环境差的情况下，两次包的TCP在验证数据包完整性上，有非常大的优点。 并不是所有浏览器都会在POST中发送两次包，Firefox就只发送一次。 本文参考地址]]></content>
@@ -77,8 +91,8 @@
         <category>自动内存管理机制</category>
       </categories>
       <tags>
-        <tag>Java</tag>
         <tag>JVM</tag>
+        <tag>Java</tag>
       </tags>
   </entry>
   <entry>
@@ -91,8 +105,8 @@
         <category>自动内存管理机制</category>
       </categories>
       <tags>
-        <tag>Java</tag>
         <tag>JVM</tag>
+        <tag>Java</tag>
       </tags>
   </entry>
   <entry>
@@ -156,8 +170,8 @@
         <category>LeetCode Category</category>
       </categories>
       <tags>
-        <tag>Array</tag>
         <tag>BackTracking</tag>
+        <tag>Array</tag>
         <tag>DFS</tag>
       </tags>
   </entry>
@@ -225,8 +239,8 @@
         <category>LeetCode Category</category>
       </categories>
       <tags>
-        <tag>BinarySearch</tag>
         <tag>Array</tag>
+        <tag>BinarySearch</tag>
       </tags>
   </entry>
   <entry>

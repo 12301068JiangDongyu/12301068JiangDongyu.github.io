@@ -107,13 +107,6 @@
     </url>
 
     <url>
-        <loc>blog.jiangdongyu.space/tags/Java/</loc>
-        <lastmod>2018-06-08T12:22:08.360Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>blog.jiangdongyu.space/tags/JVM/</loc>
         <lastmod>2018-06-08T12:22:08.360Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -172,6 +165,20 @@
     <url>
         <loc>blog.jiangdongyu.space/tags/HTTP/</loc>
         <lastmod>2018-06-20T11:01:23.628Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>blog.jiangdongyu.space/tags/Java/</loc>
+        <lastmod>2018-06-26T12:17:07.973Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>blog.jiangdongyu.space/tags/Class/</loc>
+        <lastmod>2018-06-26T12:17:07.973Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
