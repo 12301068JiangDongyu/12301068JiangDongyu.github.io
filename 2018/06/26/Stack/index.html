@@ -85,7 +85,7 @@
 
 
 
-  <meta name="keywords" content="LinkedList," />
+  <meta name="keywords" content="String,Stack," />
 
 
 
@@ -98,20 +98,21 @@
 
 
 
-<meta name="description" content="dummy node的运用 merge linked list一定要会  题目列表LinkedList题大体可分为三类：reverse类、Merge类、快慢针类">
-<meta name="keywords" content="LinkedList">
+<meta name="description" content="Stack实际上也是通过数组去实现的。 执行push时(即，将元素推入栈中)，是通过将元素追加的数组的末尾中。 执行peek时(即，取出栈顶元素，不执行删除)，是返回数组末尾的元素。 执行pop时(即，取出栈顶元素，并将该元素从栈中删除)，是取出数组末尾的元素，然后将该元素从数组中删除。 Stack继承于Vector，意味着Vector拥有的属性和功能，Stack都拥有。">
+<meta name="keywords" content="String,Stack">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LinkedList">
-<meta property="og:url" content="blog.jiangdongyu.space/2018/04/07/LinkedList/index.html">
+<meta property="og:title" content="Stack">
+<meta property="og:url" content="blog.jiangdongyu.space/2018/06/26/Stack/index.html">
 <meta property="og:site_name" content="M&amp;Y">
-<meta property="og:description" content="dummy node的运用 merge linked list一定要会  题目列表LinkedList题大体可分为三类：reverse类、Merge类、快慢针类">
+<meta property="og:description" content="Stack实际上也是通过数组去实现的。 执行push时(即，将元素推入栈中)，是通过将元素追加的数组的末尾中。 执行peek时(即，取出栈顶元素，不执行删除)，是返回数组末尾的元素。 执行pop时(即，取出栈顶元素，并将该元素从栈中删除)，是取出数组末尾的元素，然后将该元素从数组中删除。 Stack继承于Vector，意味着Vector拥有的属性和功能，Stack都拥有。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://p9fh1pach.bkt.clouddn.com/List%20Cycle%20II.png">
-<meta property="og:updated_time" content="2018-05-29T15:46:44.414Z">
+<meta property="og:image" content="http://p9fh1pach.bkt.clouddn.com/1418713310-55de4fd532244.png">
+<meta property="og:image" content="http://p9fh1pach.bkt.clouddn.com/765770818-55de4fe7f3337.png">
+<meta property="og:updated_time" content="2018-06-27T11:32:44.228Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LinkedList">
-<meta name="twitter:description" content="dummy node的运用 merge linked list一定要会  题目列表LinkedList题大体可分为三类：reverse类、Merge类、快慢针类">
-<meta name="twitter:image" content="http://p9fh1pach.bkt.clouddn.com/List%20Cycle%20II.png">
+<meta name="twitter:title" content="Stack">
+<meta name="twitter:description" content="Stack实际上也是通过数组去实现的。 执行push时(即，将元素推入栈中)，是通过将元素追加的数组的末尾中。 执行peek时(即，取出栈顶元素，不执行删除)，是返回数组末尾的元素。 执行pop时(即，取出栈顶元素，并将该元素从栈中删除)，是取出数组末尾的元素，然后将该元素从数组中删除。 Stack继承于Vector，意味着Vector拥有的属性和功能，Stack都拥有。">
+<meta name="twitter:image" content="http://p9fh1pach.bkt.clouddn.com/1418713310-55de4fd532244.png">
 
 
 
@@ -141,13 +142,13 @@
 
 
 
-  <link rel="canonical" href="blog.jiangdongyu.space/2018/04/07/LinkedList/"/>
+  <link rel="canonical" href="blog.jiangdongyu.space/2018/06/26/Stack/"/>
 
 
 
 
 
-  <title>LinkedList | M&Y</title>
+  <title>Stack | M&Y</title>
   
 
 
@@ -310,7 +311,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="blog.jiangdongyu.space/2018/04/07/LinkedList/">
+    <link itemprop="mainEntityOfPage" href="blog.jiangdongyu.space/2018/06/26/Stack/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Agnes">
@@ -327,7 +328,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">LinkedList</h1>
+          <h1 class="post-title" itemprop="name headline">Stack</h1>
         
 
         <div class="post-meta">
@@ -339,8 +340,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-07T17:52:00+08:00">
-                2018-04-07
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-26T20:35:00+08:00">
+                2018-06-26
               </time>
             
 
@@ -402,8 +403,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/04/07/LinkedList/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/04/07/LinkedList/" itemprop="commentsCount"></span>
+                <a href="/2018/06/26/Stack/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/06/26/Stack/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -411,7 +412,7 @@
 
           
           
-             <span id="/2018/04/07/LinkedList/" class="leancloud_visitors" data-flag-title="LinkedList">
+             <span id="/2018/06/26/Stack/" class="leancloud_visitors" data-flag-title="Stack">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -436,7 +437,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,207 字
+                  2,169 字
                 </span>
               
 
@@ -452,7 +453,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  5 分钟
+                  12 分钟
                 </span>
               
             </div>
@@ -473,172 +474,212 @@
       
 
       
-        <ul>
-<li>dummy node的运用</li>
-<li>merge linked list一定要会</li>
-</ul>
-<p><strong>题目列表</strong><br>LinkedList题大体可分为三类：reverse类、Merge类、快慢针类<br><a id="more"></a></p>
+        <p>Stack实际上也是通过<strong>数组</strong>去实现的。</p>
+<p>执行push时(即，将元素推入栈中)，是通过将元素追加的数组的末尾中。</p>
+<p>执行peek时(即，取出栈顶元素，不执行删除)，是返回数组末尾的元素。</p>
+<p>执行pop时(即，取出栈顶元素，并将该元素从栈中删除)，是取出数组末尾的元素，然后将该元素从数组中删除。</p>
+<p>Stack继承于Vector，意味着Vector拥有的属性和功能，Stack都拥有。</p>
+<a id="more"></a>
+<h3 id="225-Implement-Stack-with-Queue"><a href="#225-Implement-Stack-with-Queue" class="headerlink" title="225.Implement Stack with Queue"></a>225.Implement Stack with Queue</h3><p>Implement the following operations of a stack using queues.</p>
 <ul>
-<li>Rotate List</li>
-<li>Copy list with random pointers</li>
-<li>Convert sorted list to Binary Search Tree </li>
-<li>Remove Duplicates</li>
-<li>Remove Duplicates II</li>
-<li>Add Two Numbers</li>
-<li>insertion sort list use a dummy node to add node to new list one at a time</li>
+<li>push(x) – Push element x onto stack.</li>
+<li>pop() – Removes the element on top of the stack.</li>
+<li>top() – Get the top element.</li>
+<li>empty() – Return whether the stack is empty.</li>
 </ul>
-<p><strong>reverse类</strong></p>
+<p><strong>Example:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">MyStack stack = new MyStack();</span><br><span class="line">stack.push(1);</span><br><span class="line">stack.push(2);  </span><br><span class="line">stack.top();   // returns 2</span><br><span class="line">stack.pop();   // returns 2</span><br><span class="line">stack.empty(); // returns false</span><br></pre></td></tr></table></figure>
+<p><strong>Notes:</strong></p>
 <ul>
-<li>reverse linked list </li>
-<li>reverse print list</li>
-<li>reverse nodes in k group </li>
-<li>swap nodes in pairs </li>
-<li>palindrome list</li>
-<li>reorder list</li>
+<li>You must use only standard operations of a queue – which means only push to back, peek/pop from front, size, and is empty operations are valid.</li>
+<li>Depending on your language, queue may not be supported natively. You may simulate a queue by using a list or deque (double-ended queue), as long as you use only standard operations of a queue.</li>
+<li>You may assume that all operations are valid (for example, no pop or top operations will be called on an empty stack).</li>
 </ul>
-<p><strong>Merge类</strong></p>
+<p><strong>维护两个队列</strong></p>
 <ul>
-<li>merge linked list </li>
-<li>merge K sorted List</li>
+<li>Push O(n),Pop O(1)<ul>
+<li>Push: q2存放新元素，q1元素逐个添加到q2队尾，q1，q2互换</li>
+<li>Pop: q1.poll()</li>
+<li>Top: q1.peek()</li>
+<li>Empty: q1.isEmpty()</li>
 </ul>
-<p><strong>快慢针类</strong></p>
+</li>
+<li>Push O(1),Pop O(n)<ul>
+<li>Push: q1直接存,并更新top值</li>
+<li>Pop: q1的大小大于1时，更新top值，并移到q2;删除q1的值，交换q1,q2</li>
+<li>Top: 直接返回top</li>
+<li>Empty: q1.isEmpty()</li>
+</ul>
+</li>
+</ul>
+<p><strong>维护一个队列</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> LinkedList&lt;Integer&gt; q1 = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line"></span><br><span class="line"><span class="comment">// Push element x onto stack.</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">push</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">    q1.add(x);</span><br><span class="line">    <span class="keyword">int</span> sz = q1.size();</span><br><span class="line">    <span class="keyword">while</span> (sz &gt; <span class="number">1</span>) &#123;</span><br><span class="line">        q1.add(q1.remove());</span><br><span class="line">        sz--;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="232-Implement-Queue-with-stacks"><a href="#232-Implement-Queue-with-stacks" class="headerlink" title="232.Implement Queue with stacks"></a>232.Implement Queue with stacks</h3><p>Implement the following operations of a queue using stacks.</p>
 <ul>
-<li>list cycle I, II</li>
-<li>get kth node ( get middle node)</li>
-<li>intersection of two lists</li>
-<li>remove nth node from end of list</li>
+<li>push(x) – Push element x to the back of queue.</li>
+<li>pop() – Removes the element from in front of queue.</li>
+<li>peek() – Get the front element.</li>
+<li>empty() – Return whether the queue is empty.</li>
 </ul>
-<h2 id="Add-Two-Numbers"><a href="#Add-Two-Numbers" class="headerlink" title="Add Two Numbers"></a>Add Two Numbers</h2><blockquote>
-<p>Input: (2 -&gt; 4 -&gt; 3) + (5 -&gt; 6 -&gt; 4)</p>
-<p>Output: 7 -&gt; 0 -&gt; 8</p>
-<p>Explanation: 342 + 465 = 807.</p>
+<p><strong>Example:</strong></p>
+<pre><code>MyQueue queue = new MyQueue();
+
+queue.push(1);
+queue.push(2);  
+queue.peek();  // returns 1
+queue.pop();   // returns 1
+queue.empty(); // returns false
+</code></pre><p><strong>Notes:</strong></p>
+<ul>
+<li>You must use only standard operations of a stack – which means only push to top, peek/pop from top, size, and is empty operations are valid.</li>
+<li>Depending on your language, stack may not be supported natively. You may simulate a stack by using a list or deque (double-ended queue), as long as you use only standard operations of a stack.</li>
+<li>You may assume that all operations are valid (for example, no pop or peek operations will be called on an empty queue).</li>
+</ul>
+<p><strong>(Two Stacks) Push - O(1) per operation, Pop - Amortized O(1) per operation.</strong></p>
+<ul>
+<li>Push: s1直接存,记录下最开始s1为空时的peek值</li>
+<li>Pop: s2为空时，把s1中的值pop到s2,再返回s2.pop()</li>
+<li>Peek: s2为空直接返回peek,否则返回s2.peek()</li>
+<li>Empty: s1.isEmpty()&amp;&amp;s2.isEmpty()</li>
+</ul>
+<h3 id="155-Min-Stack"><a href="#155-Min-Stack" class="headerlink" title="155.Min Stack"></a>155.Min Stack</h3><p>Design a stack that supports push, pop, top, and retrieving the minimum element in constant time.</p>
+<ul>
+<li>push(x) – Push element x onto stack.</li>
+<li>pop() – Removes the element on top of the stack.</li>
+<li>top() – Get the top element.</li>
+<li>getMin() – Retrieve the minimum element in the stack.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code>MinStack minStack = new MinStack();
+minStack.push(-2);
+minStack.push(0);
+minStack.push(-3);
+minStack.getMin();   --&gt; Returns -3.
+minStack.pop();
+minStack.top();      --&gt; Returns 0.
+minStack.getMin();   --&gt; Returns -2.
+</code></pre><p><strong>使用两个栈(借助辅助栈，存储min)</strong></p>
+<ul>
+<li>Push: s1直接push，当s2为空或者新入栈的元素小于等于栈顶元素时，s2也入栈</li>
+<li>Pop: s1直接pop，如果s1中pop的元素和s2栈顶元素相同，s2也pop</li>
+<li>Top: s1.peek()</li>
+<li>GetMin: s2.peek()</li>
+</ul>
+<h3 id="String"><a href="#String" class="headerlink" title="String"></a>String</h3><h4 id="20-Valid-Parentheses"><a href="#20-Valid-Parentheses" class="headerlink" title="20.Valid Parentheses"></a>20.Valid Parentheses</h4><p>Given a string containing just the characters ‘(‘, ‘)’, ‘{‘, ‘}’, ‘[‘ and ‘]’, determine if the input string is valid.</p>
+<p>An input string is valid if:</p>
+<ol>
+<li>Open brackets must be closed by the same type of brackets.</li>
+<li>Open brackets must be closed in the correct order.</li>
+</ol>
+<p>Note that an empty string is also considered valid.</p>
+<p><strong>Example 1:</strong></p>
+<pre><code>Input: &quot;()&quot;
+Output: true
+</code></pre><p><strong>Example 2:</strong></p>
+<pre><code>Input: &quot;()[]{}&quot;
+Output: true
+</code></pre><p><strong>Example 3:</strong></p>
+<pre><code>Input: &quot;(]&quot;
+Output: false
+</code></pre><p><strong>Example 4:</strong></p>
+<pre><code>Input: &quot;([)]&quot;
+Output: false
+</code></pre><p><strong>Example 5:</strong></p>
+<pre><code>Input: &quot;{[]}&quot;
+Output: true
+</code></pre><ul>
+<li>典型Stack的题，符号匹配<ul>
+<li>是左括号，则入栈</li>
+<li>判断是否是对应的右括号，同时栈不为空</li>
+<li>都不满足，则返回false</li>
+<li>最后判断栈是否为空</li>
+</ul>
+</li>
+</ul>
+<p><strong>代码</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isValid</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">        Stack&lt;Character&gt; stack = <span class="keyword">new</span> Stack&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">char</span> c : s.toCharArray())&#123;</span><br><span class="line">            <span class="keyword">if</span>(c == <span class="string">'('</span> || c == <span class="string">'['</span> || c == <span class="string">'&#123;'</span>)&#123;</span><br><span class="line">                stack.push(c);</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(c == <span class="string">')'</span> &amp;&amp; !stack.empty() &amp;&amp; stack.peek() == <span class="string">'('</span>)&#123;</span><br><span class="line">                stack.pop();</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(c == <span class="string">']'</span> &amp;&amp; !stack.empty() &amp;&amp; stack.peek() == <span class="string">'['</span>)&#123;</span><br><span class="line">                stack.pop();</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(c == <span class="string">'&#125;'</span> &amp;&amp; !stack.empty() &amp;&amp; stack.peek() == <span class="string">'&#123;'</span>)&#123;</span><br><span class="line">                stack.pop();</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> stack.empty();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>更简洁的解法</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isValid</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">	Stack&lt;Character&gt; stack = <span class="keyword">new</span> Stack&lt;Character&gt;();</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">char</span> c : s.toCharArray()) &#123;</span><br><span class="line">		<span class="keyword">if</span> (c == <span class="string">'('</span>)</span><br><span class="line">			stack.push(<span class="string">')'</span>);</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (c == <span class="string">'&#123;'</span>)</span><br><span class="line">			stack.push(<span class="string">'&#125;'</span>);</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (c == <span class="string">'['</span>)</span><br><span class="line">			stack.push(<span class="string">']'</span>);</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (stack.isEmpty() || stack.pop() != c)</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> stack.isEmpty();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="150-Evaluate-Reverse-Polish-Notation"><a href="#150-Evaluate-Reverse-Polish-Notation" class="headerlink" title="150.Evaluate Reverse Polish Notation"></a>150.Evaluate Reverse Polish Notation</h4><p>Evaluate the value of an arithmetic expression in Reverse Polish Notation.</p>
+<p>Valid operators are +, -, *, /. Each operand may be an integer or another expression.</p>
+<p><strong>Note:</strong></p>
+<ul>
+<li>Division between two integers should truncate toward zero.</li>
+<li>The given RPN expression is always valid. That means the expression would always evaluate to a result and there won’t be any divide by zero operation.</li>
+</ul>
+<p><strong>Example 1:</strong></p>
+<pre><code>Input: [&quot;2&quot;, &quot;1&quot;, &quot;+&quot;, &quot;3&quot;, &quot;*&quot;]
+Output: 9
+Explanation: ((2 + 1) * 3) = 9
+</code></pre><p><strong>Example 2:</strong></p>
+<pre><code>Input: [&quot;4&quot;, &quot;13&quot;, &quot;5&quot;, &quot;/&quot;, &quot;+&quot;]
+Output: 6
+Explanation: (4 + (13 / 5)) = 6
+</code></pre><p><strong>Example 3:</strong></p>
+<pre><code>Input: [&quot;10&quot;, &quot;6&quot;, &quot;9&quot;, &quot;3&quot;, &quot;+&quot;, &quot;-11&quot;, &quot;*&quot;, &quot;/&quot;, &quot;*&quot;, &quot;17&quot;, &quot;+&quot;, &quot;5&quot;, &quot;+&quot;]
+Output: 22
+Explanation:
+  ((10 * (6 / ((9 + 3) * -11))) + 17) + 5
+= ((10 * (6 / (12 * -11))) + 17) + 5
+= ((10 * (6 / -132)) + 17) + 5
+= ((10 * 0) + 17) + 5
+= (0 + 17) + 5
+= 17 + 5
+= 22
+</code></pre><p><strong>解题思路</strong></p>
+<ul>
+<li>用栈解决</li>
+<li>遇到数字直接入栈</li>
+<li>遇到操作符，则pop出两个数字，进行计算，计算后的值接着入栈</li>
+<li>需要注意的是除法的时候，是后pop出来的除以先pop出来的</li>
+</ul>
+<h4 id="84-Largest-Rectangel-in-Histrogram"><a href="#84-Largest-Rectangel-in-Histrogram" class="headerlink" title="84.Largest Rectangel in Histrogram"></a>84.Largest Rectangel in Histrogram</h4><blockquote>
+<p>在DP专题总结过</p>
 </blockquote>
-<p>dummy node的使用，sum &amp; carry</p>
-<p>最后要对carry进行判断</p>
-<h2 id="Remove-Duplicates"><a href="#Remove-Duplicates" class="headerlink" title="Remove Duplicates"></a>Remove Duplicates</h2><blockquote>
+<p>Given n non-negative integers representing the histogram’s bar height where the width of each bar is 1, find the area of largest rectangle in the histogram. </p>
+<p><img src="http://p9fh1pach.bkt.clouddn.com/1418713310-55de4fd532244.png" alt="avatar"></p>
+<p>Above is a histogram where width of each bar is 1, given height = [2,1,5,6,2,3].</p>
+<p><img src="http://p9fh1pach.bkt.clouddn.com/765770818-55de4fe7f3337.png" alt="avatar"></p>
+<p>The largest rectangle is shown in the shaded area, which has area = 10 unit.</p>
+<ul>
+<li>栈，存放数组的index</li>
+<li>栈为空或者数组是递增状态，则直接push</li>
+<li>小于则pop，并计算当前的最大面积</li>
+</ul>
+<p><strong>代码</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">largestRectangleArea</span><span class="params">(<span class="keyword">int</span>[] height)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len = height.length;</span><br><span class="line">        Stack&lt;Integer&gt; s = <span class="keyword">new</span> Stack&lt;Integer&gt;();</span><br><span class="line">        <span class="keyword">int</span> maxArea = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= len; i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> h = (i == len ? <span class="number">0</span> : height[i]);</span><br><span class="line">            <span class="keyword">if</span>(s.isEmpty() || h &gt;= height[s.peek()])&#123;</span><br><span class="line">                s.push(i);</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">int</span> tp = s.pop();</span><br><span class="line">                maxArea = Math.max(maxArea, height[tp] * (s.isEmpty() ? i : i - <span class="number">1</span> - s.peek()));</span><br><span class="line">                i--;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> maxArea;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//或者</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">	    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">largestRectangleArea</span><span class="params">(<span class="keyword">int</span>[] height)</span> </span>&#123;</span><br><span class="line">	        Stack&lt;Integer&gt; stack = <span class="keyword">new</span> Stack&lt;Integer&gt;();</span><br><span class="line">	        <span class="keyword">int</span> index = <span class="number">0</span>, largestArea = <span class="number">0</span>;</span><br><span class="line">	        <span class="keyword">while</span> (index &lt; height.length || (index == height.length &amp;&amp; !stack.isEmpty())) &#123;</span><br><span class="line">	            <span class="keyword">if</span> (index != height.length &amp;&amp; (stack.isEmpty() || height[stack.peek()] &lt; height[index])) &#123;</span><br><span class="line">	                stack.push(index++);</span><br><span class="line">	            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">	                <span class="keyword">int</span> h = height[stack.pop()];</span><br><span class="line">	                <span class="keyword">int</span> w = stack.isEmpty() ? index : index - stack.peek() - <span class="number">1</span>;</span><br><span class="line">	                largestArea = Math.max(largestArea, h * w);</span><br><span class="line">	            &#125;</span><br><span class="line">	        &#125;</span><br><span class="line">	        <span class="keyword">return</span> largestArea;</span><br><span class="line">	    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="85-Maximal-Rectangle"><a href="#85-Maximal-Rectangle" class="headerlink" title="85.Maximal Rectangle"></a>85.Maximal Rectangle</h4><blockquote>
+<p>在DP专题总结过</p>
+</blockquote>
+<p>Given a 2D binary matrix filled with 0’s and 1’s, find the largest rectangle containing all 1’s and return its area.</p>
+<ul>
+<li>要求最大的矩形，实际上可以将矩阵的每一行，转化为上一题的直方图，</li>
+<li>而直方图的每个竖条的数字，就是该行对应坐标正上方，向上方向有多少个连续的1。</li>
+<li>要转化为直方图，方法是每一行的数值都累加上一行计算出来的数值，而第一行的数值就是本身。如果原始矩阵中遇到0，则累加中断，重新置0。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">0 0 1 1 0 -&gt; 0 0 1 1 0</span><br><span class="line">0 0 1 1 0 -&gt; 0 0 2 2 0</span><br><span class="line">1 1 0 0 0 -&gt; 1 1 0 0 0</span><br><span class="line">1 1 1 0 0 -&gt; 2 2 1 0 0</span><br></pre></td></tr></table></figure>
+<ul>
+<li>dp[i][j]化为直方图的值</li>
+<li>接着对dp[i][j]进行Largest Rectangle in Histogram计算即可</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">i == 0 --&gt; dp[i][j] = matrix[i][j] - &apos;0&apos;</span><br><span class="line">i != 0 --&gt; </span><br><span class="line">matrix[i][j] == 1 --&gt; dp[i][j] = dp[i-1][j] + matrix[i][j] - &apos;0&apos;</span><br><span class="line">matrix[i][j] != 1 --&gt; dp[i][j] = 0</span><br></pre></td></tr></table></figure>
+<p><strong>代码</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maximalRectangle</span><span class="params">(<span class="keyword">char</span>[][] matrix)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> max = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span>(matrix.length == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span>[][] dp = <span class="keyword">new</span> <span class="keyword">int</span>[matrix.length][matrix[<span class="number">0</span>].length];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; matrix.length; i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; matrix[<span class="number">0</span>].length; j++)&#123;</span><br><span class="line">                <span class="comment">// 如果是第一行就是自身，如果遇到0则停止累加</span></span><br><span class="line">                dp[i][j] =  i == <span class="number">0</span> ? matrix[i][j] - <span class="string">'0'</span> : matrix[i][j] == <span class="string">'1'</span> ? dp[i-<span class="number">1</span>][j] + matrix[i][j] - <span class="string">'0'</span> : <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; dp.length; i++)&#123;</span><br><span class="line">            <span class="comment">//找每行的最大矩形</span></span><br><span class="line">            <span class="keyword">int</span> tmp = findRowMax(i, dp);</span><br><span class="line">            max = Math.max(max, tmp);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> max;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">findRowMax</span><span class="params">(<span class="keyword">int</span> row, <span class="keyword">int</span>[][] matrix)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(matrix[row].length== <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        Stack&lt;Integer&gt; stk = <span class="keyword">new</span> Stack&lt;Integer&gt;();</span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">1</span>, max = matrix[row][<span class="number">0</span>];</span><br><span class="line">        stk.push(<span class="number">0</span>);</span><br><span class="line">        <span class="keyword">while</span>(i &lt; matrix[row].length || (i == matrix[row].length &amp;&amp; !stk.isEmpty()))&#123;</span><br><span class="line">            <span class="keyword">if</span>(i != matrix[row].length &amp;&amp; ( stk.isEmpty() || matrix[row][i] &gt;= matrix[row][stk.peek()] ))&#123;</span><br><span class="line">                stk.push(i);</span><br><span class="line">                i++;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">int</span> top = matrix[row][stk.pop()];</span><br><span class="line">                <span class="keyword">int</span> currMax = !stk.isEmpty() ? top * (i - stk.peek() - <span class="number">1</span>) : top * i;</span><br><span class="line">                max = Math.max(currMax, max);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> max;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="71-Simplify-Path"><a href="#71-Simplify-Path" class="headerlink" title="71.Simplify Path"></a>71.Simplify Path</h4><p>Given an absolute path for a file (Unix-style), simplify it.</p>
 <p>For example,</p>
-<p>Given 1-&gt;1-&gt;2, return 1-&gt;2.</p>
-<p>Given 1-&gt;1-&gt;2-&gt;3-&gt;3, return 1-&gt;2-&gt;3.</p>
-</blockquote>
-<p>保留重复的值，可用cur = head,判断cur.val == cur.next.val ? </p>
-<h2 id="Remove-Duplicates-II"><a href="#Remove-Duplicates-II" class="headerlink" title="Remove Duplicates II"></a>Remove Duplicates II</h2><blockquote>
-<p>For example,</p>
-<p>Given 1-&gt;2-&gt;3-&gt;3-&gt;4-&gt;4-&gt;5, return 1-&gt;2-&gt;5.</p>
-<p>Given 1-&gt;1-&gt;1-&gt;2-&gt;3, return 2-&gt;3.</p>
-</blockquote>
-<p>删除重复的值，需要dummy node，cur = dummy,需要记录cur.next.val进行循环删除</p>
-<h2 id="Merge类"><a href="#Merge类" class="headerlink" title="Merge类"></a>Merge类</h2><h3 id="Merge-Two-Sorted-Lists"><a href="#Merge-Two-Sorted-Lists" class="headerlink" title="Merge Two Sorted Lists"></a>Merge Two Sorted Lists</h3><ul>
-<li>递归</li>
-<li>非递归</li>
-</ul>
-<h3 id="Merge-K-Sorted-Lists"><a href="#Merge-K-Sorted-Lists" class="headerlink" title="Merge K Sorted Lists"></a>Merge K Sorted Lists</h3><ul>
-<li>二分+递归</li>
-<li>使用堆（优先队列），将K个链表的头结点全部添加到队列，由于优先级队列采用了最小堆数据结构，堆顶为队列的最小元素，我们将其取出添加到结果链表中，取出元素对应的链表下移一个节点，并将这个节点添加到优先级队列中；然后我们继续取出堆顶元素，…，直到优先级队列为空，那么其中所有元素取尽，K个链表的元素已经全部排序到结果链表。</li>
-</ul>
-<h2 id="快慢针类"><a href="#快慢针类" class="headerlink" title="快慢针类"></a>快慢针类</h2><h3 id="List-Cycle"><a href="#List-Cycle" class="headerlink" title="List Cycle"></a>List Cycle</h3><ul>
-<li>快慢指针，最后是否相遇 fast.next != null &amp;&amp; fast.next.next != null</li>
-</ul>
-<h3 id="List-Cycle-II"><a href="#List-Cycle-II" class="headerlink" title="List Cycle II"></a>List Cycle II</h3><blockquote>
-<p>找到环开始的地方</p>
-</blockquote>
-<p><img src="http://p9fh1pach.bkt.clouddn.com/List%20Cycle%20II.png" alt="avatar"></p>
-<p>假设从起点到环开始的地方长度为x,相遇点距离环起点为k，环长为L</p>
-<p>d = x + m*L + k</p>
-<p>2d = x + n*L +k</p>
-<p>则 x + (2m -n)*L +k = 0</p>
-<p>所以 x = (L-k) + (n-2m-1)*L</p>
-<p>所以 一指针从开始出发，一指针从相遇点出发，最终会在环开始的地方相遇</p>
-<h3 id="Remove-Nth-Node-From-End"><a href="#Remove-Nth-Node-From-End" class="headerlink" title="Remove Nth Node From End"></a>Remove Nth Node From End</h3><blockquote>
-<p>删除从尾部开始数的第n个结点</p>
-</blockquote>
+<p><strong>path</strong> = “/home/“, =&gt; “/home”</p>
+<p><strong>path</strong> = “/a/./b/../../c/“, =&gt; “/c”</p>
+<p><strong>Corner Cases:</strong></p>
 <ul>
-<li>快慢指针，快指针先走n步</li>
+<li>Did you consider the case where path = “/../“?<br>In this case, you should return “/“.</li>
+<li>Another corner case is the path might contain multiple slashes ‘/‘ together, such as “/home//foo/“.In this case, you should ignore redundant slashes and return “/home/foo”.</li>
 </ul>
-<h3 id="Partition-List"><a href="#Partition-List" class="headerlink" title="Partition List"></a>Partition List</h3><blockquote>
-<p>给定一个链表，一个整数x，将链表分开确定一边比x小，另一表不小于x，并保持原来的链表的相对顺序</p>
-</blockquote>
+<p><strong>题目意思</strong></p>
 <ul>
-<li>需要dummy node</li>
-<li>可以新建一个链表用来存小于x的node,并将原来对应的node删掉，最后将原来的list接在现在的之后</li>
+<li>.可忽略，..需要pop掉上一个，比如/b/../c/ -&gt; /c</li>
 </ul>
-<h2 id="reverse类"><a href="#reverse类" class="headerlink" title="reverse类"></a>reverse类</h2><h3 id="Reverse-Linked-List"><a href="#Reverse-Linked-List" class="headerlink" title="Reverse Linked List"></a>Reverse Linked List</h3><ul>
-<li>头插法</li>
-<li>递归</li>
-</ul>
-<h3 id="Reverse-Linked-List-II"><a href="#Reverse-Linked-List-II" class="headerlink" title="Reverse Linked List II"></a>Reverse Linked List II</h3><blockquote>
-<p>将链表m到n的位置的结点逆置</p>
-</blockquote>
-<ul>
-<li>dummy node</li>
-<li>找到开始反转的前一个node pre 维持不变，以及找到真正开始反转的结点start，下一个结点 then</li>
-</ul>
-<h3 id="Palindrome-List"><a href="#Palindrome-List" class="headerlink" title="Palindrome List"></a>Palindrome List</h3><ul>
-<li>双指针，判断fast.next是否为null，不是则slow = slow.next</li>
-<li>对slow进行逆置</li>
-<li>一一比较两个链表的值</li>
-</ul>
-<h3 id="Swap-Nodes-in-Pairs"><a href="#Swap-Nodes-in-Pairs" class="headerlink" title="Swap Nodes in Pairs"></a>Swap Nodes in Pairs</h3><blockquote>
-<p>For example,<br>Given 1-&gt;2-&gt;3-&gt;4, you should return the list as 2-&gt;1-&gt;4-&gt;3.</p>
-</blockquote>
-<ul>
-<li>dummy node</li>
-<li>三个node的使用，cur first second </li>
-<li>cur = cur.next.next</li>
-</ul>
-<h3 id="Reorder-List"><a href="#Reorder-List" class="headerlink" title="Reorder List"></a>Reorder List</h3><blockquote>
-<p>Given a singly linked list L: L0→L1→…→Ln-1→Ln,</p>
-<p>reorder it to: L0→Ln→L1→Ln-1→L2→Ln-2→…</p>
-</blockquote>
-<ul>
-<li>找到中点，前半部分结尾设为null</li>
-<li>将后半部分reverse</li>
-<li>再merge</li>
-</ul>
-<h2 id="Rotate-List"><a href="#Rotate-List" class="headerlink" title="Rotate List"></a>Rotate List</h2><blockquote>
-<p>Given 1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;NULL and k = 2,</p>
-</blockquote>
-<blockquote>
-<p>return 4-&gt;5-&gt;1-&gt;2-&gt;3-&gt;NULL.</p>
-</blockquote>
-<ul>
-<li>two pointer</li>
-<li>找到length-k个，注意k可能大于length(%),并将next设为null</li>
-<li>将原来链表的end的next设为head</li>
-<li>返回原来的length-k+1个</li>
-</ul>
-<h2 id="Copy-List-with-Random-Pointer"><a href="#Copy-List-with-Random-Pointer" class="headerlink" title="Copy List with Random Pointer"></a>Copy List with Random Pointer</h2><blockquote>
-<p>如果要copy一个带有random pointer的list，主要的问题就是有可能这个random指向的位置还没有被copy到，所以解决方法都是多次扫描list。</p>
-</blockquote>
-<p><strong>使用HashMap，HashMap的key存原始pointer，value存新的pointer。</strong></p>
-<ul>
-<li>hashmap，一次遍历put(node,new RandomListNode(node.label))</li>
-<li>再次遍历，对next，random指针进行修改</li>
-</ul>
-<p><strong>3次遍历list，时间复杂度为O(3n)=O(n)。</strong></p>
-<ul>
-<li><p>对每个node进行复制，并插入其原始node的后面，新旧交替，变成重复链表。如：原始：1-&gt;2-&gt;3-&gt;null，复制后：1-&gt;1-&gt;2-&gt;2-&gt;3-&gt;3-&gt;null</p>
-</li>
-<li><p>遍历每个旧node，把旧node的random的复制给新node的random，因为链表已经是新旧交替的。所以复制方法为：</p>
-<pre><code>node.next.random = node.random.next
-</code></pre><p>前面是说旧node的next的random，就是新node的random，后面是旧node的random的next，正好是新node，是从旧random复制来的。</p>
-</li>
-<li><p>把新旧两个表拆开，返回新的表即可。</p>
-</li>
-</ul>
-<h2 id="Convert-Sorted-List-to-Binary-Search-Tree"><a href="#Convert-Sorted-List-to-Binary-Search-Tree" class="headerlink" title="Convert Sorted List to Binary Search Tree"></a>Convert Sorted List to Binary Search Tree</h2><p><strong>递归</strong></p>
-<ul>
-<li>找到中点</li>
-<li>递归</li>
-</ul>
-<p><strong>中序遍历</strong></p>
-<p>左子树-根-右子树</p>
-<h2 id="Intersection-of-Two-Linked-List"><a href="#Intersection-of-Two-Linked-List" class="headerlink" title="Intersection of Two Linked List"></a>Intersection of Two Linked List</h2><p>For example, the following two linked lists:</p>
-<blockquote>
-<p>A:          a1 → a2 → c1 → c2 → c3  </p>
-<p>B:      b1 → b2 → b3 → c1 → c2 → c3 </p>
-</blockquote>
-<p>begin to intersect at node c1.</p>
-<p>获得两个链表的长度差x，较长的先往前x，再一起往前，直到相等</p>
+<p><strong>代码</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">simplifyPath</span><span class="params">(String path)</span> </span>&#123;</span><br><span class="line">        Stack&lt;String&gt; stack = <span class="keyword">new</span> Stack();</span><br><span class="line">        <span class="keyword">for</span>(String cur: path.split(<span class="string">"/"</span>))&#123;</span><br><span class="line">            <span class="keyword">if</span>(cur.equals(<span class="string">".."</span>)) &#123;</span><br><span class="line">                <span class="keyword">if</span>(!stack.empty()) stack.pop();</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(cur.length()&gt;<span class="number">0</span> &amp;&amp; !cur.equals(<span class="string">"."</span>)) stack.push(cur);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"/"</span>+String.join(<span class="string">"/"</span>,stack);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -688,7 +729,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="blog.jiangdongyu.space/2018/04/07/LinkedList/" title="LinkedList">blog.jiangdongyu.space/2018/04/07/LinkedList/</a>
+    <a href="blog.jiangdongyu.space/2018/06/26/Stack/" title="Stack">blog.jiangdongyu.space/2018/06/26/Stack/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -703,7 +744,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/LinkedList/" rel="tag"><i class="fa fa-tag"></i> LinkedList</a>
+            <a href="/tags/String/" rel="tag"><i class="fa fa-tag"></i> String</a>
+          
+            <a href="/tags/Stack/" rel="tag"><i class="fa fa-tag"></i> Stack</a>
           
         </div>
       
@@ -716,8 +759,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/07/位运算/" rel="next" title="位运算">
-                <i class="fa fa-chevron-left"></i> 位运算
+              <a href="/2018/06/25/类文件结构/" rel="next" title="类文件结构">
+                <i class="fa fa-chevron-left"></i> 类文件结构
               </a>
             
           </div>
@@ -725,10 +768,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/04/09/今日头条/" rel="prev" title="今日头条">
-                今日头条 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -915,7 +954,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Add-Two-Numbers"><span class="nav-number">1.</span> <span class="nav-text">Add Two Numbers</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Remove-Duplicates"><span class="nav-number">2.</span> <span class="nav-text">Remove Duplicates</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Remove-Duplicates-II"><span class="nav-number">3.</span> <span class="nav-text">Remove Duplicates II</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Merge类"><span class="nav-number">4.</span> <span class="nav-text">Merge类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Merge-Two-Sorted-Lists"><span class="nav-number">4.1.</span> <span class="nav-text">Merge Two Sorted Lists</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Merge-K-Sorted-Lists"><span class="nav-number">4.2.</span> <span class="nav-text">Merge K Sorted Lists</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#快慢针类"><span class="nav-number">5.</span> <span class="nav-text">快慢针类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#List-Cycle"><span class="nav-number">5.1.</span> <span class="nav-text">List Cycle</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#List-Cycle-II"><span class="nav-number">5.2.</span> <span class="nav-text">List Cycle II</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Remove-Nth-Node-From-End"><span class="nav-number">5.3.</span> <span class="nav-text">Remove Nth Node From End</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Partition-List"><span class="nav-number">5.4.</span> <span class="nav-text">Partition List</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#reverse类"><span class="nav-number">6.</span> <span class="nav-text">reverse类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Reverse-Linked-List"><span class="nav-number">6.1.</span> <span class="nav-text">Reverse Linked List</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Reverse-Linked-List-II"><span class="nav-number">6.2.</span> <span class="nav-text">Reverse Linked List II</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Palindrome-List"><span class="nav-number">6.3.</span> <span class="nav-text">Palindrome List</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Swap-Nodes-in-Pairs"><span class="nav-number">6.4.</span> <span class="nav-text">Swap Nodes in Pairs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Reorder-List"><span class="nav-number">6.5.</span> <span class="nav-text">Reorder List</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Rotate-List"><span class="nav-number">7.</span> <span class="nav-text">Rotate List</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Copy-List-with-Random-Pointer"><span class="nav-number">8.</span> <span class="nav-text">Copy List with Random Pointer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Convert-Sorted-List-to-Binary-Search-Tree"><span class="nav-number">9.</span> <span class="nav-text">Convert Sorted List to Binary Search Tree</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Intersection-of-Two-Linked-List"><span class="nav-number">10.</span> <span class="nav-text">Intersection of Two Linked List</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#225-Implement-Stack-with-Queue"><span class="nav-number">1.</span> <span class="nav-text">225.Implement Stack with Queue</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#232-Implement-Queue-with-stacks"><span class="nav-number">2.</span> <span class="nav-text">232.Implement Queue with stacks</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#155-Min-Stack"><span class="nav-number">3.</span> <span class="nav-text">155.Min Stack</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#String"><span class="nav-number">4.</span> <span class="nav-text">String</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#20-Valid-Parentheses"><span class="nav-number">4.1.</span> <span class="nav-text">20.Valid Parentheses</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#150-Evaluate-Reverse-Polish-Notation"><span class="nav-number">4.2.</span> <span class="nav-text">150.Evaluate Reverse Polish Notation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#84-Largest-Rectangel-in-Histrogram"><span class="nav-number">4.3.</span> <span class="nav-text">84.Largest Rectangel in Histrogram</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#85-Maximal-Rectangle"><span class="nav-number">4.4.</span> <span class="nav-text">85.Maximal Rectangle</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#71-Simplify-Path"><span class="nav-number">4.5.</span> <span class="nav-text">71.Simplify Path</span></a></li></ol></li></ol></div>
             
 
           </div>
