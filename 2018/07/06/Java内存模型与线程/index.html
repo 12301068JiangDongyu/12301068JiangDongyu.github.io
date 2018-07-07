@@ -85,7 +85,7 @@
 
 
 
-  <meta name="keywords" content="Heap," />
+  <meta name="keywords" content="Java,Thread," />
 
 
 
@@ -98,18 +98,25 @@
 
 
 
-<meta name="description" content="272.Closest Binary Search Tree Value IIGiven a non-empty binary search tree and a target value, find k values in the BST that are closest to the target. Note: Given target value is a floating point. Y">
-<meta name="keywords" content="Heap">
+<meta name="description" content="衡量一个服务性能的高低好坏，每秒事物处理数(TPS)是最重要的指标之一，它代表着一秒内服务端平均能响应的请求总数，而TPS的值与程序的并发能力又有密切的关系。对于计算量相同的任务，程序线程并发协调越有条不紊，效率自然就越高；反之，线程之间频繁阻塞甚至死锁，将会大大降低程序的并发能力。">
+<meta name="keywords" content="Java,Thread">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Heap">
-<meta property="og:url" content="blog.jiangdongyu.space/2018/06/12/Heap/index.html">
+<meta property="og:title" content="Java内存模型与线程">
+<meta property="og:url" content="blog.jiangdongyu.space/2018/07/06/Java内存模型与线程/index.html">
 <meta property="og:site_name" content="M&amp;Y">
-<meta property="og:description" content="272.Closest Binary Search Tree Value IIGiven a non-empty binary search tree and a target value, find k values in the BST that are closest to the target. Note: Given target value is a floating point. Y">
+<meta property="og:description" content="衡量一个服务性能的高低好坏，每秒事物处理数(TPS)是最重要的指标之一，它代表着一秒内服务端平均能响应的请求总数，而TPS的值与程序的并发能力又有密切的关系。对于计算量相同的任务，程序线程并发协调越有条不紊，效率自然就越高；反之，线程之间频繁阻塞甚至死锁，将会大大降低程序的并发能力。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-12T08:08:29.690Z">
+<meta property="og:image" content="http://p9fh1pach.bkt.clouddn.com/WechatIMG299.jpeg">
+<meta property="og:image" content="http://p9fh1pach.bkt.clouddn.com/WechatIMG300.jpeg">
+<meta property="og:image" content="http://p9fh1pach.bkt.clouddn.com/20141214145942631.png">
+<meta property="og:image" content="http://p9fh1pach.bkt.clouddn.com/20141214150247703.png">
+<meta property="og:image" content="http://p9fh1pach.bkt.clouddn.com/20141214150313341.png">
+<meta property="og:image" content="http://p9fh1pach.bkt.clouddn.com/20141214150758572.png">
+<meta property="og:updated_time" content="2018-07-07T06:57:52.729Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Heap">
-<meta name="twitter:description" content="272.Closest Binary Search Tree Value IIGiven a non-empty binary search tree and a target value, find k values in the BST that are closest to the target. Note: Given target value is a floating point. Y">
+<meta name="twitter:title" content="Java内存模型与线程">
+<meta name="twitter:description" content="衡量一个服务性能的高低好坏，每秒事物处理数(TPS)是最重要的指标之一，它代表着一秒内服务端平均能响应的请求总数，而TPS的值与程序的并发能力又有密切的关系。对于计算量相同的任务，程序线程并发协调越有条不紊，效率自然就越高；反之，线程之间频繁阻塞甚至死锁，将会大大降低程序的并发能力。">
+<meta name="twitter:image" content="http://p9fh1pach.bkt.clouddn.com/WechatIMG299.jpeg">
 
 
 
@@ -139,13 +146,13 @@
 
 
 
-  <link rel="canonical" href="blog.jiangdongyu.space/2018/06/12/Heap/"/>
+  <link rel="canonical" href="blog.jiangdongyu.space/2018/07/06/Java内存模型与线程/"/>
 
 
 
 
 
-  <title>Heap | M&Y</title>
+  <title>Java内存模型与线程 | M&Y</title>
   
 
 
@@ -308,7 +315,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="blog.jiangdongyu.space/2018/06/12/Heap/">
+    <link itemprop="mainEntityOfPage" href="blog.jiangdongyu.space/2018/07/06/Java内存模型与线程/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Agnes">
@@ -325,7 +332,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Heap</h1>
+          <h1 class="post-title" itemprop="name headline">Java内存模型与线程</h1>
         
 
         <div class="post-meta">
@@ -337,8 +344,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-12T12:09:00+08:00">
-                2018-06-12
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-06T19:30:00+08:00">
+                2018-07-06
               </time>
             
 
@@ -360,8 +367,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/算法与数据结构/" itemprop="url" rel="index">
-                    <span itemprop="name">算法与数据结构</span>
+                  <a href="/categories/Java基础/" itemprop="url" rel="index">
+                    <span itemprop="name">Java基础</span>
                   </a>
                 </span>
 
@@ -371,8 +378,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/算法与数据结构/算法/" itemprop="url" rel="index">
-                    <span itemprop="name">算法</span>
+                  <a href="/categories/Java基础/深入理解Java虚拟机/" itemprop="url" rel="index">
+                    <span itemprop="name">深入理解Java虚拟机</span>
                   </a>
                 </span>
 
@@ -382,8 +389,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/算法与数据结构/算法/LeetCode-Category/" itemprop="url" rel="index">
-                    <span itemprop="name">LeetCode Category</span>
+                  <a href="/categories/Java基础/深入理解Java虚拟机/高效并发/" itemprop="url" rel="index">
+                    <span itemprop="name">高效并发</span>
                   </a>
                 </span>
 
@@ -400,8 +407,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/06/12/Heap/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/06/12/Heap/" itemprop="commentsCount"></span>
+                <a href="/2018/07/06/Java内存模型与线程/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/07/06/Java内存模型与线程/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -409,7 +416,7 @@
 
           
           
-             <span id="/2018/06/12/Heap/" class="leancloud_visitors" data-flag-title="Heap">
+             <span id="/2018/07/06/Java内存模型与线程/" class="leancloud_visitors" data-flag-title="Java内存模型与线程">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -434,7 +441,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,729 字
+                  4,437 字
                 </span>
               
 
@@ -450,7 +457,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  9 分钟
+                  15 分钟
                 </span>
               
             </div>
@@ -471,97 +478,112 @@
       
 
       
-        <h3 id="272-Closest-Binary-Search-Tree-Value-II"><a href="#272-Closest-Binary-Search-Tree-Value-II" class="headerlink" title="272.Closest Binary Search Tree Value II"></a>272.Closest Binary Search Tree Value II</h3><p>Given a non-empty binary search tree and a target value, find <strong>k</strong> values in the BST that are closest to the target.</p>
-<p><strong>Note:</strong></p>
-<p>Given target value is a floating point. You may assume k is always valid, that is: k ≤ total nodes. You are guaranteed to have only one unique set of k values in the BST that are closest to the target. </p>
+        <p>衡量一个服务性能的高低好坏，每秒事物处理数(TPS)是最重要的指标之一，它代表着一秒内服务端平均能响应的请求总数，而TPS的值与程序的<strong>并发</strong>能力又有密切的关系。对于计算量相同的任务，程序线程并发协调越有条不紊，效率自然就越高；反之，线程之间频繁阻塞甚至死锁，将会大大降低程序的并发能力。</p>
 <a id="more"></a>
-<p><strong>Follow up:</strong></p>
-<p>Assume that the BST is balanced, could you solve it in less than O(n) runtime (where n = total nodes)?</p>
-<p><strong>Hint:</strong></p>
-<p>Consider implement these two helper functions: getPredecessor(N), which returns the next smaller node to N. getSuccessor(N), which returns the next larger node to N.</p>
+<h2 id="硬件的效率与一致性"><a href="#硬件的效率与一致性" class="headerlink" title="硬件的效率与一致性"></a>硬件的效率与一致性</h2><p>物理机并发问题与虚拟机的情况有不少相似之处。</p>
+<p>计算机的存储设备与处理器的运算速度有几个数量级的差距，因而加入高速缓存来作为内存与处理器之间的缓冲，引入新的问题：<strong>缓存一致性</strong>。</p>
+<p><img src="http://p9fh1pach.bkt.clouddn.com/WechatIMG299.jpeg" alt="avatar"></p>
+<h2 id="Java内存模型"><a href="#Java内存模型" class="headerlink" title="Java内存模型"></a>Java内存模型</h2><h3 id="主内存与工作内存"><a href="#主内存与工作内存" class="headerlink" title="主内存与工作内存"></a>主内存与工作内存</h3><p>Java内存模型的主要目标是定义程序中各个变量的<strong>访问规则</strong>，即在虚拟机中将变量存储到内存和从内存中取出变量这样的底层细节。此处的变量，包括了<strong>实例字段、静态字段和构成数组对象的元素，但不包括局部变量与方法参数</strong>，因为后者是线程私有的，不会被共享，自然没有竞争问题。</p>
+<p>Java内存模型规定了所有的变量都存储在<strong>主内存</strong>中。每条<strong>线程</strong>还有自己的<strong>工作内存</strong>，线程的工作内存中保存了被该线程使用到的变量的主内存副本拷贝，<strong>线程对变量的所有操作都必须在工作内存中进行</strong>，而不能直接读写主内存中的变量。不同的线程之间也无法直接访问对方工作内存中的变量，线程间变量值的传递需要通过主内存来完成。</p>
+<p><img src="http://p9fh1pach.bkt.clouddn.com/WechatIMG300.jpeg" alt="avatar"></p>
+<h3 id="内存间交互操作"><a href="#内存间交互操作" class="headerlink" title="内存间交互操作"></a>内存间交互操作</h3><p>关于主内存与工作内存之间具体的交互协议，即一个变量如何从主内存拷贝到工作内存、如何从工作内存同步回主内存之类的实现细节，Java内存模型中定义了以下8种操作来完成，虚拟机实现时必须保证下面提及的每一种操作都是原子的、不可再分的(对于double和long类型的变量来说，load、store、read和write操作在某些平台上允许有例外)：</p>
 <ul>
-<li>中序遍历法<ul>
-<li>二叉搜索树的中序遍历就是顺序输出二叉搜索树</li>
-<li>中序遍历二叉搜索树，同时维护一个大小为K的队列</li>
-<li>前K个数直接加入队列</li>
-<li>之后每来一个新的数（较大的数），如果该数和目标的差，相比于队头的数离目标的差来说，更小，则将队头拿出来，将新数加入队列</li>
-<li>更大，则直接退出并返回这个队列</li>
+<li>lock(锁定): 作用于<strong>主内存</strong>的变量，它把一个变量标识为一条线程独占的状态</li>
+<li>unlock(解锁): 作用于<strong>主内存</strong>的变量，它把一个处于锁定状态的变量释放出来，释放后的变量才可以被其他线程锁定。</li>
+<li>read(读取): 作用于<strong>主内存</strong>变量，它把一个变量的值从主内存传输到线程的工作内存中，以便随后的load动作使用。</li>
+<li>load(载入): 作用于<strong>工作内存</strong>的变量，它把read操作从主内存中得到的变量值放入到工作内存的变量副本中。</li>
+<li>use(使用): 作用于<strong>工作内存</strong>的变量，它把工作内存中一个变量的值传递给执行引擎，每当虚拟机遇到一个<strong>需要使用到变量</strong>的值的字节码指令的时候将会执行这个操作。</li>
+<li>assign(赋值): 作用于<strong>工作内存</strong>的变量，它把一个从执行引擎接收到的值赋给工作内存的变量，每当虚拟机遇到一个<strong>给变量赋值</strong>的字节码指令时将会执行这个操作。</li>
+<li>store(存储): 作用于<strong>工作内存</strong>变量，它把工作内存中一个变量的值传送到主内存中，以便随后的write操作使用。</li>
+<li>write(写入): 作用于<strong>主内存</strong>变量，它把store操作从工作内存中得到的变量的值放入主内存的变量中。</li>
+</ul>
+<p>Java内存模型还规定了在执行上述8种基本操作时必须满足如下规则：</p>
+<ol>
+<li>不允许read和load、store和write操作之一单独出现，即不允许一个变量从主内存读取了但工作内存不接受，或者从工作内存发起回写了但主内存不接受的情况出现。</li>
+<li>不允许一个线程丢弃它最近的assign操作，即变量在工作内存中改变了之后必须把该变化同步回主内存。</li>
+<li>不允许一个线程无原因地（没有发生过任何assign操作）把数据从线程的工作内存同步会主内存中。</li>
+<li>一个新的变量只能在主内存中“诞生”，不允许在工作内存中直接使用一个未被初始化（load或assign）的变量，换句话说就是对一个变量实施use和store操作之前，必须先执行过assign和load操作。</li>
+<li>一个变量在同一个时刻只允许一条线程对其进行lock操作，但lock操作可以被同一条线程重复执行多次，多次执行lock之后，只有执行相同次数的unlock操作，变量才会被解锁。</li>
+<li>如果对一个变量执行lock操作，将会清空工作内存中此变量的值，在执行引擎使用这个变量前，需要重新执行load或assign操作初始化变量的值。</li>
+<li>如果一个变量事先没有被lock操作锁定，则不允许对它执行unlock操作；也不允许去unlock一个被其他线程锁定住的变量。</li>
+<li>对一个变量执行unlock操作之前，必须先把此变量同步回主内存中（执行store和write操作）。</li>
+</ol>
+<h3 id="对于volatile型变量的特殊规则"><a href="#对于volatile型变量的特殊规则" class="headerlink" title="对于volatile型变量的特殊规则"></a>对于volatile型变量的特殊规则</h3><p>关键字volatile可以说是Java虚拟机提供的<strong>最轻量级的同步机制</strong>。当一个变量被定义成volatile之后，它将具备两种特性，第一是<strong>保证此变量对所有线程的可见性</strong>，这里的“可见性”是指当一条线程修改了这个变量的值，新值对于其他线程来说是可以<strong>立即得知的</strong>。</p>
+<p>由于volatile变量只能保证可见性，在不符合以下两条规则的运算场景中，我们仍然要通过加锁（使用synchronized或java.util.concurrent中的原子类）来保证原子性。</p>
+<ul>
+<li>运算结果并不依赖变量的当前值，或者能够确保只有单一的线程修改变量的值。</li>
+<li>变量不需要与其他的状态变量共同参与不变约束。</li>
+</ul>
+<p>第二个特性是<strong>禁止指令重排序优化</strong>。普通的变量仅仅会保证在该方法的执行过程中所有依赖赋值结果的地方都能获取到正确的结果，而不能保证变量赋值操作的顺序与程序代码中的执行顺序一致。因为在一个线程的方法执行过程中无法感知到这点，这样就是Java内存模型中描述的所谓的“线程内表现为串行的语义”。</p>
+<h3 id="对于long和double型变量的特殊规则"><a href="#对于long和double型变量的特殊规则" class="headerlink" title="对于long和double型变量的特殊规则"></a>对于long和double型变量的特殊规则</h3><p>Java内存模型要求lock、unlock、read、load、assign、use、store和write这8个操作都具有原子性，但是对于64位的数据类型long和double，在模型中特别定义了一条宽松的规定：允许虚拟机将没有被volatile修饰的64位数据的读写操作划分为两次32位的操作来进行，即允许虚拟机实现选择可以不保证64位数据类型的load、store、read和write这四个操作的原子性，这点就是所谓的long和double的<strong>非原子性协定</strong>。</p>
+<p>如果有多个线程共享一个未被声明为volatile的long或double类型的变量，并且同时对它们进行读取和修改操作，那么某些线程可能会读到一个既非原值，也非其他线程修改值的代表了“半个变量”的数值。</p>
+<p>不过这种读取到“半个变量”的情况非常罕见，因为Java内存模型虽然允许虚拟机不把long和double变量的读写实现成原子操作，但<strong>允许虚拟机选择把这些操作实现为具有原子性的操作</strong>，而且还“强烈建议”虚拟机这样实现。目前各种平台下的商用虚拟机几乎都选择吧64位数据的读写操作作为原子操作来对待，因此在编码时，不需要将long和double变量专门声明为volatile。</p>
+<h3 id="原子性、可见性与有序性"><a href="#原子性、可见性与有序性" class="headerlink" title="原子性、可见性与有序性"></a>原子性、可见性与有序性</h3><p>Java内存模型是围绕着在并发过程中如何处理原子性、可见性和有序性这三个特征来建立的：</p>
+<ul>
+<li>原子性(Atomicity):<ul>
+<li>由Java内存模型来直接保证的原子性变量操作包括read、load、assign、use、store和write这六个，我们大致可以认为基本数据类型的访问读写是具备原子性的。</li>
+<li>在synchronized块之间的操作也具备原子性。</li>
+</ul>
+</li>
+<li>可见性(Visibility): <ul>
+<li>指当一个线程修改了共享变量的值，其他线程能够<strong>立即</strong>得知这个修改。</li>
+<li>Java内存模型是通过在变量修改后将新值同步回主内存，在变量读取前从主内存刷新变量值这种依赖主内存作为传递媒介实现可见性的</li>
+<li>普通变量与volatile变量的区别是，volatile的特殊规则保证了新值能<strong>立即</strong>同步到主内存，以及每次使用前立即从主内存刷新。</li>
+<li>除了volatile之外，synchronized和final也能实现可见性。同步块的可见性是由“<strong>对一个变量执行unlock操作之前，必须先把此变量同步回主内存中</strong>”这条规则获得的，而final关键字的可见性是指：<strong>被final修饰的字段在构造器中一旦初始化完成，并且构造器没有把“this”的引用传递出去，那在其他线程中就能看见final字段的值</strong></li>
+</ul>
+</li>
+<li>有序性(Ordering): <ul>
+<li>Java程序中天然的有序性可以总结为一句话：如果在本线程内观察，所有的操作都是有序的；如果在一个线程中观察另一个线程，所有的操作都是无序的。前半句是指“线程内表现为串行的语义”，后半句是指“指令重排序”现象和“工作内存与主内存同步延迟”现象。</li>
+<li>Java语言提供了volatile和synchronized两个关键字来保证线程之间操作的有序性，volatile关键字本身就包含了<strong>禁止指令重排序</strong>的语义，而synchronized则是由“<strong>一个变量在同一个时刻只允许一条线程对其进行lock操作</strong>”这条规则获得的，这条规则决定了持有同一个锁的两个同步块只能<strong>串行</strong>地进入</li>
 </ul>
 </li>
 </ul>
-<p><strong>代码</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title">closestKValues</span><span class="params">(TreeNode root, <span class="keyword">double</span> target, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        Queue&lt;Integer&gt; klist = <span class="keyword">new</span> LinkedList&lt;Integer&gt;();</span><br><span class="line">        Stack&lt;TreeNode&gt; stk = <span class="keyword">new</span> Stack&lt;TreeNode&gt;();</span><br><span class="line">        <span class="comment">// 迭代中序遍历二叉搜索树的代码</span></span><br><span class="line">        <span class="keyword">while</span>(root != <span class="keyword">null</span>)&#123;</span><br><span class="line">            stk.push(root);</span><br><span class="line">            root = root.left;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(!stk.isEmpty())&#123;</span><br><span class="line">            TreeNode curr = stk.pop();</span><br><span class="line">            <span class="comment">// 维护一个大小为k的队列</span></span><br><span class="line">            <span class="comment">// 队列不到k时直接加入</span></span><br><span class="line">            <span class="keyword">if</span>(klist.size() &lt; k)&#123;</span><br><span class="line">                klist.offer(curr.val);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">// 队列到k时，判断下新的数是否更近，更近就加入队列并去掉队头</span></span><br><span class="line">                <span class="keyword">int</span> first = klist.peek();</span><br><span class="line">                <span class="keyword">if</span>(Math.abs(first - target) &gt; Math.abs(curr.val - target))&#123;</span><br><span class="line">                    klist.poll();</span><br><span class="line">                    klist.offer(curr.val);</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="comment">// 如果不是更近则直接退出，后面的数只会更大</span></span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// 中序遍历的代码</span></span><br><span class="line">            <span class="keyword">if</span>(curr.right != <span class="keyword">null</span>)&#123;</span><br><span class="line">                curr = curr.right;</span><br><span class="line">                <span class="keyword">while</span>(curr != <span class="keyword">null</span>)&#123;</span><br><span class="line">                    stk.push(curr);</span><br><span class="line">                    curr = curr.left;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 强制转换成List，是用LinkedList实现的所以可以转换</span></span><br><span class="line">        <span class="keyword">return</span> (List&lt;Integer&gt;)klist;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>相似的题：<br>270.Closest Binary Search Tree Value</strong></p>
-<p>Given a non-empty binary search tree and a target value, find the value in the BST that is closest to the target.</p>
-<p><strong>Note:</strong></p>
-<p>Given target value is a floating point. You are guaranteed to have only one unique value in the BST that is closest to the target.</p>
+<h3 id="先行发生原则"><a href="#先行发生原则" class="headerlink" title="先行发生原则"></a>先行发生原则</h3><p>先行发生是Java内存模型中定义的两项操作之间的<strong>偏序关系</strong>，如果说操作A先行发生于操作B，其实就是说在发生操作B之前，操作A产生的影响能被操作B观察到，“影响”包括修改了内存中共享变量的值、发送了小写、调用了方法等。</p>
+<p>下面是Java内存模型下一些“天然的”先行发生关系，这些先行发送关系无须任何同步器协助就已经存在，可以在编码中直接使用。如果两个操作之间的关系不在此列，并且无法从下列规则推导出来的话，他们就没有顺序性保障，虚拟机可以对它们进行随意重新排序。</p>
 <ul>
-<li>递归<ul>
-<li>当遍历到某个根节点时，最近的那个节点要么是在子树里面，要么就是根节点本身</li>
-<li>根据这个递归，返回子树中最近的节点，和根节点中更近的那个</li>
+<li>程序次序规则(Program Order Rule): 在一个线程内，按照程序<strong>代码顺序</strong>，书写在钱吗的操作先于书写在后面的操作。准确地说应该是控制流顺序而不是程序代码顺序，因为要考虑分支、循环等结构。</li>
+<li>管程锁定规则(Monitor Lock Rule): 一个unlock操作先行发生于后面对同一个锁的lock操作。这里必须强调的是同一个锁，而“后面”是指时间上的先后顺序。</li>
+<li>volatile变量规则(Volatile Variable Rule): 对一个volatile变量的写操作先行发生于后面对这个变量的读操作。“后面”是指时间上的先后顺序。</li>
+<li>线程启动规则(Thread Start Rule): Thread对象的start()方法先行发生于此线程的每一个动作。</li>
+<li>线程终止规则(Thread Termination Rule): 线程中所有操作都先行发生于此线程的终止检测。</li>
+<li>线程中断规则(Thread Interruption Rule): 对线程interrupt()方法的调用先行发生于被中断线程的代码检测到中断事件的发生。</li>
+<li>对象终结规则(Finalizer Rule): 一个对象的初始化完成（构造函数执行结束）先行发生于它的finalize()方法的开始。</li>
+<li>传递性(Transitivity): 如果操作A先行发生于操作B，操作B先行发生于操作C，那就可以得到操作A先行发生于操作C。</li>
+</ul>
+<h2 id="Java与线程"><a href="#Java与线程" class="headerlink" title="Java与线程"></a>Java与线程</h2><h3 id="线程的实现"><a href="#线程的实现" class="headerlink" title="线程的实现"></a>线程的实现</h3><ul>
+<li>使用内核线程实现<ul>
+<li>内核线程(Kernel Thread，KLT)就是直接由操作系统内核支持的线程，这种线程由<strong>内核</strong>来完成<strong>线程切换</strong>，内核通过操纵<strong>调度器</strong>对线程进行调度，并负责将线程的任务映射到各个处理器上。每个内核线程都可以看做是内核的一个分身，这样操作系统就有能力同时处理多件事情，支持多线程的内核就叫<strong>多线程内核</strong>。</li>
+<li>程序一般不会直接使用内核线程，而是去使用内核线程的一种高级接口——轻量级进程(Light Weight Process，LWP)，轻量级进程就是我们通常意义上所讲的线程，由于每个轻量级进程都由一个内核线程支持，因此只有先支持内核线程，才能有轻量级进程。<br><img src="http://p9fh1pach.bkt.clouddn.com/20141214145942631.png" alt="avatar"></li>
+<li>由于内核线程的支持，每个轻量级进程都成为一个<strong>独立</strong>的调度单元，即使有一个轻量级进程在系统调用中阻塞了，也不会影响整个进程继续工作，但轻量级进程具有它的局限性：基于线程内核实现，各种线程操作都需要进行<strong>系统调用</strong>，系统调用代价高，需要在用户态和内核态中来回切换；轻量级进程都需要有一个内核线程的支持，<strong>消耗内核资源</strong></li>
+</ul>
+</li>
+<li>使用用户线程实现<ul>
+<li><strong>广义</strong>上，一个线程只要不是内核线程，那就可以认为是用户线程(User Thread，UT)。</li>
+<li><strong>狭义</strong>上的用户线程指的是完全建立在用户空间的线程库上，系统内核不能感知到线程存在的实现。<br><img src="http://p9fh1pach.bkt.clouddn.com/20141214150247703.png" alt="avatar"></li>
+<li>使用用户线程的<strong>优势劣势</strong>都在于没有系统内核的支援，所有线程操作都需要用户程序自己处理，困难，实现复杂，放弃使用  </li>
+</ul>
+</li>
+<li>使用用户线程加轻量级进程混合实现<ul>
+<li>线程除了依赖内核线程实现和完全由用户程序自己实现之外，还有一种将内核线程与用户线程一起使用的实现方式。在这种混合实现下，既存在用户线程，也存在轻量级进程。<br><img src="http://p9fh1pach.bkt.clouddn.com/20141214150313341.png" alt="avatar"></li>
 </ul>
 </li>
 </ul>
-<p><strong>代码</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">closestValue</span><span class="params">(TreeNode root, <span class="keyword">double</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 选出子树的根节点</span></span><br><span class="line">        TreeNode kid = target &lt; root.val ? root.left : root.right;</span><br><span class="line">        <span class="comment">// 如果没有子树，也就是递归到底时，直接返回当前节点值</span></span><br><span class="line">        <span class="keyword">if</span>(kid == <span class="keyword">null</span>) <span class="keyword">return</span> root.val;</span><br><span class="line">        <span class="comment">// 找出子树中最近的那个节点</span></span><br><span class="line">        <span class="keyword">int</span> closest = closestValue(kid, target);</span><br><span class="line">        <span class="comment">// 返回根节点和子树最近节点中，更近的那个节点</span></span><br><span class="line">        <span class="keyword">return</span> Math.abs(root.val - target) &lt; Math.abs(closest - target) ? root.val : closest;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Java线程调度"><a href="#Java线程调度" class="headerlink" title="Java线程调度"></a>Java线程调度</h3><p>线程调度是指系统为线程分配处理器使用权的过程，主要调度方式有两种，分别是<strong>协同式线程调度</strong>(Cooperative Threads-Scheduling)和<strong>抢占式线程调度</strong>(Preemptive Threads-Scheduling)。</p>
 <ul>
-<li>迭代<ul>
-<li>记录一个最近的值，然后沿着二叉搜索的路径一路比较下去，并更新这个最近值</li>
+<li>如果使用<strong>协同式</strong>调度的多线程系统，线程的执行时间由<strong>线程</strong>本身来控制，线程把自己的工作执行完毕后，要主动通知系统切换到另一个线程上去。</li>
+<li>如果使用<strong>抢占式</strong>调度的多线程系统，那么每个线程将由<strong>系统</strong>来分配执行时间，线程的切换不由线程本身来决定(在Java中，Thread.yield()可以让出执行时间，但要获取执行时间的话，线程本身是没有什么办法)。Java使用抢占式调度。线程优先级</li>
 </ul>
-</li>
+<h3 id="状态转换"><a href="#状态转换" class="headerlink" title="状态转换"></a>状态转换</h3><p>Java语言定义了5种线程状态，在任意一个时间点，一个线程只能有且只有其中的一种状态，这5种状态分别是：</p>
+<ul>
+<li>新建(New): 创建后尚未启动</li>
+<li>运行(Runable): Runable包括了操作系统线程状态中的Running和Ready，也就是处于此状态的线程有可能正在执行，也有可能正在等待CPU为它分配执行时间</li>
+<li>无期限等待(Waiting): 不会被分配CPU执行时间，需要等待被其他线程显式地唤醒</li>
+<li>期限等待(Timed Waiting): 不会被分配CPU执行时间，无须等待被其他线程显式地唤醒，在一定时间之后会由系统自动唤醒</li>
+<li>阻塞(Blocked): 线程被阻塞了，“阻塞状态”与“等待状态”的区别是：“阻塞状态”在等待着获取到一个排他锁，这个事件将在另外一个线程放弃这个锁的时候发生；而“等待状态”则是等待一段时间，或者唤醒动作的发生</li>
+<li>结束(Terminated): 已终止线程的线程状态，线程已经结束执行</li>
 </ul>
-<p><strong>代码</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">closestValue</span><span class="params">(TreeNode root, <span class="keyword">double</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> closest = root.val;</span><br><span class="line">        <span class="keyword">while</span>(root != <span class="keyword">null</span>)&#123;</span><br><span class="line">            <span class="comment">// 如果该节点的离目标更近，则更新到目前为止的最近值</span></span><br><span class="line">            closest = Math.abs(closest - target) &lt; Math.abs(root.val - target) ? closest : root.val;</span><br><span class="line">            <span class="comment">// 二叉搜索</span></span><br><span class="line">            root = target &lt; root.val ? root.left : root.right;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> closest;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="239-Sliding-Window-Maximum"><a href="#239-Sliding-Window-Maximum" class="headerlink" title="239.Sliding Window Maximum"></a>239.Sliding Window Maximum</h3><p>Given an array nums, there is a sliding window of size k which is moving from the very left of the array to the very right. You can only see the k numbers in the window. Each time the sliding window moves right by one position. Return the max sliding window.</p>
-<p><strong>Example:</strong></p>
-<pre><code>Input: nums = [1,3,-1,-3,5,3,6,7], and k = 3
-Output: [3,3,5,5,6,7] 
-Explanation: 
+<p>上述5种状态在遇到特定事件发生的时候会相互转换。<br><img src="http://p9fh1pach.bkt.clouddn.com/20141214150758572.png" alt="avatar"></p>
 
-Window position                Max
----------------               -----
-[1  3  -1] -3  5  3  6  7       3
- 1 [3  -1  -3] 5  3  6  7       3
- 1  3 [-1  -3  5] 3  6  7       5
- 1  3  -1 [-3  5  3] 6  7       5
- 1  3  -1  -3 [5  3  6] 7       6
- 1  3  -1  -3  5 [3  6  7]      7
-</code></pre><p><strong>Note:</strong><br>You may assume k is always valid, 1 ≤ k ≤ input array’s size for non-empty array.</p>
-<p><strong>Follow up:</strong><br>Could you solve it in linear time?</p>
-<p><strong>思路与代码</strong></p>
-<p>就看题目中的例子，[1 3 -1] -3 5 3 6 7，我们知道这个窗口中的最大值为3。我们同时也可以确定，3之前的数字无需加入后面大小的比较，因为它们一定比3小。</p>
-<p>按照这种规则，我们可以维护一个存储了可比较数字的链表。这个链表中的数字可以和当前准备加入链表的值进行比较。那么我们看一下将一个值加入该链表有什么场景：</p>
-<ul>
-<li>链表为空，直接加入</li>
-<li>链表的数量大于窗口，则删除最左侧的值</li>
-<li>链表中有值，且有些值小于即将加入的值，则这些小于的值都被抛弃</li>
-<li>链表中的值均大于即将加入的值，则不进行任何操作</li>
-</ul>
-<p><strong>代码</strong>： 可以用deque</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">int</span>[] maxSlidingWindow(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> k) &#123;</span><br><span class="line">    <span class="keyword">if</span>(nums.length == <span class="number">0</span> || k == <span class="number">0</span>) <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">0</span>];</span><br><span class="line">    LinkedList&lt;Integer&gt; list = <span class="keyword">new</span> LinkedList&lt;Integer&gt;();</span><br><span class="line">    <span class="keyword">int</span>[] result = <span class="keyword">new</span> <span class="keyword">int</span>[nums.length - k + <span class="number">1</span>];</span><br><span class="line">        </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ; i&lt;nums.length ; i++)&#123;</span><br><span class="line">        <span class="keyword">while</span>(list.size() != <span class="number">0</span> &amp;&amp; list.getFirst() &lt; i-k+<span class="number">1</span>)&#123;</span><br><span class="line">            list.remove(<span class="number">0</span>);<span class="comment">//deq.poll()</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(list.size()!=<span class="number">0</span> &amp;&amp; nums[list.getLast()] &lt; nums[i])&#123;</span><br><span class="line">            list.remove(list.size()-<span class="number">1</span>);<span class="comment">//deq.pollLast()</span></span><br><span class="line">        &#125;</span><br><span class="line">        list.addLast(i);</span><br><span class="line">        <span class="keyword">if</span>(i - k + <span class="number">1</span> &gt;= <span class="number">0</span>)&#123;</span><br><span class="line">            result[i-k+<span class="number">1</span>] = nums[list.getFirst()];<span class="comment">//deq.peek()</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="480-Sliding-Window-Median"><a href="#480-Sliding-Window-Median" class="headerlink" title="480.Sliding Window Median"></a>480.Sliding Window Median</h3><blockquote>
-<p>与上一题不同的是这次找的是中位数</p>
-</blockquote>
-<p>For example,<br>Given nums = [1,3,-1,-3,5,3,6,7], and k = 3.</p>
-<pre><code>Window position                Median
----------------               -----
-[1  3  -1] -3  5  3  6  7       1
- 1 [3  -1  -3] 5  3  6  7       -1
- 1  3 [-1  -3  5] 3  6  7       -1
- 1  3  -1 [-3  5  3] 6  7       3
- 1  3  -1  -3 [5  3  6] 7       5
- 1  3  -1  -3  5 [3  6  7]      6
-</code></pre><p>Therefore, return the median sliding window as [1,-1,-1,3,5,6].</p>
-<ul>
-<li>minHeap和maxHeap，maxHeap在保存较小的一半元素，minHeap保存较大的一半元素</li>
-<li>然后调整最大堆和最小堆的大小。根据k值可以分两种情况讨论：<ul>
-<li>若k为偶数，则需要最大堆中元素和最小堆中元素数量相等</li>
-<li>若k为奇数，此时最小堆的堆顶元素即为此时窗口元素的median</li>
-</ul>
-</li>
-</ul>
-<p><strong>代码</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    PriorityQueue&lt;Integer&gt; minHeap;</span><br><span class="line">    PriorityQueue&lt;Integer&gt; maxHeap;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">double</span>[] medianSlidingWindow(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> k) &#123;</span><br><span class="line">        <span class="keyword">int</span> n = nums.length;</span><br><span class="line">        <span class="keyword">double</span>[] result = <span class="keyword">new</span> <span class="keyword">double</span>[n - k + <span class="number">1</span>];</span><br><span class="line">        maxHeap = <span class="keyword">new</span> PriorityQueue&lt;&gt;(k/<span class="number">2</span> + <span class="number">1</span>, (a, b) -&gt; b.compareTo(a));</span><br><span class="line">        minHeap = <span class="keyword">new</span> PriorityQueue&lt;&gt;(k/<span class="number">2</span> + <span class="number">1</span>);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            <span class="comment">// delete the element beyond the window</span></span><br><span class="line">            <span class="keyword">if</span>(maxHeap.size() + minHeap.size() == k) slide(nums[i - k]);</span><br><span class="line">            <span class="comment">// add new element to the window</span></span><br><span class="line">            add(nums[i]);</span><br><span class="line">            <span class="keyword">if</span>(i &gt;= k - <span class="number">1</span>) &#123;</span><br><span class="line">                result[i - k + <span class="number">1</span>] = getMedian();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">slide</span><span class="params">(<span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(minHeap.contains(target)) minHeap.remove(target);</span><br><span class="line">        <span class="keyword">else</span> maxHeap.remove(target);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">        maxHeap.add(num);</span><br><span class="line">        minHeap.add(maxHeap.poll());</span><br><span class="line">        <span class="keyword">if</span>(maxHeap.size() + <span class="number">1</span> &lt; minHeap.size()) maxHeap.add(minHeap.poll());</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">double</span> <span class="title">getMedian</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">// window size is even</span></span><br><span class="line">        <span class="keyword">if</span>(minHeap.size() == maxHeap.size()) <span class="keyword">return</span> minHeap.peek()/<span class="number">2.0</span> + maxHeap.peek()/<span class="number">2.0</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">return</span> minHeap.peek();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -610,7 +632,7 @@ Window position                Max
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="blog.jiangdongyu.space/2018/06/12/Heap/" title="Heap">blog.jiangdongyu.space/2018/06/12/Heap/</a>
+    <a href="blog.jiangdongyu.space/2018/07/06/Java内存模型与线程/" title="Java内存模型与线程">blog.jiangdongyu.space/2018/07/06/Java内存模型与线程/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -625,7 +647,9 @@ Window position                Max
       
         <div class="post-tags">
           
-            <a href="/tags/Heap/" rel="tag"><i class="fa fa-tag"></i> Heap</a>
+            <a href="/tags/Java/" rel="tag"><i class="fa fa-tag"></i> Java</a>
+          
+            <a href="/tags/Thread/" rel="tag"><i class="fa fa-tag"></i> Thread</a>
           
         </div>
       
@@ -638,8 +662,8 @@ Window position                Max
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/09/HashTable/" rel="next" title="HashTable">
-                <i class="fa fa-chevron-left"></i> HashTable
+              <a href="/2018/07/05/晚期(运行期)优化/" rel="next" title="晚期(运行期)优化">
+                <i class="fa fa-chevron-left"></i> 晚期(运行期)优化
               </a>
             
           </div>
@@ -647,10 +671,6 @@ Window position                Max
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/06/13/网络层/" rel="prev" title="计算机网络 -- 网络层">
-                计算机网络 -- 网络层 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -837,7 +857,7 @@ Window position                Max
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#272-Closest-Binary-Search-Tree-Value-II"><span class="nav-number">1.</span> <span class="nav-text">272.Closest Binary Search Tree Value II</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#239-Sliding-Window-Maximum"><span class="nav-number">2.</span> <span class="nav-text">239.Sliding Window Maximum</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#480-Sliding-Window-Median"><span class="nav-number">3.</span> <span class="nav-text">480.Sliding Window Median</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#硬件的效率与一致性"><span class="nav-number">1.</span> <span class="nav-text">硬件的效率与一致性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java内存模型"><span class="nav-number">2.</span> <span class="nav-text">Java内存模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#主内存与工作内存"><span class="nav-number">2.1.</span> <span class="nav-text">主内存与工作内存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内存间交互操作"><span class="nav-number">2.2.</span> <span class="nav-text">内存间交互操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对于volatile型变量的特殊规则"><span class="nav-number">2.3.</span> <span class="nav-text">对于volatile型变量的特殊规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对于long和double型变量的特殊规则"><span class="nav-number">2.4.</span> <span class="nav-text">对于long和double型变量的特殊规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原子性、可见性与有序性"><span class="nav-number">2.5.</span> <span class="nav-text">原子性、可见性与有序性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#先行发生原则"><span class="nav-number">2.6.</span> <span class="nav-text">先行发生原则</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java与线程"><span class="nav-number">3.</span> <span class="nav-text">Java与线程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#线程的实现"><span class="nav-number">3.1.</span> <span class="nav-text">线程的实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java线程调度"><span class="nav-number">3.2.</span> <span class="nav-text">Java线程调度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#状态转换"><span class="nav-number">3.3.</span> <span class="nav-text">状态转换</span></a></li></ol></li></ol></div>
             
 
           </div>
