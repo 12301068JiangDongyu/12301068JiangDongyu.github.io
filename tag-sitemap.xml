@@ -185,14 +185,21 @@
 
     <url>
         <loc>blog.jiangdongyu.space/tags/Java/</loc>
-        <lastmod>2018-07-07T06:57:52.729Z</lastmod>
+        <lastmod>2018-07-08T06:34:36.832Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>blog.jiangdongyu.space/tags/Thread/</loc>
-        <lastmod>2018-07-07T06:57:52.729Z</lastmod>
+        <lastmod>2018-07-08T06:34:36.832Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>blog.jiangdongyu.space/tags/Lock/</loc>
+        <lastmod>2018-07-08T06:34:36.832Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
