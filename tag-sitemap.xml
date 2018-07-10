@@ -58,14 +58,14 @@
     </url>
 
     <url>
-        <loc>blog.jiangdongyu.space/tags/DynamicProgramming/</loc>
+        <loc>blog.jiangdongyu.space/tags/Greedy/</loc>
         <lastmod>2018-05-29T15:46:35.208Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>blog.jiangdongyu.space/tags/Greedy/</loc>
+        <loc>blog.jiangdongyu.space/tags/DynamicProgramming/</loc>
         <lastmod>2018-05-29T15:46:35.208Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -107,13 +107,6 @@
     </url>
 
     <url>
-        <loc>blog.jiangdongyu.space/tags/JVM/</loc>
-        <lastmod>2018-06-08T12:22:08.360Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>blog.jiangdongyu.space/tags/BackTracking/</loc>
         <lastmod>2018-06-09T13:35:12.073Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -149,13 +142,6 @@
     </url>
 
     <url>
-        <loc>blog.jiangdongyu.space/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</loc>
-        <lastmod>2018-06-20T11:01:23.628Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>blog.jiangdongyu.space/tags/HTTP/</loc>
         <lastmod>2018-06-20T11:01:23.628Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -177,29 +163,43 @@
     </url>
 
     <url>
-        <loc>blog.jiangdongyu.space/tags/Class/</loc>
-        <lastmod>2018-07-05T08:57:44.775Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>blog.jiangdongyu.space/tags/Java/</loc>
-        <lastmod>2018-07-08T06:34:36.832Z</lastmod>
+        <loc>blog.jiangdongyu.space/tags/Lock/</loc>
+        <lastmod>2018-07-10T09:01:47.122Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>blog.jiangdongyu.space/tags/Thread/</loc>
-        <lastmod>2018-07-08T06:34:36.832Z</lastmod>
+        <lastmod>2018-07-10T09:02:05.462Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>blog.jiangdongyu.space/tags/Lock/</loc>
-        <lastmod>2018-07-08T06:34:36.832Z</lastmod>
+        <loc>blog.jiangdongyu.space/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</loc>
+        <lastmod>2018-07-10T09:02:27.898Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>blog.jiangdongyu.space/tags/Class/</loc>
+        <lastmod>2018-07-10T09:02:33.638Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>blog.jiangdongyu.space/tags/JVM/</loc>
+        <lastmod>2018-07-10T09:02:44.724Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>blog.jiangdongyu.space/tags/Java/</loc>
+        <lastmod>2018-07-10T09:02:44.724Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
