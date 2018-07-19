@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[HTTPS通信过程]]></title>
+    <url>%2F2018%2F07%2F19%2FHTTPS%E9%80%9A%E4%BF%A1%E8%BF%87%E7%A8%8B%2F</url>
+    <content type="text"><![CDATA[我们都知道HTTPS能够加密信息，以免敏感信息被第三方获取。所以很多银行网站或电子邮箱等等安全级别较高的服务都会采用HTTPS协议。 HTTPS简介HTTPS其实是有两部分组成：HTTP + SSL / TLS，也就是在HTTP上又加了一层处理加密信息的模块。服务端和客户端的信息传输都会通过TLS进行加密，所以传输的数据都是加密后的数据。具体是如何进行加密，解密，验证的，且看下图。 客户端发起HTTPS请求 这个没什么好说的，就是用户在浏览器里输入一个https网址，然后连接到server的443端口。 服务端的配置 采用HTTPS协议的服务器必须要有一套数字证书，可以自己制作，也可以向组织申请。区别就是自己颁发的证书需要客户端验证通过，才可以继续访问，而使用受信任的公司申请的证书则不会弹出提示页面(startssl就是个不错的选择，有1年的免费服务)。这套证书其实就是一对公钥和私钥。如果对公钥和私钥不太理解，可以想象成一把钥匙和一个锁头，只是全世界只有你一个人有这把钥匙，你可以把锁头给别人，别人可以用这个锁把重要的东西锁起来，然后发给你，因为只有你一个人有这把钥匙，所以只有你才能看到被这把锁锁起来的东西。 传送证书 这个证书其实就是公钥，只是包含了很多信息，如证书的颁发机构，过期时间等等。 客户端解析证书 这部分工作是有客户端的TLS来完成的，首先会验证公钥是否有效，比如颁发机构，过期时间等等，如果发现异常，则会弹出一个警告框，提示证书存在问题。如果证书没有问题，那么就生成一个随机值。然后用*8证书对该随机值进行加密**。就好像上面说的，把随机值用锁头锁起来，这样除非有钥匙，不然看不到被锁住的内容。 传送加密信息 这部分传送的是用证书加密后的随机值，目的就是让服务端得到这个随机值，以后客户端和服务端的通信就可以通过这个随机值来进行加密解密了。 服务段解密信息 服务端用私钥解密后，得到了客户端传过来的随机值(私钥)，然后把内容通过该值进行对称加密。所谓对称加密就是，将信息和私钥通过某种算法混合在一起，这样除非知道私钥，不然无法获取内容，而正好客户端和服务端都知道这个私钥，所以只要加密算法够彪悍，私钥够复杂，数据就够安全。 传输加密后的信息 这部分信息是服务段用私钥加密后的信息，可以在客户端被还原 客户端解密信息 客户端用之前生成的私钥解密服务段传过来的信息，于是获取了解密后的内容。整个过程第三方即使监听到了数据，也束手无策。]]></content>
+      <categories>
+        <category>Java面试</category>
+        <category>HTTPS</category>
+      </categories>
+      <tags>
+        <tag>计算机网络</tag>
+        <tag>HTTPS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[对Spring IOC和AOP的理解]]></title>
     <url>%2F2018%2F07%2F15%2FSpring%20IOC%20AOP%2F</url>
     <content type="text"><![CDATA[在面试中，经常会问，说说你对Spring IOC和AOP的理解，问题很宽泛，似乎不知道从何说起。 回答思路： 先用通俗易懂的话解释下何为IOC和AOP 各自的实现原理 自己的项目中如何使用 以下是个人的一些总结，仅供参考。 IOC许多应用都是通过彼此间的相互合作来实现业务逻辑的，如类A要调用类B的方法，以前我们都是在类A中，通过自身new一个类B，然后在调用类B的方法，现在我们把new类B的事情交给Spring来做，在我们调用的时候，容器会为我们实例化。 IOC容器的初始化过程 资源定位，即定义bean的xml 载入 IOC容器注册，注册beanDefinition IOC容器的初始化过程，一般不包含bean的依赖注入的实现，在Spring IOC设计中，bean的注册和依赖注入是两个过程，依赖注入一般发生在应用第一次索取bean的时候，但是也可以在xm中配置，在容器初始化的时候，这个bean就完成了初始化。 三种注入方式： 构造器 接口 set注入(常用) bean是如何创建——工厂模式 数据是如何注入——反射 IOC的定义及实现原理 AOP面向切面编程，在我们的应用中，经常需要做一些事情，但是这些事情与核心业务无关，比如，要记录所有update*方法的执行时间时间，操作人等等信息，记录到日志， 通过Spring的AOP技术，就可以在不修改update*的代码的情况下完成该需求。 AOP的好处就是你只需要干你的正事，其它事情别人帮你干。 从Spring的角度看，AOP最大的用途就在于提供了事务管理的能力。事务管理就是一个关注点，你的正事就是去访问数据库，而你不想管事务（太烦），所以，Spring在你访问数据库之前，自动帮你开启事务，当你访问数据库结束之后，自动帮你提交/回滚事务！ AOP的实现原理——代理 AOP的应用的三种实现方式]]></content>
@@ -472,9 +485,9 @@
       </categories>
       <tags>
         <tag>Array</tag>
+        <tag>DynamicProgramming</tag>
         <tag>Greedy</tag>
         <tag>Sort</tag>
-        <tag>DynamicProgramming</tag>
       </tags>
   </entry>
   <entry>
@@ -502,19 +515,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[位运算]]></title>
-    <url>%2F2018%2F04%2F07%2F%E4%BD%8D%E8%BF%90%E7%AE%97%2F</url>
-    <content type="text"><![CDATA[例题 XOR相关Single Number 找到数组中只出现一次的元素，其它出现两次，不用额外内存异或XOR ^ Concept If we take XOR of zero and some bit, it will return that bit a⊕0=a If we take XOR of two same bits, it will return 0 a⊕a=0 a⊕b⊕a=(a⊕a)⊕b=0⊕b=b Single Number II 找到数组中只出现一次的元素，其它出现三次，不用额外内存 利用只出现3次的特性，模3的值只可能是0或1，则第一次出现存在ones中，第二次出现存在twos中，同时清掉ones的值，第三次出现，存在ones中，但twos中有了，同时清掉ones，twos的值 12345678public int singleNumber(int[] A) &#123; int ones = 0, twos = 0; for(int i = 0; i &lt; A.length; i++)&#123; ones = (ones ^ A[i]) &amp; ~twos; twos = (twos ^ A[i]) &amp; ~ones; &#125; return ones;&#125; Single Number III 2n+2的数组，每个元素出现两次，除了两个只出现一次的数，找到这两个数 time O(n) space O(1) 遍历数组异或，得到两个只出现一次的数异或之后的值x 将该值x与~(x-1)相与，获得最后几位不同的数值y 初始化返回数组，res[2]={0,0} 遍历数组，判断num[i]&amp;y == 0? res[0]^num[i]:res[1]^num[i] Missing Number 给定一个0-n每个元素都不同的数组，数组元素缺了一个，比如0，1，3，缺了2，找到缺少的那个数 对0-n做异或得x 对数组做异或得y 返回x^y &amp;相关Count of 1 bits 给定一个整数，求该整数二进制表示时1的个数 检查每一位是否是1，右移12345678910static int countSetBits(int n)&#123; int count = 0; while (n &gt; 0) &#123; count += n &amp; 1; n &gt;&gt;= 1; &#125; return count;&#125; bitwise从integer减1时，从右往左所有0变1，将最右边1变为0 比如110100 减1 得110011，对这两个数做&amp;，变为110000 所以n &amp; (n-1)可以将n的最后一个1消掉，用while判断是否消掉所有的1 Power of Two 给定一个整数，判断是否是2的次方 2的power只有一位是1，利用n &amp; (n-1)将1消掉，接着判断是否为0 Shift相关Reverse Bits 0100 -&gt; 0010 32位整数，循环32次，将当前bit赋值给res,整数右移，res左移 1234567891011public class Solution &#123; // you need treat n as an unsigned value public int reverseBits(int n) &#123; int res = 0; for(int i = 0;i &lt; 32;i++)&#123; res = (res&lt;&lt;1) | (n&amp;1); n = n&gt;&gt;1; &#125; return res; &#125;&#125; Math相关Bitwise AND of Numbers Range 给定范围[m, n]，其中 0 &lt;= m &lt;= n &lt;= 2147483647，返回范围内所有整数的按位与，包括边界。 例如，给定范围[5, 7], 你应该返回4。 [m, n]范围的按位与的结果为m与n的公共“左边首部（left header）” 1234567891011class Solution &#123; public int rangeBitwiseAnd(int m, int n) &#123; int count = 0; while(m!=n)&#123; m = m&gt;&gt;1; n = n&gt;&gt;1; count++; &#125; return m&lt;&lt;count; &#125;&#125;]]></content>
-      <categories>
-        <category>算法与数据结构</category>
-        <category>算法</category>
-        <category>LeetCode Category</category>
-      </categories>
-      <tags>
-        <tag>Math</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[LinkedList]]></title>
     <url>%2F2018%2F04%2F07%2FLinkedList%2F</url>
     <content type="text"><![CDATA[dummy node的运用 merge linked list一定要会 题目列表LinkedList题大体可分为三类：reverse类、Merge类、快慢针类 Rotate List Copy list with random pointers Convert sorted list to Binary Search Tree Remove Duplicates Remove Duplicates II Add Two Numbers insertion sort list use a dummy node to add node to new list one at a time reverse类 reverse linked list reverse print list reverse nodes in k group swap nodes in pairs palindrome list reorder list Merge类 merge linked list merge K sorted List 快慢针类 list cycle I, II get kth node ( get middle node) intersection of two lists remove nth node from end of list Add Two Numbers Input: (2 -&gt; 4 -&gt; 3) + (5 -&gt; 6 -&gt; 4) Output: 7 -&gt; 0 -&gt; 8 Explanation: 342 + 465 = 807. dummy node的使用，sum &amp; carry 最后要对carry进行判断 Remove Duplicates For example, Given 1-&gt;1-&gt;2, return 1-&gt;2. Given 1-&gt;1-&gt;2-&gt;3-&gt;3, return 1-&gt;2-&gt;3. 保留重复的值，可用cur = head,判断cur.val == cur.next.val ? Remove Duplicates II For example, Given 1-&gt;2-&gt;3-&gt;3-&gt;4-&gt;4-&gt;5, return 1-&gt;2-&gt;5. Given 1-&gt;1-&gt;1-&gt;2-&gt;3, return 2-&gt;3. 删除重复的值，需要dummy node，cur = dummy,需要记录cur.next.val进行循环删除 Merge类Merge Two Sorted Lists 递归 非递归 Merge K Sorted Lists 二分+递归 使用堆（优先队列），将K个链表的头结点全部添加到队列，由于优先级队列采用了最小堆数据结构，堆顶为队列的最小元素，我们将其取出添加到结果链表中，取出元素对应的链表下移一个节点，并将这个节点添加到优先级队列中；然后我们继续取出堆顶元素，…，直到优先级队列为空，那么其中所有元素取尽，K个链表的元素已经全部排序到结果链表。 快慢针类List Cycle 快慢指针，最后是否相遇 fast.next != null &amp;&amp; fast.next.next != null List Cycle II 找到环开始的地方 假设从起点到环开始的地方长度为x,相遇点距离环起点为k，环长为L d = x + m*L + k 2d = x + n*L +k 则 x + (2m -n)*L +k = 0 所以 x = (L-k) + (n-2m-1)*L 所以 一指针从开始出发，一指针从相遇点出发，最终会在环开始的地方相遇 Remove Nth Node From End 删除从尾部开始数的第n个结点 快慢指针，快指针先走n步 Partition List 给定一个链表，一个整数x，将链表分开确定一边比x小，另一表不小于x，并保持原来的链表的相对顺序 需要dummy node 可以新建一个链表用来存小于x的node,并将原来对应的node删掉，最后将原来的list接在现在的之后 reverse类Reverse Linked List 头插法 递归 Reverse Linked List II 将链表m到n的位置的结点逆置 dummy node 找到开始反转的前一个node pre 维持不变，以及找到真正开始反转的结点start，下一个结点 then Palindrome List 双指针，判断fast.next是否为null，不是则slow = slow.next 对slow进行逆置 一一比较两个链表的值 Swap Nodes in Pairs For example,Given 1-&gt;2-&gt;3-&gt;4, you should return the list as 2-&gt;1-&gt;4-&gt;3. dummy node 三个node的使用，cur first second cur = cur.next.next Reorder List Given a singly linked list L: L0→L1→…→Ln-1→Ln, reorder it to: L0→Ln→L1→Ln-1→L2→Ln-2→… 找到中点，前半部分结尾设为null 将后半部分reverse 再merge Rotate List Given 1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;NULL and k = 2, return 4-&gt;5-&gt;1-&gt;2-&gt;3-&gt;NULL. two pointer 找到length-k个，注意k可能大于length(%),并将next设为null 将原来链表的end的next设为head 返回原来的length-k+1个 Copy List with Random Pointer 如果要copy一个带有random pointer的list，主要的问题就是有可能这个random指向的位置还没有被copy到，所以解决方法都是多次扫描list。 使用HashMap，HashMap的key存原始pointer，value存新的pointer。 hashmap，一次遍历put(node,new RandomListNode(node.label)) 再次遍历，对next，random指针进行修改 3次遍历list，时间复杂度为O(3n)=O(n)。 对每个node进行复制，并插入其原始node的后面，新旧交替，变成重复链表。如：原始：1-&gt;2-&gt;3-&gt;null，复制后：1-&gt;1-&gt;2-&gt;2-&gt;3-&gt;3-&gt;null 遍历每个旧node，把旧node的random的复制给新node的random，因为链表已经是新旧交替的。所以复制方法为： node.next.random = node.random.next 前面是说旧node的next的random，就是新node的random，后面是旧node的random的next，正好是新node，是从旧random复制来的。 把新旧两个表拆开，返回新的表即可。 Convert Sorted List to Binary Search Tree递归 找到中点 递归 中序遍历 左子树-根-右子树 Intersection of Two Linked ListFor example, the following two linked lists: A: a1 → a2 → c1 → c2 → c3 B: b1 → b2 → b3 → c1 → c2 → c3 begin to intersect at node c1. 获得两个链表的长度差x，较长的先往前x，再一起往前，直到相等]]></content>
@@ -525,6 +525,19 @@
       </categories>
       <tags>
         <tag>LinkedList</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[位运算]]></title>
+    <url>%2F2018%2F04%2F07%2F%E4%BD%8D%E8%BF%90%E7%AE%97%2F</url>
+    <content type="text"><![CDATA[例题 XOR相关Single Number 找到数组中只出现一次的元素，其它出现两次，不用额外内存异或XOR ^ Concept If we take XOR of zero and some bit, it will return that bit a⊕0=a If we take XOR of two same bits, it will return 0 a⊕a=0 a⊕b⊕a=(a⊕a)⊕b=0⊕b=b Single Number II 找到数组中只出现一次的元素，其它出现三次，不用额外内存 利用只出现3次的特性，模3的值只可能是0或1，则第一次出现存在ones中，第二次出现存在twos中，同时清掉ones的值，第三次出现，存在ones中，但twos中有了，同时清掉ones，twos的值 12345678public int singleNumber(int[] A) &#123; int ones = 0, twos = 0; for(int i = 0; i &lt; A.length; i++)&#123; ones = (ones ^ A[i]) &amp; ~twos; twos = (twos ^ A[i]) &amp; ~ones; &#125; return ones;&#125; Single Number III 2n+2的数组，每个元素出现两次，除了两个只出现一次的数，找到这两个数 time O(n) space O(1) 遍历数组异或，得到两个只出现一次的数异或之后的值x 将该值x与~(x-1)相与，获得最后几位不同的数值y 初始化返回数组，res[2]={0,0} 遍历数组，判断num[i]&amp;y == 0? res[0]^num[i]:res[1]^num[i] Missing Number 给定一个0-n每个元素都不同的数组，数组元素缺了一个，比如0，1，3，缺了2，找到缺少的那个数 对0-n做异或得x 对数组做异或得y 返回x^y &amp;相关Count of 1 bits 给定一个整数，求该整数二进制表示时1的个数 检查每一位是否是1，右移12345678910static int countSetBits(int n)&#123; int count = 0; while (n &gt; 0) &#123; count += n &amp; 1; n &gt;&gt;= 1; &#125; return count;&#125; bitwise从integer减1时，从右往左所有0变1，将最右边1变为0 比如110100 减1 得110011，对这两个数做&amp;，变为110000 所以n &amp; (n-1)可以将n的最后一个1消掉，用while判断是否消掉所有的1 Power of Two 给定一个整数，判断是否是2的次方 2的power只有一位是1，利用n &amp; (n-1)将1消掉，接着判断是否为0 Shift相关Reverse Bits 0100 -&gt; 0010 32位整数，循环32次，将当前bit赋值给res,整数右移，res左移 1234567891011public class Solution &#123; // you need treat n as an unsigned value public int reverseBits(int n) &#123; int res = 0; for(int i = 0;i &lt; 32;i++)&#123; res = (res&lt;&lt;1) | (n&amp;1); n = n&gt;&gt;1; &#125; return res; &#125;&#125; Math相关Bitwise AND of Numbers Range 给定范围[m, n]，其中 0 &lt;= m &lt;= n &lt;= 2147483647，返回范围内所有整数的按位与，包括边界。 例如，给定范围[5, 7], 你应该返回4。 [m, n]范围的按位与的结果为m与n的公共“左边首部（left header）” 1234567891011class Solution &#123; public int rangeBitwiseAnd(int m, int n) &#123; int count = 0; while(m!=n)&#123; m = m&gt;&gt;1; n = n&gt;&gt;1; count++; &#125; return m&lt;&lt;count; &#125;&#125;]]></content>
+      <categories>
+        <category>算法与数据结构</category>
+        <category>算法</category>
+        <category>LeetCode Category</category>
+      </categories>
+      <tags>
+        <tag>Math</tag>
       </tags>
   </entry>
   <entry>

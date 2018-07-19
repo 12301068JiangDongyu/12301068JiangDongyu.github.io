@@ -161,15 +161,22 @@
     </url>
 
     <url>
-        <loc>blog.jiangdongyu.space/categories/Java%E9%9D%A2%E8%AF%95/</loc>
+        <loc>blog.jiangdongyu.space/categories/Java%E9%9D%A2%E8%AF%95/Spring/</loc>
         <lastmod>2018-07-15T15:01:58.477Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>blog.jiangdongyu.space/categories/Java%E9%9D%A2%E8%AF%95/Spring/</loc>
-        <lastmod>2018-07-15T15:01:58.477Z</lastmod>
+        <loc>blog.jiangdongyu.space/categories/Java%E9%9D%A2%E8%AF%95/</loc>
+        <lastmod>2018-07-19T05:15:30.261Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>blog.jiangdongyu.space/categories/Java%E9%9D%A2%E8%AF%95/HTTPS/</loc>
+        <lastmod>2018-07-19T05:15:30.261Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
