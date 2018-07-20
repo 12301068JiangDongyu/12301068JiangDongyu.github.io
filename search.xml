@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[第四范式]]></title>
+    <url>%2F2018%2F07%2F19%2F%E7%AC%AC%E5%9B%9B%E8%8C%83%E5%BC%8F%2F</url>
+    <content type="text"><![CDATA[第四范式 Java 开发实习生 面试 一面 自我介绍 介绍一下项目 Exception &amp;&amp; Error synchronized关键字static修饰和没有static修饰 比如synchronized修饰方法，让循环输出1-10，new两个类，调用该线程 作用域不同，static修饰指同步类，输出两次1-10 非static修饰，是同步局部变量，不能确定结果 final修饰字段，方法，类 字段不可变 方法不可override 类不能被继承 String,StringBuilder,StringBuffer String不可变，源码是用final修饰的private数组，同时方法等没改变数组的值 StringBuilder，StringBuffer都可变，StringBuffer线程安全 ArrayList和LinkedList 同：实现List接口 异：ArrayList查 O(1),增删 O(n) LinkedList查 O(n),增删 O(1) 知不知道Dequeue? 实现最小栈GetMin() leetcode原题155.Min Stack Q: Exception &amp;&amp; Error A: Error和Exception都继承自Throwable； Exception： RuntimeException 类及其子类表示“JVM 常用操作”引发的错误 可以是可被控制（checked）或者不可控制（unchecked）； unchecked exception（非检查异常）: 运行时异常,比如常见的NullPointerException、IndexOutOfBoundsException。对于运行时异常，java编译器不要求必须进行异常捕获处理或者抛出声明，由程序员自行决定。 checked exception（检查异常，编译异常）: 非运行时异常,java编译器强制程序员必须进行捕获处理，比如常见的IOExeption和SQLException。对于非运行时异常如果不进行捕获或者抛出声明处理，编译都不会通过。 表示一个由程序员导致的错误； 应该在应用程序级被处理； Error： 大多数错误与代码编写者执行的操作无关，而表示代码运行时 JVM（Java 虚拟机）出现的问题。 总是不可控制的（unchecked）； 经常用来表示系统错误或者底层资源错误； 如果可能的话，应该在系统级被捕捉； 二面 自我介绍 项目介绍比较详细 问了下熟悉的技术]]></content>
+      <categories>
+        <category>面试经历</category>
+        <category>2018</category>
+        <category>实习</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[HTTPS通信过程]]></title>
     <url>%2F2018%2F07%2F19%2FHTTPS%E9%80%9A%E4%BF%A1%E8%BF%87%E7%A8%8B%2F</url>
     <content type="text"><![CDATA[我们都知道HTTPS能够加密信息，以免敏感信息被第三方获取。所以很多银行网站或电子邮箱等等安全级别较高的服务都会采用HTTPS协议。 HTTPS简介HTTPS其实是有两部分组成：HTTP + SSL / TLS，也就是在HTTP上又加了一层处理加密信息的模块。服务端和客户端的信息传输都会通过TLS进行加密，所以传输的数据都是加密后的数据。具体是如何进行加密，解密，验证的，且看下图。 客户端发起HTTPS请求 这个没什么好说的，就是用户在浏览器里输入一个https网址，然后连接到server的443端口。 服务端的配置 采用HTTPS协议的服务器必须要有一套数字证书，可以自己制作，也可以向组织申请。区别就是自己颁发的证书需要客户端验证通过，才可以继续访问，而使用受信任的公司申请的证书则不会弹出提示页面(startssl就是个不错的选择，有1年的免费服务)。这套证书其实就是一对公钥和私钥。如果对公钥和私钥不太理解，可以想象成一把钥匙和一个锁头，只是全世界只有你一个人有这把钥匙，你可以把锁头给别人，别人可以用这个锁把重要的东西锁起来，然后发给你，因为只有你一个人有这把钥匙，所以只有你才能看到被这把锁锁起来的东西。 传送证书 这个证书其实就是公钥，只是包含了很多信息，如证书的颁发机构，过期时间等等。 客户端解析证书 这部分工作是有客户端的TLS来完成的，首先会验证公钥是否有效，比如颁发机构，过期时间等等，如果发现异常，则会弹出一个警告框，提示证书存在问题。如果证书没有问题，那么就生成一个随机值。然后用*8证书对该随机值进行加密**。就好像上面说的，把随机值用锁头锁起来，这样除非有钥匙，不然看不到被锁住的内容。 传送加密信息 这部分传送的是用证书加密后的随机值，目的就是让服务端得到这个随机值，以后客户端和服务端的通信就可以通过这个随机值来进行加密解密了。 服务段解密信息 服务端用私钥解密后，得到了客户端传过来的随机值(私钥)，然后把内容通过该值进行对称加密。所谓对称加密就是，将信息和私钥通过某种算法混合在一起，这样除非知道私钥，不然无法获取内容，而正好客户端和服务端都知道这个私钥，所以只要加密算法够彪悍，私钥够复杂，数据就够安全。 传输加密后的信息 这部分信息是服务段用私钥加密后的信息，可以在客户端被还原 客户端解密信息 客户端用之前生成的私钥解密服务段传过来的信息，于是获取了解密后的内容。整个过程第三方即使监听到了数据，也束手无策。]]></content>
@@ -14,12 +27,26 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[菜鸟一面]]></title>
+    <url>%2F2018%2F07%2F19%2F%E8%8F%9C%E9%B8%9F%E4%B8%80%E9%9D%A2%2F</url>
+    <content type="text"><![CDATA[说了下午有事，就简单聊了半个小时 为什么要用多线程 线程是不是越多效率越快？ 怎么控制线程，尽可能减少上下文切换？或者说有没有一种方式达到了多线程的效果，但是避免了上下文切换？ 提示concurrent包里有 讲一下Spring IOC，为什么要控制反转？目的是啥？IOC的过程？ 两个int型的set求交集？ 求交集的同时，还要给出相同的数字的个数？ 如果set特别大，大到无法在内存处理，怎么办？ Linux的了解？ 问微软的pipeline导入为什么能提高效率？ 问了下职业规划]]></content>
+      <categories>
+        <category>面试经历</category>
+        <category>2018</category>
+        <category>秋招</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Keep]]></title>
     <url>%2F2018%2F07%2F17%2FKeep%2F</url>
     <content type="text"><![CDATA[Keep Java 开发实习生 面试 一面 自我介绍 问项目 int[]数组长度为n，问数组中连续m个数的最大值 链表反转 20w条ip地址的数据，给一个ip地址，怎么找到？ 设计用户发微博的数据库，以及查看首页功能 首页时间线表，但对于大V发微博，告知关注者的时间线处理有问题 微博用户群组问题，怎么做到分群组？ 图的BFS 对设计的微博的表，怎么建索引？建索引为什么会快？ http和https的区别？https的加密过程？ Q：哪些情况需要加索引？ 在经常需要搜索的列上，可以加快搜索的速度； 在作为主键的列上，强制该列的唯一性和组织表中数据的排列结构； 在经常用在连接的列上，这些列主要是一些外键，可以加快连接的速度； 在经常需要根据范围进行搜索的列上创建索引，因为索引已经排序，其指定的范围是连续的； 在经常需要排序的列上创建索引，因为索引已经排序，这样查询可以利用索引的排序，加快排序查询时间； 在经常使用在WHERE子句中的列上面创建索引，加快条件的判断速度。 Q：哪些情况不需要加索引？ 第一，对于那些在查询中很少使用或者参考的列不应该创建索引。这是因为，既然这些列很少使用到，因此有索引或者无索引，并不能提高查询速度。相反，由于增加了索引，反而降低了系统的维护速度和增大了空间需求。 第二，对于那些只有很少数据值的列也不应该增加索引。这是因为，由于这些列的取值很少，例如人事表的性别列，在查询的结果中，结果集的数据行占了表中数据行的很大比例，即需要在表中搜索的数据行的比例很大。增加索引，并不能明显加快检索速度。 第三，对于那些定义为text, image和bit数据类型的列不应该增加索引。这是因为，这些列的数据量要么相当大，要么取值很少。 第四，当修改性能远远大于检索性能时，不应该创建索引。这是因为，修改性能和检索性能是互相矛盾的。当增加索引时，会提高检索性能，但是会降低修改性能。当减少索引时，会提高修改性能，降低检索性能。因此，当修改性能远远大于检索性能时，不应该创建索引。 Q：数据库建立索引为什么会加快查询速度？ 首先明白为什么索引会增加速度，DB在执行一条Sql语句的时候，默认的方式是根据搜索条件进行全表扫描，遇到匹配条件的就加入搜索结果集合。如果我们对某一字段增加索引，查询时就会先去索引列表中一次定位到特定值的行数，大大减少遍历匹配的行数，所以能明显增加查询的速度。 HTTPS通信过程 二面 介绍项目 垃圾回收策略 HotSpot垃圾收集器，G1的特点，优缺点… 垃圾收集器与内存分配策略 为什么Eden: Survivor: Survivor是8:1:1 ? IOC，IOC的初始化过程？ AOP，AOP的动态代理怎么做？ InvocationHandler接口 concurrent包里有些啥？ ThreadPoolExecutor类得看源码 Java锁机制，Java怎么实现CAS的？多线程i++问题？AtomicInteger？UnSafe类？]]></content>
       <categories>
-        <category>实习面试经历</category>
+        <category>面试经历</category>
         <category>2018</category>
+        <category>实习</category>
       </categories>
       <tags>
         <tag>Java</tag>
@@ -340,11 +367,12 @@
   </entry>
   <entry>
     <title><![CDATA[商汤]]></title>
-    <url>%2F2018%2F05%2F18%2F%E5%95%86%E6%B1%A4Java%E5%AE%9E%E4%B9%A0%E7%94%9F%2F</url>
+    <url>%2F2018%2F05%2F18%2F%E5%95%86%E6%B1%A4%2F</url>
     <content type="text"><![CDATA[商汤Java实习生面试 Collections框架体系 HashSet的特性 基于HashMap实现 无序不重复 HashMap结构 哈希表，数组+链表 HashMap和ConcurrentHashMap区别 锁的了解 线程池有哪些？ 怎么实现线程？ 并发包… SpringBoot中@ReseController注解对应哪两个 @ResponseBody和@Controller的组合注解。 Redis支持哪些类型？ Strings Lists Sets 求交集、并集 Sorted Set hashes]]></content>
       <categories>
-        <category>实习面试经历</category>
+        <category>面试经历</category>
         <category>2018</category>
+        <category>实习</category>
       </categories>
       <tags>
         <tag>Java</tag>
@@ -396,12 +424,10 @@
     <url>%2F2018%2F04%2F24%2F%E5%BE%AE%E8%BD%AFOffice%20STCA%2F</url>
     <content type="text"><![CDATA[微软Office STCA暑期实习面试 一面 介绍azure table为什么能做到一个用户的数据在一台机器上 介绍datafactory入hive的过程，如果将copy和hive分开，怎么做？用socket？为什么websocket能做到双方发消息？ 多态是在编译时知道？还是运行时？ B extends A; A a = new A() 编译时 A a = new B() 运行时 给定一个正整数，求阶乘？ 越界？ 非递归？ n较小时 public static long getNFactorial(int n){ if(n==0){ return 1l; } return n*getNFactorial1(n-1); } public static long getNFactorial1(int n){ if(n==0){ return 1l; } long sum=1l; for(int i=1;i&lt;=n;i++){ sum=sum*i; } return sum; } n较大时 public static void getNFactorial(int n) { int num[] = new int[1000]; int i, j; if (n == 1 || n == 0) { System.out.println(1); } else { int p, h;// p 存放当前结果的位数，h为进位； p = 1; h = 0; num[1] = 1; for (i = 2; i &lt;= n; i++) { // 使得a[]的每位与i相乘 for (j = 1; j &lt;= p; j++) { num[j] = num[j] * i + h; h = num[j] / 10; num[j] = num[j] % 10; } // 表示向新的位置进位 while (h &gt; 0) { num[j] = h % 10; h = h / 10; j++; } p = j - 1; } for (i = p; i &gt;= 1; i--) { System.out.print(num[i]); } } } 二面 2 Sum &amp; 3 Sum int parse(String str)的测试用例 为什么用azure？]]></content>
       <categories>
-        <category>实习面试经历</category>
+        <category>面试经历</category>
         <category>2018</category>
+        <category>暑期</category>
       </categories>
-      <tags>
-        <tag>Java</tag>
-      </tags>
   </entry>
   <entry>
     <title><![CDATA[Sort]]></title>
@@ -464,8 +490,9 @@
     <url>%2F2018%2F04%2F16%2F%E8%85%BE%E8%AE%AF%2F</url>
     <content type="text"><![CDATA[腾讯后台开发实习生暑期实习面试 自我介绍 写hql 给定腾讯新闻数据，三个表 第一个表：腾讯新闻版面id，文章id 第二个表，浏览行为数据：时间戳，版面id，文章id 第三个表，评论行为数据：时间戳，版面id，文章id 求每天文章/版面的曝光 曝光 = 评论/浏览 求两个数组的交集 hashset 排序，再比较]]></content>
       <categories>
-        <category>实习面试经历</category>
+        <category>面试经历</category>
         <category>2018</category>
+        <category>暑期</category>
       </categories>
       <tags>
         <tag>Java</tag>
@@ -497,9 +524,9 @@
       </categories>
       <tags>
         <tag>Array</tag>
-        <tag>DynamicProgramming</tag>
         <tag>Greedy</tag>
         <tag>Sort</tag>
+        <tag>DynamicProgramming</tag>
       </tags>
   </entry>
   <entry>
@@ -507,8 +534,9 @@
     <url>%2F2018%2F04%2F10%2F%E8%85%BE%E8%AE%AF%E4%BA%91%2F</url>
     <content type="text"><![CDATA[腾讯云后台开发实习生暑期实习面试 介绍项目 多线程的实现方式，线程的状态 new Thread / implements Runnable gc,什么时候gc，内存溢出 Java GC Linux指令，怎么查看内存线程使用情况 Mysql索引，group by &amp; union TCP的…四次挥手，为什么等待2MSL? 用过哪些大数据框架 怎么判断一棵二叉树是镜像的？ 层次遍历，每次取左子树左右结点，右子树右左结点，判断是否相同 栈实现O(1)获得最小的数getMin() 非常棒的一道题。原理很简单，但是需要思考清楚为什么可以。原理可以参考下图： 准备两个栈，一个正常栈，一个辅助栈，正常栈做pop和push。辅助栈push更新最小值，pop出正常栈的最小值。 过程很简单，当正常栈push的时候，查看辅助栈的栈顶元素，如果是比辅助栈栈顶还小或者等于，那么更新到栈顶。否则不加如辅助栈。 当正常栈做pop，查看辅助栈栈顶是否相等，相等的话一起pop，否则不动。 PS：注意当做push的时候，辅助栈栈顶元素和新元素相等，还是要入栈，因为再做pop把元素出栈后，正常栈其实后面还是有这个元素。 原理：其实就是类似动态规划的原理，辅助栈里的元素，全是到正常栈该元素位置的最小值是谁。所以除非正常栈做出栈弹出到这个值，否则辅助栈的栈顶就是当前的最小值。 1000瓶水，1瓶有毒，一只小白鼠喝了有毒的一周死亡，现给10只小白鼠一周时间，怎么做？ 二进制 标记]]></content>
       <categories>
-        <category>实习面试经历</category>
+        <category>面试经历</category>
         <category>2018</category>
+        <category>暑期</category>
       </categories>
       <tags>
         <tag>Java</tag>
@@ -519,24 +547,12 @@
     <url>%2F2018%2F04%2F09%2F%E4%BB%8A%E6%97%A5%E5%A4%B4%E6%9D%A1%2F</url>
     <content type="text"><![CDATA[今日头条后台开发面试 自我介绍 给定一个结点，确定二叉树中序遍历的后继结点（结点有左指针，右指针，父亲指针） 判断是否有右子树，有就找右子树最左的结点 没有，则不断找父亲结点，直到当前结点是父亲结点的左孩子 介绍项目 hashmap的equals和hashcode方法，怎么判断key存在（底层） 首先hash(key)得到key的hashcode()，hashmap根据获得的hashcode找到要插入的位置所在的链，在这个链里面放的都是hashcode相同的Entry键值对，在找到这个链之后，会通过equals()方法判断是否已经存在要插入的键值对，而这个equals比较的其实就是key。 判断key是否存在的时候是先比较key的hashCode，再比较相等或equals的 Http的keep-alive长连接的特性，多个json怎么区分（content-length） 数据库事务的一致性 事务执行前与执行后数据内在的逻辑始终是成立的。比如转账前与转账后两人存款的总和始终不变。]]></content>
       <categories>
-        <category>实习面试经历</category>
+        <category>面试经历</category>
         <category>2018</category>
+        <category>实习</category>
       </categories>
       <tags>
         <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[位运算]]></title>
-    <url>%2F2018%2F04%2F07%2F%E4%BD%8D%E8%BF%90%E7%AE%97%2F</url>
-    <content type="text"><![CDATA[例题 XOR相关Single Number 找到数组中只出现一次的元素，其它出现两次，不用额外内存异或XOR ^ Concept If we take XOR of zero and some bit, it will return that bit a⊕0=a If we take XOR of two same bits, it will return 0 a⊕a=0 a⊕b⊕a=(a⊕a)⊕b=0⊕b=b Single Number II 找到数组中只出现一次的元素，其它出现三次，不用额外内存 利用只出现3次的特性，模3的值只可能是0或1，则第一次出现存在ones中，第二次出现存在twos中，同时清掉ones的值，第三次出现，存在ones中，但twos中有了，同时清掉ones，twos的值 12345678public int singleNumber(int[] A) &#123; int ones = 0, twos = 0; for(int i = 0; i &lt; A.length; i++)&#123; ones = (ones ^ A[i]) &amp; ~twos; twos = (twos ^ A[i]) &amp; ~ones; &#125; return ones;&#125; Single Number III 2n+2的数组，每个元素出现两次，除了两个只出现一次的数，找到这两个数 time O(n) space O(1) 遍历数组异或，得到两个只出现一次的数异或之后的值x 将该值x与~(x-1)相与，获得最后几位不同的数值y 初始化返回数组，res[2]={0,0} 遍历数组，判断num[i]&amp;y == 0? res[0]^num[i]:res[1]^num[i] Missing Number 给定一个0-n每个元素都不同的数组，数组元素缺了一个，比如0，1，3，缺了2，找到缺少的那个数 对0-n做异或得x 对数组做异或得y 返回x^y &amp;相关Count of 1 bits 给定一个整数，求该整数二进制表示时1的个数 检查每一位是否是1，右移12345678910static int countSetBits(int n)&#123; int count = 0; while (n &gt; 0) &#123; count += n &amp; 1; n &gt;&gt;= 1; &#125; return count;&#125; bitwise从integer减1时，从右往左所有0变1，将最右边1变为0 比如110100 减1 得110011，对这两个数做&amp;，变为110000 所以n &amp; (n-1)可以将n的最后一个1消掉，用while判断是否消掉所有的1 Power of Two 给定一个整数，判断是否是2的次方 2的power只有一位是1，利用n &amp; (n-1)将1消掉，接着判断是否为0 Shift相关Reverse Bits 0100 -&gt; 0010 32位整数，循环32次，将当前bit赋值给res,整数右移，res左移 1234567891011public class Solution &#123; // you need treat n as an unsigned value public int reverseBits(int n) &#123; int res = 0; for(int i = 0;i &lt; 32;i++)&#123; res = (res&lt;&lt;1) | (n&amp;1); n = n&gt;&gt;1; &#125; return res; &#125;&#125; Math相关Bitwise AND of Numbers Range 给定范围[m, n]，其中 0 &lt;= m &lt;= n &lt;= 2147483647，返回范围内所有整数的按位与，包括边界。 例如，给定范围[5, 7], 你应该返回4。 [m, n]范围的按位与的结果为m与n的公共“左边首部（left header）” 1234567891011class Solution &#123; public int rangeBitwiseAnd(int m, int n) &#123; int count = 0; while(m!=n)&#123; m = m&gt;&gt;1; n = n&gt;&gt;1; count++; &#125; return m&lt;&lt;count; &#125;&#125;]]></content>
-      <categories>
-        <category>算法与数据结构</category>
-        <category>算法</category>
-        <category>LeetCode Category</category>
-      </categories>
-      <tags>
-        <tag>Math</tag>
       </tags>
   </entry>
   <entry>
@@ -550,6 +566,19 @@
       </categories>
       <tags>
         <tag>LinkedList</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[位运算]]></title>
+    <url>%2F2018%2F04%2F07%2F%E4%BD%8D%E8%BF%90%E7%AE%97%2F</url>
+    <content type="text"><![CDATA[例题 XOR相关Single Number 找到数组中只出现一次的元素，其它出现两次，不用额外内存异或XOR ^ Concept If we take XOR of zero and some bit, it will return that bit a⊕0=a If we take XOR of two same bits, it will return 0 a⊕a=0 a⊕b⊕a=(a⊕a)⊕b=0⊕b=b Single Number II 找到数组中只出现一次的元素，其它出现三次，不用额外内存 利用只出现3次的特性，模3的值只可能是0或1，则第一次出现存在ones中，第二次出现存在twos中，同时清掉ones的值，第三次出现，存在ones中，但twos中有了，同时清掉ones，twos的值 12345678public int singleNumber(int[] A) &#123; int ones = 0, twos = 0; for(int i = 0; i &lt; A.length; i++)&#123; ones = (ones ^ A[i]) &amp; ~twos; twos = (twos ^ A[i]) &amp; ~ones; &#125; return ones;&#125; Single Number III 2n+2的数组，每个元素出现两次，除了两个只出现一次的数，找到这两个数 time O(n) space O(1) 遍历数组异或，得到两个只出现一次的数异或之后的值x 将该值x与~(x-1)相与，获得最后几位不同的数值y 初始化返回数组，res[2]={0,0} 遍历数组，判断num[i]&amp;y == 0? res[0]^num[i]:res[1]^num[i] Missing Number 给定一个0-n每个元素都不同的数组，数组元素缺了一个，比如0，1，3，缺了2，找到缺少的那个数 对0-n做异或得x 对数组做异或得y 返回x^y &amp;相关Count of 1 bits 给定一个整数，求该整数二进制表示时1的个数 检查每一位是否是1，右移12345678910static int countSetBits(int n)&#123; int count = 0; while (n &gt; 0) &#123; count += n &amp; 1; n &gt;&gt;= 1; &#125; return count;&#125; bitwise从integer减1时，从右往左所有0变1，将最右边1变为0 比如110100 减1 得110011，对这两个数做&amp;，变为110000 所以n &amp; (n-1)可以将n的最后一个1消掉，用while判断是否消掉所有的1 Power of Two 给定一个整数，判断是否是2的次方 2的power只有一位是1，利用n &amp; (n-1)将1消掉，接着判断是否为0 Shift相关Reverse Bits 0100 -&gt; 0010 32位整数，循环32次，将当前bit赋值给res,整数右移，res左移 1234567891011public class Solution &#123; // you need treat n as an unsigned value public int reverseBits(int n) &#123; int res = 0; for(int i = 0;i &lt; 32;i++)&#123; res = (res&lt;&lt;1) | (n&amp;1); n = n&gt;&gt;1; &#125; return res; &#125;&#125; Math相关Bitwise AND of Numbers Range 给定范围[m, n]，其中 0 &lt;= m &lt;= n &lt;= 2147483647，返回范围内所有整数的按位与，包括边界。 例如，给定范围[5, 7], 你应该返回4。 [m, n]范围的按位与的结果为m与n的公共“左边首部（left header）” 1234567891011class Solution &#123; public int rangeBitwiseAnd(int m, int n) &#123; int count = 0; while(m!=n)&#123; m = m&gt;&gt;1; n = n&gt;&gt;1; count++; &#125; return m&lt;&lt;count; &#125;&#125;]]></content>
+      <categories>
+        <category>算法与数据结构</category>
+        <category>算法</category>
+        <category>LeetCode Category</category>
+      </categories>
+      <tags>
+        <tag>Math</tag>
       </tags>
   </entry>
   <entry>
@@ -608,8 +637,9 @@
     <url>%2F2018%2F03%2F30%2F%E8%9A%82%E8%9A%81%E9%87%91%E6%9C%8D%2F</url>
     <content type="text"><![CDATA[蚂蚁金服Java暑期实习生面试 一面 介绍项目，主要介绍在微软的实习，要注意项目讲得对方能理解 10亿条文件排序，外部归并，merge时堆内部排序 一堆运动员的成绩排序，如a:10,b:20,c:5，排序并保证新来的一个运动员也是有序的 用treemap, map底层怎么实现的，哈希表或红黑树 白板写代码： 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061//假设用一组字符串表示一个目录下的层级结构:// 如"dir\n\tsubdir1\n\t\tfile1.ext\n\t\tsubsubdir1\n\tsubdir2\n\t\tsubsubdir2\n\t\t\tfile2.ext"//表示的结构为// dir// subdir1// file1.ext// subsubdir1// subdir2// subsubdir2// file2.ext &#125; import java.util.ArrayList;import java.util.List;public class Main &#123; class Value&#123; public int i = 15; &#125; public static void main(String[] args) &#123; System.out.println(getLargestLength("dir\n\tsubdir1\n\t\tfile1.ext\n\t\tsubsubdir1\n\tsubdir2\n\t\tsubsubdir2\n\t\t\tfile2.ext")); &#125; public static int getLargestLength(String str)&#123; int max = 0; if(str == null || str.length() == 0)&#123; return max; &#125; String arr [] = str.split("\n"); if(arr[0].contains("\t")) return -1; List&lt;Integer&gt; dirLength = new ArrayList&lt;&gt;(); dirLength.add(arr[0].length()); max = arr[0].length(); for (int i = 1; i &lt; arr.length; i++)&#123; int length = arr[i].replaceAll("\t", "").length(); int count = arr[i].length() - length; if (dirLength.size() &lt; count) &#123; //输入欠缺中间目录 return -1; &#125; else if (count == 0) &#123; //新的根目录 dirLength = null; &#125; else &#123; dirLength = dirLength.subList(0, count); &#125; dirLength.add(length + dirLength.get(count - 1)); if (dirLength.get(count) &gt; max)&#123; max = dirLength.get(count); &#125; &#125; return max; &#125;&#125; 二面 介绍项目 给一个二维数组代表会议室的预定时间区间，比如[1,2],[2,3],[1,3]，则最少需要的会议室的数量为2 贪心 转换为一个会议室利用率最高的问题，对开始时间排序，选择下一个开始时间离结束时间最近的 数学题，给1-5五个数字，全排列，[12345,12354,…,54312,54321],求中间两个数的差值 hiveql和sql是一样的么？不一样，举例说明，并说明理由 hiveql数据表的join,map reduce的过程？ 给一个整数数组[x1,x2…xi,…xn]，求X+Y+Z&lt;N的所有可能性，不能重复 3sum 的变体，先排序，外层循环，内层两个指针判断，如果和&gt; N-Z，则尾指针前移 HTTP怎么做到有状态？ 我们要实现的是一种web应用，实现这种应用的协议我们选择了http这种本质上是无状态的通信协议。但是事实上，我们需要我们的web应用是有状态的。所以我们加入了cookies、session等机制去实现由状态的web应用 Web应用=http协议+session、cookies等状态机制+其他辅助的机制 MySQL数据库引擎，innoDB的特点？别的引擎？ InnoDB：该存储引擎为MySQL表提供了ACID事务支持、系统崩溃修复能力和多版本并发控制（即MVCC Multi-Version Concurrency Control）的行级锁;该引擎支持自增长列（auto_increment）,自增长列的值不能为空，如果在使用的时候为空则自动从现有值开始增值，如果有但是比现在的还大，则直接保存这个值; 该引擎存储引擎支持外键（foreign key）,外键所在的表称为子表而所依赖的表称为父表。该引擎在5.5后的MySQL数据库中为默认存储引擎。 ISAM：该引擎在读取数据方面速度很快，而且不占用大量的内存和存储资源；但是ISAM不支持事务处理、不支持外来键、不能够容错、也不支持索引。该引擎在包括MySQL 5.1及其以上版本的数据库中不再支持。 MyISAM：该引擎基于ISAM数据库引擎，除了提供ISAM里所没有的索引和字段管理等大量功能，MyISAM还使用一种表格锁定的机制来优化多个并发的读写操作，但是需要经常运行OPTIMIZE TABLE命令，来恢复被更新机制所浪费的空间，否则碎片也会随之增加，最终影响数据访问性能。MyISAM还有一些有用的扩展，例如用来修复数据库文件的MyISAMChk工具和用来恢复浪费空间的 MyISAMPack工具。MyISAM强调了快速读取操作，主要用于高负载的select，这可能也是MySQL深受Web开发的主要原因：在Web开发中进行的大量数据操作都是读取操作，所以大多数虚拟主机提供商和Internet平台提供商（Internet Presence Provider，IPP）只允许使用MyISAM格式。 HEAP（也称为MEMORY）：该存储引擎通过在内存中创建临时表来存储数据。每个基于该存储引擎的表实际对应一个磁盘文件，该文件的文件名和表名是相同的，类型为.frm。该磁盘文件只存储表的结构，而其数据存储在内存中，所以使用该种引擎的表拥有极高的插入、更新和查询效率。这种存储引擎默认使用哈希（HASH）索引，其速度比使用B-+Tree型要快，但也可以使用B树型索引。由于这种存储引擎所存储的数据保存在内存中，所以其保存的数据具有不稳定性，比如如果mysqld进程发生异常、重启或计算机关机等等都会造成这些数据的消失，所以这种存储引擎中的表的生命周期很短，一般只使用一次。 CSV（Comma-Separated Values逗号分隔值）：使用该引擎的MySQL数据库表会在MySQL安装目录data文件夹中的和该表所在数据库名相同的目录中生成一个.CSV文件（所以，它可以将CSV类型的文件当做表进行处理），这种文件是一种普通文本文件，每个数据行占用一个文本行。该种类型的存储引擎不支持索引，即使用该种类型的表没有主键列；另外也不允许表中的字段为null。 小英的用户数据一台机器放不下的时候，怎么办？]]></content>
       <categories>
-        <category>实习面试经历</category>
+        <category>面试经历</category>
         <category>2018</category>
+        <category>暑期</category>
       </categories>
       <tags>
         <tag>Java</tag>
@@ -620,8 +650,9 @@
     <url>%2F2018%2F03%2F28%2F%E6%90%9C%E7%8B%90%E6%99%BA%E8%83%BD%E5%AA%92%E4%BD%93%E7%A0%94%E5%8F%91%E4%B8%AD%E5%BF%83%2F</url>
     <content type="text"><![CDATA[搜狐智能媒体研发中心Java实习生面试 并发编程，能并发的数据结构 Springboot为什么能做到不配置一些xml？ 1.0版本的智慧教室会遇到哪些问题？并发？底层的哪些不够用了，才会出现这些问题？ JVM参数调优，怎么做？参数的意义？ HTTP要了解得更深入一些 服务器怎么判断是某个用户，用户登录的时候怎么返回该用户的信息，session怎么做安全？ MySQL建表的时候需要注意什么？long类型在mysql中怎么存？ Redis适合存一些什么样的数据？在什么场合使用？ Spring的IOC、AOP需要知道流程，Java基础，NIO等… 单链表反转，递归，非递归]]></content>
       <categories>
-        <category>实习面试经历</category>
+        <category>面试经历</category>
         <category>2018</category>
+        <category>暑期</category>
       </categories>
       <tags>
         <tag>Java</tag>
@@ -632,8 +663,9 @@
     <url>%2F2018%2F03%2F23%2F%E6%90%9C%E7%8B%90%E6%B1%BD%E8%BD%A6%2F</url>
     <content type="text"><![CDATA[搜狐汽车Java后台开发实习生面试 介绍简历 String为什么是final的,Enum,数据库连接（左外，右外，内连接） 用栈实现队列(时间复杂度),数组找出只出现一次的元素(时间复杂度),手写快排 Java运行时的编译情况，大的项目是怎么编译的 Spring的文档什么的有没有看过 确定自己喜欢的是什么，有没有兴趣，自驱动能力 String为什么是final的？ 不可变final指不在原内存地址上修改数据，而是重新指向一个新对象，新地址 JDK源码，java.lang.String前三行 123456public final class String implements java.io.Serializable,Comparable&lt;String&gt;,CharSequence&#123; /** String本质是个char数组，而且用final修饰*/ private final char[] value; &#125; Array可变，只是在后面的String的所有方法里没有动数组的元素，没有暴露内部成员。String不可变的关键都在底层实现，而不是一个final 不可变是为了安全 SQL四种连接 内联接（典型的联接运算，使用像 = 或 &lt;&gt; 之类的比较运算符）。包括相等联接和自然联接。内联接使用比较运算符根据每个表共有的列的值匹配两个表中的行。例如，检索 students和courses表中学生标识号相同的所有行。 外联接。外联接可以是左向外联接、右向外联接或完整外部联接。在 FROM子句中指定外联接时，可以由下列几组关键字中的一组指定： 1）LEFT JOIN或LEFT OUTER JOIN左向外联接的结果集包括 LEFT OUTER子句中指定的左表的所有行，而不仅仅是联接列所匹配的行。如果左表的某行在右表中没有匹配行，则在相关联的结果集行中右表的所有选择列表列均为空值。 2）RIGHT JOIN 或 RIGHT OUTER JOIN右向外联接是左向外联接的反向联接。将返回右表的所有行。如果右表的某行在左表中没有匹配行，则将为左表返回空值。 3）FULL JOIN 或 FULL OUTER JOIN完整外部联接返回左表和右表中的所有行。当某行在另一个表中没有匹配行时，则另一个表的选择列表列包含空值。如果表之间有匹配行，则整个结果集行包含基表的数据值。 交叉联接交叉联接返回左表中的所有行，左表中的每一行与右表中的所有行组合。交叉联接也称作笛卡尔积。]]></content>
       <categories>
-        <category>实习面试经历</category>
+        <category>面试经历</category>
         <category>2018</category>
+        <category>暑期</category>
       </categories>
       <tags>
         <tag>Java</tag>
