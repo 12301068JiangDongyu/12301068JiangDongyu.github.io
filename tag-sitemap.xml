@@ -44,14 +44,14 @@
     </url>
 
     <url>
-        <loc>blog.jiangdongyu.space/tags/Greedy/</loc>
+        <loc>blog.jiangdongyu.space/tags/DynamicProgramming/</loc>
         <lastmod>2018-05-29T15:46:35.208Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>blog.jiangdongyu.space/tags/DynamicProgramming/</loc>
+        <loc>blog.jiangdongyu.space/tags/Greedy/</loc>
         <lastmod>2018-05-29T15:46:35.208Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -93,13 +93,6 @@
     </url>
 
     <url>
-        <loc>blog.jiangdongyu.space/tags/BackTracking/</loc>
-        <lastmod>2018-06-09T13:35:12.073Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>blog.jiangdongyu.space/tags/DFS/</loc>
         <lastmod>2018-06-09T13:35:12.073Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -109,13 +102,6 @@
     <url>
         <loc>blog.jiangdongyu.space/tags/Heap/</loc>
         <lastmod>2018-06-12T08:08:29.690Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>blog.jiangdongyu.space/tags/Array/</loc>
-        <lastmod>2018-06-12T08:11:45.424Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -228,6 +214,20 @@
     <url>
         <loc>blog.jiangdongyu.space/tags/Java/</loc>
         <lastmod>2018-07-20T12:26:35.237Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>blog.jiangdongyu.space/tags/Array/</loc>
+        <lastmod>2018-07-24T10:12:00.908Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>blog.jiangdongyu.space/tags/BackTracking/</loc>
+        <lastmod>2018-07-24T10:12:00.908Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

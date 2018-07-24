@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[79. Word Search]]></title>
+    <url>%2F2018%2F07%2F24%2F79.%20Word%20Search%2F</url>
+    <content type="text"><![CDATA[Given a 2D board and a word, find if the word exists in the grid. The word can be constructed from letters of sequentially adjacent cell, where “adjacent” cells are those horizontally or vertically neighboring. The same letter cell may not be used more than once. Example: board = [ [&apos;A&apos;,&apos;B&apos;,&apos;C&apos;,&apos;E&apos;], [&apos;S&apos;,&apos;F&apos;,&apos;C&apos;,&apos;S&apos;], [&apos;A&apos;,&apos;D&apos;,&apos;E&apos;,&apos;E&apos;] ] Given word = &quot;ABCCED&quot;, return true. Given word = &quot;SEE&quot;, return true. Given word = &quot;ABCB&quot;, return false. 思路：还算是比较明显的dfs的题。 首先需要找到word首字母的位置，才能接着判断 接下来就是递归的过程，上下左右都有可能 同时为了避免当前再被递归到，需要将当前值先修改再恢复 代码 1234567891011121314151617181920212223242526class Solution &#123; public boolean exist(char[][] board, String word) &#123; if(word == null || word.length() == 0) return true; if(board == null || board.length == 0) return false; for(int i = 0;i &lt; board.length; i++)&#123; for(int j = 0;j &lt; board[0].length; j++)&#123; if(board[i][j] == word.charAt(0) &amp;&amp; exists(board, word, i, j, 0))&#123; return true; &#125; &#125; &#125; return false; &#125; public boolean exists(char[][] board, String word, int i, int j, int start)&#123; if(word.length() == start) return true; if(i &gt;= 0 &amp;&amp; i &lt; board.length &amp;&amp; j &gt;= 0 &amp;&amp; j &lt; board[0].length &amp;&amp; board[i][j] == word.charAt(start))&#123; board[i][j] = '$'; boolean res = exists(board, word, i-1, j, start+1) || exists(board, word, i+1, j, start+1) || exists(board, word, i, j-1, start+1) || exists(board, word, i, j+1, start+1); board[i][j] = word.charAt(start); return res; &#125; return false; &#125;&#125;]]></content>
+      <categories>
+        <category>算法与数据结构</category>
+        <category>算法</category>
+        <category>刷题打卡</category>
+      </categories>
+      <tags>
+        <tag>Array</tag>
+        <tag>BackTracking</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[第四范式]]></title>
     <url>%2F2018%2F07%2F19%2F%E7%AC%AC%E5%9B%9B%E8%8C%83%E5%BC%8F%2F</url>
     <content type="text"><![CDATA[第四范式 Java 开发实习生 面试 一面 自我介绍 介绍一下项目 Exception &amp;&amp; Error synchronized关键字static修饰和没有static修饰 比如synchronized修饰方法，让循环输出1-10，new两个类，调用该线程 作用域不同，static修饰指同步类，输出两次1-10 非static修饰，是同步局部变量，不能确定结果 final修饰字段，方法，类 字段不可变 方法不可override 类不能被继承 String,StringBuilder,StringBuffer String不可变，源码是用final修饰的private数组，同时方法等没改变数组的值 StringBuilder，StringBuffer都可变，StringBuffer线程安全 ArrayList和LinkedList 同：实现List接口 异：ArrayList查 O(1),增删 O(n) LinkedList查 O(n),增删 O(1) 知不知道Dequeue? 实现最小栈GetMin() leetcode原题155.Min Stack Q: Exception &amp;&amp; Error A: Error和Exception都继承自Throwable； Exception： RuntimeException 类及其子类表示“JVM 常用操作”引发的错误 可以是可被控制（checked）或者不可控制（unchecked）； unchecked exception（非检查异常）: 运行时异常,比如常见的NullPointerException、IndexOutOfBoundsException。对于运行时异常，java编译器不要求必须进行异常捕获处理或者抛出声明，由程序员自行决定。 checked exception（检查异常，编译异常）: 非运行时异常,java编译器强制程序员必须进行捕获处理，比如常见的IOExeption和SQLException。对于非运行时异常如果不进行捕获或者抛出声明处理，编译都不会通过。 表示一个由程序员导致的错误； 应该在应用程序级被处理； Error： 大多数错误与代码编写者执行的操作无关，而表示代码运行时 JVM（Java 虚拟机）出现的问题。 总是不可控制的（unchecked）； 经常用来表示系统错误或者底层资源错误； 如果可能的话，应该在系统级被捕捉； 二面 自我介绍 项目介绍比较详细 问了下熟悉的技术]]></content>
@@ -400,8 +414,8 @@
         <category>LeetCode Category</category>
       </categories>
       <tags>
-        <tag>BackTracking</tag>
         <tag>Array</tag>
+        <tag>BackTracking</tag>
         <tag>DFS</tag>
       </tags>
   </entry>
@@ -524,9 +538,9 @@
       </categories>
       <tags>
         <tag>Array</tag>
+        <tag>DynamicProgramming</tag>
         <tag>Greedy</tag>
         <tag>Sort</tag>
-        <tag>DynamicProgramming</tag>
       </tags>
   </entry>
   <entry>
