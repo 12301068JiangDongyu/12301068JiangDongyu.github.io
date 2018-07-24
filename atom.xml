@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="blog.jiangdongyu.space/"/>
-  <updated>2018-07-24T10:12:00.908Z</updated>
+  <updated>2018-07-24T14:05:45.566Z</updated>
   <id>blog.jiangdongyu.space/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>菜鸟二面</title>
+    <link href="blog.jiangdongyu.space/2018/07/24/%E8%8F%9C%E9%B8%9F%E4%BA%8C%E9%9D%A2/"/>
+    <id>blog.jiangdongyu.space/2018/07/24/菜鸟二面/</id>
+    <published>2018-07-24T13:41:00.000Z</published>
+    <updated>2018-07-24T14:05:45.566Z</updated>
+    
+    <content type="html"><![CDATA[<p>还是聊了半个小时- -</p><a id="more"></a><ul><li>介绍学习、实习、项目情况</li><li>介绍影响最深、提升能力最快的项目</li><li>问一些相对比较难的题</li><li>SpringBoot和Spring的区别<ul><li>SpringBoot是在Spring上的快速开发包</li><li>SpringBoot内嵌了一些容器，比如tomcat</li><li>问内嵌的tomcat和不内嵌的有什么区别？</li></ul></li><li>MyBatis和Hibernate有什么区别？<ul><li>MyBatis半自动，Hibernate全自动</li><li>Hibernate为什么能实现全自动？</li></ul></li><li>问觉得阿里和微软的区别</li><li>给了些建议- -</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;还是聊了半个小时- -&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="面试经历" scheme="blog.jiangdongyu.space/categories/%E9%9D%A2%E8%AF%95%E7%BB%8F%E5%8E%86/"/>
+    
+      <category term="2018" scheme="blog.jiangdongyu.space/categories/%E9%9D%A2%E8%AF%95%E7%BB%8F%E5%8E%86/2018/"/>
+    
+      <category term="秋招" scheme="blog.jiangdongyu.space/categories/%E9%9D%A2%E8%AF%95%E7%BB%8F%E5%8E%86/2018/%E7%A7%8B%E6%8B%9B/"/>
+    
+    
+      <category term="Java" scheme="blog.jiangdongyu.space/tags/Java/"/>
+    
+  </entry>
   
   <entry>
     <title>79. Word Search</title>
@@ -571,35 +597,6 @@
       <category term="计算机网络" scheme="blog.jiangdongyu.space/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
     
       <category term="HTTP" scheme="blog.jiangdongyu.space/tags/HTTP/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>计算机网络 -- 传输层</title>
-    <link href="blog.jiangdongyu.space/2018/06/19/%E4%BC%A0%E8%BE%93%E5%B1%82/"/>
-    <id>blog.jiangdongyu.space/2018/06/19/传输层/</id>
-    <published>2018-06-19T03:00:00.000Z</published>
-    <updated>2018-07-10T09:02:11.914Z</updated>
-    
-    <content type="html"><![CDATA[<p><strong>知识架构图如下:</strong></p><p><img src="http://p9fh1pach.bkt.clouddn.com/WechatIMG268.jpeg" alt="avatar"></p><a id="more"></a><h2 id="传输层提供的服务"><a href="#传输层提供的服务" class="headerlink" title="传输层提供的服务"></a>传输层提供的服务</h2><h3 id="传输层的功能"><a href="#传输层的功能" class="headerlink" title="传输层的功能"></a>传输层的功能</h3><p>面向通信部分的最高层，用户功能中的最低层。传输层提供<strong>可靠</strong>服务（尽管网络层不可靠）</p><p><strong>传输层的功能：</strong></p><ul><li>传输层为运行在不同主机上的<strong>进程</strong>提供逻辑通信（端到端通信），而网络层提供<strong>主机</strong>之间的逻辑通信。</li><li>复用和分用<ul><li>传输层：（复用）不同进程可用同一传输协议，（分用）可剥离给不同进程</li><li>网络层：（复用）不同协议数据可封装成IP数据报发送出去，（分用）可剥离给不同协议</li></ul></li><li>传输层对收到的报文进行差错检测（首部和数据部分），网络层只检测IP数据报的首部，不检验数据部分是否出错</li><li>提供两种不同的传输协议，面向连接的TCP和无连接的UDP，网络层无法同时实现两种</li></ul><h3 id="传输层的寻址与端口"><a href="#传输层的寻址与端口" class="headerlink" title="传输层的寻址与端口"></a>传输层的寻址与端口</h3><ul><li>端口的作用<ul><li>让应用进程将数据通过端口交付给传输层</li><li>让传输层知道讲数据交付给应用层对于进程</li></ul></li><li>端口号：只有本地意义<ul><li>服务端使用的端口号</li><li>客户端使用的端口号，短暂端口号</li></ul></li><li>套接字：组合识别端点<ul><li><strong>IP地址</strong>标识和区别不同主机，<strong>端口号</strong>标识和区别主机众不同应用进程，<strong>套接字</strong>组合识别端点</li><li><strong>套接字 = （主机IP地址，端口号）</strong></li></ul></li></ul><h3 id="无连接服务与面向连接服务"><a href="#无连接服务与面向连接服务" class="headerlink" title="无连接服务与面向连接服务"></a>无连接服务与面向连接服务</h3><ul><li>面向连接服务就是在通信之前，必须建立连接，通信过程中，实时监控和管理连接情况。通信结束后，应该释放连接。<ul><li>TCP不提供广播或组播服务，适合可靠性更重要的场合，如FTP，HTTP，TELNET（远程登录）</li></ul></li><li>无连接的服务，通信不需要先建立连接，需要通信时，直接将信息发送到“网络”中，让信息的传递尽力往目的地传送<ul><li>UDP在IP之上提供多路复用和对数据的错误检查，执行速度快，实时性好，TFTP（小文件传送协议），DNS，SNMP（简单网络管理协议）和RTP（实时协议）</li></ul></li></ul><h2 id="UDP协议"><a href="#UDP协议" class="headerlink" title="UDP协议"></a>UDP协议</h2><h3 id="UDP数据报"><a href="#UDP数据报" class="headerlink" title="UDP数据报"></a>UDP数据报</h3><p>UDP = IP + 复用/分用 + 差错检测</p><p><strong>UDP优点：</strong></p><ul><li>UDP无需建立连接，没有建立连接的时延</li><li>无连接状态，能支持更多的活动客户机</li><li>首部开销小，8字节开销</li><li>应用层能更好地控制要发送的数据和发送时间，无拥塞控制，发送发自由</li></ul><p>UDP用于一次性传输少量数据的网络应用，也用于多媒体应用，不保证可靠性交付但要求低延迟，应用层可灵活设计可靠性机制保证可靠性。</p><p>UDP面向报文，发送方UDP对应用层交下来的报文，添加首部后直接给IP层，不合并，不拆分；接收方UDP对IP层交上来的数据报，去除首部后直接给应用进程，一次交付一个完整的报文。（以报文为操作单位）</p><p>UDP数据报 = UDP首部（8B） + 用户数据</p><ul><li>源端口：需要对方回信时用，不用则为0</li><li>目的端口</li><li>长度：最小值为8（仅首部）</li><li>校验和：检验UDP数据报在传输中是否出错，有错则丢弃。源主机不想计算校验和，则为0</li></ul><h3 id="UDP校验"><a href="#UDP校验" class="headerlink" title="UDP校验"></a>UDP校验</h3><p>采用首部、伪首部、数据进行二进制反码运算求和再取反</p><p><img src="http://p9fh1pach.bkt.clouddn.com/WechatIMG269.jpeg" alt="avatar"></p><h2 id="TCP协议"><a href="#TCP协议" class="headerlink" title="TCP协议"></a>TCP协议</h2><h3 id="TCP协议的特点"><a href="#TCP协议的特点" class="headerlink" title="TCP协议的特点"></a>TCP协议的特点</h3><ul><li>面向连接</li><li>点对点（一对一）</li><li>可靠的交付，无差错、不丢失、不重复且有序</li><li>全双工通信，通信双方都可发送数据</li><li>面向字节流</li></ul><h3 id="TCP报文段-TCP传送的数据单元"><a href="#TCP报文段-TCP传送的数据单元" class="headerlink" title="TCP报文段(TCP传送的数据单元)"></a>TCP报文段(TCP传送的数据单元)</h3><p>TCP报文段分为首部和数据两部分，整个TCP段作为IP数据报的数据部分封装在IP数据报中。首部前20字节是固定的，后面有4N字节是根据需要而增加的选项。</p><p><img src="http://p9fh1pach.bkt.clouddn.com/201806191848.png" alt="avatar"></p><p>TCP报文段既可以用来运载数据，也可以用来建立/释放连接，应答。</p><ul><li>序号字段：4字节，指的是本报文段所发送的数据的第一个字节的序号</li><li>确认号字段：4字节，期望收到对方的下一个报文段的数据的第一个字节的序号。若确认号为N，则表示到序号N-1为止的数据都已正确收到</li><li>数据偏移：首部长度，4位</li><li>保留字段：6位，目前置0</li><li>紧急位URG：URG = 1时，表示<strong>紧急指针</strong>有效，表明有紧急数据，需要尽快送达。URG需要和紧急指针配套使用，数据从第一个字节到紧急指针所指字节就是<strong>紧急数据</strong></li><li>确认位ACK：ACK = 1时<strong>确认号字段</strong>才有效。连接建立后所有传送的报文段都必须把ACK置1</li><li>推送位PSH：（PSH = 1）尽快交付接收应用进程，不用等到缓冲区满了再交付</li><li>复位位RST：（RST = 1）连接出现严重差错，必须释放连接，然后再重新建立运输连接</li><li>同步位SYN：SYN = 1表示这是一个连接请求或连接接收报文<ul><li>SYN = 1，ACK = 0，连接请求报文</li><li>SYN = 1，ACK = 1，连接接收报文</li></ul></li><li>终止位FIN：（FIN = 1）发送方数据发送完毕，要求释放连接</li><li>窗口字段：2字节，指出允许对方发送的数据量</li><li>检验和：2字节，检验首部和数据，计算时和UDP相似，也要加12字节的伪首部，将UDP中的17 -&gt; 6</li><li>紧急指针字段：16位，指出本报文段中紧急数据的字节总数（紧急数据放在报文段数据的最前面）</li><li>选项字段：最大报文段长度（MSS），MSS是TCP报文段中的数据字段的最大长度</li><li>填充字段：为了使整个首部长度是4字节的整数倍</li></ul><h3 id="TCP连接管理"><a href="#TCP连接管理" class="headerlink" title="TCP连接管理"></a>TCP连接管理</h3><p>TCP连接的端口叫套接字，每一条TCP连接唯一地被通信两端的两个端点所确定。</p><h4 id="TCP连接的建立（三次握手）"><a href="#TCP连接的建立（三次握手）" class="headerlink" title="TCP连接的建立（三次握手）"></a>TCP连接的建立（三次握手）</h4><p><img src="http://p9fh1pach.bkt.clouddn.com/20170607205709367.gif" alt="avatar"></p><blockquote><p>最开始的时候客户端和服务器都是处于CLOSED状态。主动打开连接的为客户端，被动打开连接的是服务器。</p></blockquote><ul><li>TCP服务器进程先创建传输控制块TCB，时刻准备接受客户进程的连接请求，此时服务器就进入了LISTEN（监听）状态；</li><li>TCP客户进程也是先创建传输控制块TCB，然后向服务器发出连接请求报文，这是报文首部中的同部位SYN=1，同时选择一个初始序列号 seq=x ，此时，TCP客户端进程进入了 SYN-SENT（同步已发送状态）状态。<strong>TCP规定，SYN报文段（SYN=1的报文段）不能携带数据，但需要消耗掉一个序号。</strong></li><li>TCP服务器收到请求报文后，如果同意连接，则发出确认报文。确认报文中应该 ACK=1，SYN=1，确认号是ack=x+1，同时也要为自己初始化一个序列号 seq=y，此时，TCP服务器进程进入了SYN-RCVD（同步收到）状态。<strong>这个报文也不能携带数据，但是同样要消耗一个序号。</strong></li><li>TCP客户进程收到确认后，还要向服务器给出确认。确认报文的ACK=1，ack=y+1，自己的序列号seq=x+1，此时，TCP连接建立，客户端进入ESTABLISHED（已建立连接）状态。<strong>TCP规定，ACK报文段可以携带数据，但是如果不携带数据则不消耗序号。</strong></li><li>当服务器收到客户端的确认后也进入ESTABLISHED状态，此后双方就可以开始通信了。 </li></ul><p><img src="http://p9fh1pach.bkt.clouddn.com/20170605110405666.png" alt="avatar"></p><p>TCP是全双工通信，通信双方的应用进程在任何时候都能发送数据。</p><p>服务器的资源是在完成第二次握手时分配的，客户端资源是在完成第三次握手时分配的。这使服务器易于受到SYN洪泛攻击。</p><pre><code>Q:为什么TCP客户端最后还要发送一次确认呢？A:防止已经失效的连接请求报文突然又传送到了服务器，从而产生错误。</code></pre><h4 id="TCP连接的释放（四次挥手）"><a href="#TCP连接的释放（四次挥手）" class="headerlink" title="TCP连接的释放（四次挥手）"></a>TCP连接的释放（四次挥手）</h4><p><img src="http://p9fh1pach.bkt.clouddn.com/20170607205756255.gif" alt="avatar"></p><blockquote><p>数据传输完毕后，双方都可释放连接。最开始的时候，客户端和服务器都是处于ESTABLISHED状态，然后客户端主动关闭，服务器被动关闭。</p></blockquote><ul><li>客户端进程发出连接释放报文，并且停止发送数据。释放数据报文首部，FIN=1，其序列号为seq=u（等于前面已经传送过来的数据的最后一个字节的序号加1），此时，客户端进入FIN-WAIT-1（终止等待1）状态。<strong>TCP规定，FIN报文段即使不携带数据，也要消耗一个序号。</strong></li><li>服务器收到连接释放报文，发出确认报文，ACK=1，ack=u+1，并且带上自己的序列号seq=v，此时，服务端就进入了CLOSE-WAIT（关闭等待）状态。<strong>TCP服务器通知高层的应用进程，客户端向服务器的方向就释放了，这时候处于半关闭状态，即客户端已经没有数据要发送了，但是服务器若发送数据，客户端依然要接受。*</strong>这个状态还要持续一段时间，也就是整个CLOSE-WAIT状态持续的时间。*</li><li>客户端收到服务器的确认请求后，此时，客户端就进入FIN-WAIT-2（终止等待2）状态，等待服务器发送连接释放报文<strong>（在这之前还需要接受服务器发送的最后的数据）</strong>。</li><li>服务器将最后的数据发送完毕后，就向客户端发送连接释放报文，FIN=1，ack=u+1，由于在半关闭状态，服务器很可能又发送了一些数据，假定此时的序列号为seq=w，此时，服务器就进入了LAST-ACK（最后确认）状态，等待客户端的确认。</li><li>客户端收到服务器的连接释放报文后，必须发出确认，ACK=1，ack=w+1，而自己的序列号是seq=u+1，此时，客户端就进入了TIME-WAIT（时间等待）状态。<strong>注意此时TCP连接还没有释放，必须经过2[Math Processing Error]MSL（最长报文段寿命）的时间后，当客户端撤销相应的TCB后，才进入CLOSED状态。</strong></li><li>服务器只要收到了客户端发出的确认，立即进入CLOSED状态。同样，撤销TCB后，就结束了这次的TCP连接。<strong>可以看到，服务器结束TCP连接的时间要比客户端早一些。</strong></li></ul><p><img src="http://p9fh1pach.bkt.clouddn.com/20170606084851272.png" alt="avatar"></p><p><strong>为什么客户端最后还要等待2MSL？</strong></p><ul><li>保证客户端发送的最后一个ACK报文能够到达服务器，因为这个ACK报文可能丢失，<strong>站在服务器的角度看来，我已经发送了FIN+ACK报文请求断开了，客户端还没有给我回应，应该是我发送的请求断开报文它没有收到，于是服务器又会重新发送一次</strong>，而客户端就能在这个2MSL时间段内收到这个重传的报文，接着给出回应报文，并且会重启2MSL计时器。</li><li>防止类似与“三次握手”中提到了的“已经失效的连接请求报文段”出现在本连接中。客户端发送完最后一个确认报文后，在这个2MSL时间中，就可以使本连接持续的时间内所产生的所有报文段都从网络中消失。这样新的连接中不会出现旧连接的请求报文。</li></ul><p><strong>为什么建立连接是三次握手，关闭连接确是四次挥手呢？</strong></p><p>建立连接的时候， 服务器在LISTEN状态下，收到建立连接请求的SYN报文后，把ACK和SYN放在一个报文里发送给客户端。 </p><p>而关闭连接时，服务器收到对方的FIN报文时，仅仅表示对方不再发送数据了但是还能接收数据，而自己也未必全部数据都发送给对方了，所以己方可以立即关闭，也可以发送一些数据给对方后，再发送FIN报文给对方来表示同意现在关闭连接，因此，己方ACK和FIN一般都会分开发送，从而导致多了一次。</p><h3 id="TCP可靠传输"><a href="#TCP可靠传输" class="headerlink" title="TCP可靠传输"></a>TCP可靠传输</h3><p>保证接收方进程从缓冲区读出的字节流与发送方发出的字节流是完全一样的</p><p>使用了校验、序号、确认和重传等机制来达到目的</p><ul><li>序号：TCP 数据段以字节为单位对数据段中的“数据”部分进行一一编号，确保每个字节的数据都可以有序传送和接受</li><li>确认：TCP 要求每接受一个数据段都必须由接收端向发送端返回一个确认数据段，其中的“确认号”表明接收端已正确接受的数据段序号（“确认号”前面的所有数据段，确认号表示将要接收的下一个数据段编号）。</li><li>重传<ul><li>超时：超出计时器的重传时间还未收到确认则重传，RTT</li><li>冗余：TCP规定每当比期望序号大的失序报文段到达时，发送一个冗余ACK，指明下一个期待字节的序列号。TCP规定当发送方收到对同一个报文段的3个冗余ACK时，可以认为跟在这个被确认的报文段之后的报文段已经丢失（<strong>快重传</strong>）。</li></ul></li></ul><h3 id="TCP流量控制"><a href="#TCP流量控制" class="headerlink" title="TCP流量控制"></a>TCP流量控制</h3><p>在确认报文中设置窗口字段rwnd来限制发送速率，发送方可也根据当前网络拥塞程度设置拥塞窗口cwnd。<strong>发送窗口的实际大小取rwnd和cwnd的最小值</strong></p><h3 id="TCP拥塞控制"><a href="#TCP拥塞控制" class="headerlink" title="TCP拥塞控制"></a>TCP拥塞控制</h3><p>根据自己估算的网络拥塞程度设置cwnd来限制发送速率</p><ul><li>慢开始算法：刚连接的TCP，令cwnd = 1（一个最大报文段长度），每收到一个确认后加1。每经过一个RTT，cwnd加倍，直到慢开始门限（ssthresh），改用拥塞避免算法</li><li>拥塞避免算法：cwnd每经过一个RTT就加1（<strong>加法增大</strong>），当出现一次超时，令慢开始门限等于当前cwnd的一半（<strong>乘法减小</strong>）</li></ul><p>根据cwnd的大小执行不同算法：</p><ul><li>cwnd &lt; ssthresh,慢开始算法</li><li>cwnd &gt; ssthresh,停止慢开始，使用拥塞避免算法</li><li>cwnd = ssthresh,都可以（通常使用拥塞避免算法）</li></ul><p>一旦网络出现拥塞时，都要把ssthresh设为cwnd的一半（但不能小于2），然后把cwnd设为1，执行慢开始算法。</p><p>快重传、快恢复是对慢开始算法和拥塞避免算法的改进。</p><ul><li>快重传：发送方连续收到三个重复的ACK时，直接重传对方尚未收到的报文段</li><li>快恢复：发送方连续收到三个重复的ACK时，就执行“乘法减小”，将ssthresh设置为cwnd的一半。<strong>把cwnd设为ssthresh改变后的值</strong>，然后开始执行拥塞避免算法（“加法增大”）</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;strong&gt;知识架构图如下:&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://p9fh1pach.bkt.clouddn.com/WechatIMG268.jpeg&quot; alt=&quot;avatar&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Java基础" scheme="blog.jiangdongyu.space/categories/Java%E5%9F%BA%E7%A1%80/"/>
-    
-      <category term="读书笔记" scheme="blog.jiangdongyu.space/categories/Java%E5%9F%BA%E7%A1%80/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-    
-      <category term="计算机网络" scheme="blog.jiangdongyu.space/categories/Java%E5%9F%BA%E7%A1%80/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
-    
-      <category term="传输层" scheme="blog.jiangdongyu.space/categories/Java%E5%9F%BA%E7%A1%80/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E4%BC%A0%E8%BE%93%E5%B1%82/"/>
-    
-    
-      <category term="计算机网络" scheme="blog.jiangdongyu.space/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
     
   </entry>
   
