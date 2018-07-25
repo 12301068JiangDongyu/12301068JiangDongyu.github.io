@@ -147,20 +147,6 @@
     </url>
 
     <url>
-        <loc>blog.jiangdongyu.space/categories/%E9%9D%A2%E8%AF%95%E7%BB%8F%E5%8E%86/2018/%E5%AE%9E%E4%B9%A0/</loc>
-        <lastmod>2018-07-20T12:11:53.679Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>blog.jiangdongyu.space/categories/%E9%9D%A2%E8%AF%95%E7%BB%8F%E5%8E%86/2018/%E6%9A%91%E6%9C%9F/</loc>
-        <lastmod>2018-07-20T12:13:11.287Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>blog.jiangdongyu.space/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
         <lastmod>2018-07-24T10:12:00.908Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -177,27 +163,6 @@
     <url>
         <loc>blog.jiangdongyu.space/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AE%97%E6%B3%95/%E5%88%B7%E9%A2%98%E6%89%93%E5%8D%A1/</loc>
         <lastmod>2018-07-24T10:12:00.908Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>blog.jiangdongyu.space/categories/%E9%9D%A2%E8%AF%95%E7%BB%8F%E5%8E%86/</loc>
-        <lastmod>2018-07-24T14:05:45.566Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>blog.jiangdongyu.space/categories/%E9%9D%A2%E8%AF%95%E7%BB%8F%E5%8E%86/2018/</loc>
-        <lastmod>2018-07-24T14:05:45.566Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>blog.jiangdongyu.space/categories/%E9%9D%A2%E8%AF%95%E7%BB%8F%E5%8E%86/2018/%E7%A7%8B%E6%8B%9B/</loc>
-        <lastmod>2018-07-24T14:05:45.566Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
