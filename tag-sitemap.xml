@@ -114,13 +114,6 @@
     </url>
 
     <url>
-        <loc>blog.jiangdongyu.space/tags/HTTP/</loc>
-        <lastmod>2018-06-20T11:01:23.628Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>blog.jiangdongyu.space/tags/Stack/</loc>
         <lastmod>2018-06-27T11:32:44.228Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -177,41 +170,6 @@
     </url>
 
     <url>
-        <loc>blog.jiangdongyu.space/tags/Spring/</loc>
-        <lastmod>2018-07-15T15:01:58.477Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>blog.jiangdongyu.space/tags/AOP/</loc>
-        <lastmod>2018-07-15T15:01:58.477Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>blog.jiangdongyu.space/tags/IOC/</loc>
-        <lastmod>2018-07-15T15:01:58.477Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>blog.jiangdongyu.space/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</loc>
-        <lastmod>2018-07-19T05:15:30.261Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>blog.jiangdongyu.space/tags/HTTPS/</loc>
-        <lastmod>2018-07-19T05:15:30.261Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>blog.jiangdongyu.space/tags/Array/</loc>
         <lastmod>2018-07-24T10:12:00.908Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -228,6 +186,62 @@
     <url>
         <loc>blog.jiangdongyu.space/tags/Java/</loc>
         <lastmod>2018-07-25T11:53:50.427Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>blog.jiangdongyu.space/tags/Redis/</loc>
+        <lastmod>2018-07-26T10:20:30.162Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>blog.jiangdongyu.space/tags/NoSQL/</loc>
+        <lastmod>2018-07-26T10:20:30.162Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>blog.jiangdongyu.space/tags/HTTPS/</loc>
+        <lastmod>2018-07-26T11:23:29.901Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>blog.jiangdongyu.space/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</loc>
+        <lastmod>2018-07-26T11:26:26.072Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>blog.jiangdongyu.space/tags/HTTP/</loc>
+        <lastmod>2018-07-26T11:26:26.072Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>blog.jiangdongyu.space/tags/AOP/</loc>
+        <lastmod>2018-07-26T11:26:41.906Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>blog.jiangdongyu.space/tags/Spring/</loc>
+        <lastmod>2018-07-26T11:26:50.677Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>blog.jiangdongyu.space/tags/IOC/</loc>
+        <lastmod>2018-07-26T11:26:50.677Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
