@@ -44,14 +44,14 @@
     </url>
 
     <url>
-        <loc>blog.jiangdongyu.space/tags/Greedy/</loc>
+        <loc>blog.jiangdongyu.space/tags/DynamicProgramming/</loc>
         <lastmod>2018-05-29T15:46:35.208Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>blog.jiangdongyu.space/tags/DynamicProgramming/</loc>
+        <loc>blog.jiangdongyu.space/tags/Greedy/</loc>
         <lastmod>2018-05-29T15:46:35.208Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -156,13 +156,6 @@
     </url>
 
     <url>
-        <loc>blog.jiangdongyu.space/tags/Java/</loc>
-        <lastmod>2018-07-13T11:19:07.575Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>blog.jiangdongyu.space/tags/%E7%AE%80%E5%8E%86/</loc>
         <lastmod>2018-07-13T11:19:29.850Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -228,6 +221,13 @@
     <url>
         <loc>blog.jiangdongyu.space/tags/BackTracking/</loc>
         <lastmod>2018-07-24T10:12:00.908Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>blog.jiangdongyu.space/tags/Java/</loc>
+        <lastmod>2018-07-25T11:53:50.427Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
