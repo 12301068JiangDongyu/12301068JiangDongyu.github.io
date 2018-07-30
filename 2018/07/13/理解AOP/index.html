@@ -106,10 +106,14 @@
 <meta property="og:site_name" content="M&amp;Y">
 <meta property="og:description" content="Aspect Oriented Programming面向切面编程。解耦是程序员编码开发过程中一直追求的。AOP也是为了解耦所诞生。 具体思想是：定义一个切面，在切面的纵向定义处理方法，处理完成之后，回到横向业务流。 AOP在Spring框架中被作为核心组成部分之一，的确Spring将AOP发挥到很强大的功能。最常见的就是事务控制。 AOP 主要是利用代理模式的技术来实现的。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-26T11:23:48.431Z">
+<meta property="og:image" content="http://p9fh1pach.bkt.clouddn.com/aop9.png">
+<meta property="og:image" content="http://p9fh1pach.bkt.clouddn.com/aop10.png">
+<meta property="og:image" content="http://p9fh1pach.bkt.clouddn.com/aop11.png">
+<meta property="og:updated_time" content="2018-07-30T08:30:41.131Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="AOP的定义实现原理——代理">
 <meta name="twitter:description" content="Aspect Oriented Programming面向切面编程。解耦是程序员编码开发过程中一直追求的。AOP也是为了解耦所诞生。 具体思想是：定义一个切面，在切面的纵向定义处理方法，处理完成之后，回到横向业务流。 AOP在Spring框架中被作为核心组成部分之一，的确Spring将AOP发挥到很强大的功能。最常见的就是事务控制。 AOP 主要是利用代理模式的技术来实现的。">
+<meta name="twitter:image" content="http://p9fh1pach.bkt.clouddn.com/aop9.png">
 
 
 
@@ -378,6 +382,17 @@
 
                 
                 
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaWeb/Spring/AOP/" itemprop="url" rel="index">
+                    <span itemprop="name">AOP</span>
+                  </a>
+                </span>
+
+                
+                
               
             </span>
           
@@ -423,7 +438,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,345 字
+                  1,378 字
                 </span>
               
 
@@ -520,6 +535,9 @@ people talk业务说明
 <ul>
 <li>cglib代理类</li>
 </ul>
+<blockquote>
+<p>MethodInterceptor</p>
+</blockquote>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 使用cglib动态代理</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CglibProxy</span> <span class="keyword">implements</span> <span class="title">MethodInterceptor</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> Object target;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 创建代理对象</span></span><br><span class="line"><span class="comment">     * </span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> target</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Object <span class="title">getInstance</span><span class="params">(Object target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.target = target;</span><br><span class="line">        Enhancer enhancer = <span class="keyword">new</span> Enhancer();</span><br><span class="line">        enhancer.setSuperclass(<span class="keyword">this</span>.target.getClass());</span><br><span class="line">        <span class="comment">// 回调方法</span></span><br><span class="line">        enhancer.setCallback(<span class="keyword">this</span>);</span><br><span class="line">        <span class="comment">// 创建代理对象</span></span><br><span class="line">        <span class="keyword">return</span> enhancer.create();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Object <span class="title">intercept</span><span class="params">(Object proxy, Method method, Object[] args, MethodProxy methodProxy)</span> <span class="keyword">throws</span> Throwable </span>&#123;</span><br><span class="line">        Object result = <span class="keyword">null</span>;</span><br><span class="line">        System.out.println(<span class="string">"事物开始"</span>);</span><br><span class="line">        result = methodProxy.invokeSuper(proxy, args);</span><br><span class="line">        System.out.println(<span class="string">"事物结束"</span>);</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>测试类</li>
@@ -532,7 +550,14 @@ people talk业务方法
 事物开始
 spreak chinese业务方法
 事物结束
-</code></pre>
+</code></pre><h3 id="AOP创建过程"><a href="#AOP创建过程" class="headerlink" title="AOP创建过程"></a>AOP创建过程</h3><p><img src="http://p9fh1pach.bkt.clouddn.com/aop9.png" alt="avatar"></p>
+<ul>
+<li>如何选择JDK动态代理还是继承cglib</li>
+</ul>
+<p><img src="http://p9fh1pach.bkt.clouddn.com/aop10.png" alt="avatar"></p>
+<p><img src="http://p9fh1pach.bkt.clouddn.com/aop11.png" alt="avatar"></p>
+<p>多个AOP的类调用，采用<strong>责任链模式</strong>。</p>
+
       
     </div>
     
@@ -712,7 +737,7 @@ spreak chinese业务方法
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">56</span>
+                  <span class="site-state-item-count">58</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -723,7 +748,7 @@ spreak chinese业务方法
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">32</span>
+                  <span class="site-state-item-count">35</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -734,7 +759,7 @@ spreak chinese业务方法
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">35</span>
+                  <span class="site-state-item-count">36</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -810,7 +835,7 @@ spreak chinese业务方法
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#静态代理"><span class="nav-number">1.</span> <span class="nav-text">静态代理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#动态代理"><span class="nav-number">2.</span> <span class="nav-text">动态代理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#利用cglib"><span class="nav-number">3.</span> <span class="nav-text">利用cglib</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#静态代理"><span class="nav-number">1.</span> <span class="nav-text">静态代理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#动态代理"><span class="nav-number">2.</span> <span class="nav-text">动态代理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#利用cglib"><span class="nav-number">3.</span> <span class="nav-text">利用cglib</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AOP创建过程"><span class="nav-number">4.</span> <span class="nav-text">AOP创建过程</span></a></li></ol></div>
             
 
           </div>
@@ -844,7 +869,7 @@ spreak chinese业务方法
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">98.2k</span>
+    <span title="Site words total count">102.5k</span>
   
 </div>
 
