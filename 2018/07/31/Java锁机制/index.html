@@ -85,7 +85,7 @@
 
 
 
-  <meta name="keywords" content="Java," />
+  <meta name="keywords" content="多线程,锁," />
 
 
 
@@ -98,18 +98,20 @@
 
 
 
-<meta name="description" content="搜狐智能媒体研发中心Java实习生面试">
-<meta name="keywords" content="Java">
+<meta name="description" content="在开发Java多线程应用程序中，各个线程之间由于要共享资源，必须用到锁机制。Java提供了多种多线程锁机制的实现方式，常见的有synchronized、ReentrantLock、Semaphore、AtomicInteger等。每种机制都有优缺点与各自的适用场景，必须熟练掌握他们的特点才能在Java多线程应用开发时得心应手。——Java锁机制详解">
+<meta name="keywords" content="多线程,锁">
 <meta property="og:type" content="article">
-<meta property="og:title" content="搜狐智能媒体研发中心">
-<meta property="og:url" content="blog.jiangdongyu.space/2018/03/28/搜狐智能媒体研发中心/index.html">
+<meta property="og:title" content="Java锁机制">
+<meta property="og:url" content="blog.jiangdongyu.space/2018/07/31/Java锁机制/index.html">
 <meta property="og:site_name" content="M&amp;Y">
-<meta property="og:description" content="搜狐智能媒体研发中心Java实习生面试">
+<meta property="og:description" content="在开发Java多线程应用程序中，各个线程之间由于要共享资源，必须用到锁机制。Java提供了多种多线程锁机制的实现方式，常见的有synchronized、ReentrantLock、Semaphore、AtomicInteger等。每种机制都有优缺点与各自的适用场景，必须熟练掌握他们的特点才能在Java多线程应用开发时得心应手。——Java锁机制详解">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-20T12:12:17.897Z">
+<meta property="og:image" content="http://p9fh1pach.bkt.clouddn.com/1042141-20180119085622974-1501528059.jpg">
+<meta property="og:updated_time" content="2018-07-31T13:03:59.314Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="搜狐智能媒体研发中心">
-<meta name="twitter:description" content="搜狐智能媒体研发中心Java实习生面试">
+<meta name="twitter:title" content="Java锁机制">
+<meta name="twitter:description" content="在开发Java多线程应用程序中，各个线程之间由于要共享资源，必须用到锁机制。Java提供了多种多线程锁机制的实现方式，常见的有synchronized、ReentrantLock、Semaphore、AtomicInteger等。每种机制都有优缺点与各自的适用场景，必须熟练掌握他们的特点才能在Java多线程应用开发时得心应手。——Java锁机制详解">
+<meta name="twitter:image" content="http://p9fh1pach.bkt.clouddn.com/1042141-20180119085622974-1501528059.jpg">
 
 
 
@@ -139,13 +141,13 @@
 
 
 
-  <link rel="canonical" href="blog.jiangdongyu.space/2018/03/28/搜狐智能媒体研发中心/"/>
+  <link rel="canonical" href="blog.jiangdongyu.space/2018/07/31/Java锁机制/"/>
 
 
 
 
 
-  <title>搜狐智能媒体研发中心 | M&Y</title>
+  <title>Java锁机制 | M&Y</title>
   
 
 
@@ -308,7 +310,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="blog.jiangdongyu.space/2018/03/28/搜狐智能媒体研发中心/">
+    <link itemprop="mainEntityOfPage" href="blog.jiangdongyu.space/2018/07/31/Java锁机制/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Agnes">
@@ -325,7 +327,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">搜狐智能媒体研发中心</h1>
+          <h1 class="post-title" itemprop="name headline">Java锁机制</h1>
         
 
         <div class="post-meta">
@@ -337,8 +339,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-28T14:26:00+08:00">
-                2018-03-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-31T20:25:00+08:00">
+                2018-07-31
               </time>
             
 
@@ -360,8 +362,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/面试经历/" itemprop="url" rel="index">
-                    <span itemprop="name">面试经历</span>
+                  <a href="/categories/Java基础/" itemprop="url" rel="index">
+                    <span itemprop="name">Java基础</span>
                   </a>
                 </span>
 
@@ -371,19 +373,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/面试经历/2018/" itemprop="url" rel="index">
-                    <span itemprop="name">2018</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/面试经历/2018/暑期/" itemprop="url" rel="index">
-                    <span itemprop="name">暑期</span>
+                  <a href="/categories/Java基础/锁/" itemprop="url" rel="index">
+                    <span itemprop="name">锁</span>
                   </a>
                 </span>
 
@@ -400,8 +391,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/03/28/搜狐智能媒体研发中心/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/03/28/搜狐智能媒体研发中心/" itemprop="commentsCount"></span>
+                <a href="/2018/07/31/Java锁机制/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/07/31/Java锁机制/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -409,7 +400,7 @@
 
           
           
-             <span id="/2018/03/28/搜狐智能媒体研发中心/" class="leancloud_visitors" data-flag-title="搜狐智能媒体研发中心">
+             <span id="/2018/07/31/Java锁机制/" class="leancloud_visitors" data-flag-title="Java锁机制">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -434,7 +425,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  196 字
+                  6,286 字
                 </span>
               
 
@@ -450,7 +441,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1 分钟
+                  22 分钟
                 </span>
               
             </div>
@@ -471,18 +462,170 @@
       
 
       
-        <p>搜狐智能媒体研发中心Java实习生面试<br><a id="more"></a></p>
+        <p>在开发Java多线程应用程序中，各个线程之间由于要共享资源，必须用到锁机制。Java提供了多种多线程锁机制的实现方式，常见的有synchronized、ReentrantLock、Semaphore、AtomicInteger等。每种机制都有优缺点与各自的适用场景，必须熟练掌握他们的特点才能在Java多线程应用开发时得心应手。——<a href="http://blog.jiangdongyu.space/2018/07/30/Java锁机制简介/">Java锁机制详解</a></p>
+<a id="more"></a>
+<p>线程同步有关的类图关系可用以下的图总结：</p>
+<p><img src="http://p9fh1pach.bkt.clouddn.com/1042141-20180119085622974-1501528059.jpg" alt="avatar"></p>
+<ol>
+<li>Java Concurrency API 中的 Lock 接口是什么？对比同步它有什么优势？</li>
+</ol>
+<p>Lock接口比同步方法和同步块（这里的同步就是考察Synchronized关键字）提供了更具扩展性的锁操作。Lock不是Java语言内置的，synchronized是Java语言的关键字，因此是内置特性，Lock是一个类，通过这个类可以实现同步访问；他们允许更灵活的结构，可以具有完全不同的性质，并且可以支持多个相关类的条件对象。它的优势有：可以使锁更<strong>公平</strong>；可以使线程在等待锁的时候<strong>响应中断</strong>；可以让线程<strong>尝试获取锁</strong>，并在无法获取锁的时候立即返回或者等待一段时间；可以在不同的范围，以不同的顺序获取和释放锁。</p>
+<p>关于API及代码的例子请移步：《<a href="https://www.cnblogs.com/dolphin0520/p/3923167.html" target="_blank" rel="noopener">java并发编程Lock</a>》。常用接口方法如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Lock</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">lock</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">lockInterruptibly</span><span class="params">()</span> <span class="keyword">throws</span> InterruptedException</span>;</span><br><span class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">tryLock</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">tryLock</span><span class="params">(<span class="keyword">long</span> time, TimeUnit unit)</span> <span class="keyword">throws</span> InterruptedException</span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">unlock</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function">Condition <span class="title">newCondition</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>首先<strong>lock()</strong>方法是平常使用得最多的一个方法，就是用来<strong>获取锁</strong>。如果锁已被其他线程获取，则进行等待。由于在前面讲到如果采用Lock，必须<strong>主动</strong>去释放锁，并且在发生异常时，不会自动释放锁。因此一般来说，使用Lock必须在try{}catch{}块中进行，并且将释放锁的操作放在finally块中进行，以保证锁一定被被释放，防止死锁的发生。通常使用Lock来进行同步的话，是以下面这种形式去使用的：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Lock lock = ...;</span><br><span class="line">lock.lock();</span><br><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">    <span class="comment">//处理任务</span></span><br><span class="line">&#125;<span class="keyword">catch</span>(Exception ex)&#123;</span><br><span class="line">     </span><br><span class="line">&#125;<span class="keyword">finally</span>&#123;</span><br><span class="line">    lock.unlock();   <span class="comment">//释放锁</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>tryLock()</strong>方法是有返回值的，它表示用来尝试获取锁，如果获取成功，则返回true，如果获取失败（即锁已被其他线程获取），则返回false，也就说这个方法无论如何都会立即返回。在拿不到锁时不会一直在那等待。tryLock(long time, TimeUnit unit)方法和tryLock()方法是类似的，只不过区别在于这个方法在拿不到锁时会等待一定的时间，在时间期限之内如果还拿不到锁，就返回false。如果如果一开始拿到锁或者在等待期间内拿到了锁，则返回true。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Lock lock = ...;</span><br><span class="line"><span class="keyword">if</span>(lock.tryLock()) &#123;</span><br><span class="line">     <span class="keyword">try</span>&#123;</span><br><span class="line">         <span class="comment">//处理任务</span></span><br><span class="line">     &#125;<span class="keyword">catch</span>(Exception ex)&#123;</span><br><span class="line">         </span><br><span class="line">     &#125;<span class="keyword">finally</span>&#123;</span><br><span class="line">         lock.unlock();   <span class="comment">//释放锁</span></span><br><span class="line">     &#125; </span><br><span class="line">&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">//如果不能获取锁，则直接做其他事情</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>lockInterruptibly()</strong>方法比较特殊，当通过这个方法去获取锁时，如果线程正在等待获取锁，则这个线程能够响应中断，即中断线程的等待状态。也就使说，当两个线程同时通过lock.lockInterruptibly()想获取某个锁时，假若此时线程A获取到了锁，而线程B只有在等待，那么对线程B调用threadB.interrupt()方法能够中断线程B的等待过程。由于lockInterruptibly()的声明中抛出了异常，所以lock.lockInterruptibly()必须放在try块中或者在调用lockInterruptibly()的方法外声明抛出InterruptedException。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">()</span> <span class="keyword">throws</span> InterruptedException </span>&#123;</span><br><span class="line">    lock.lockInterruptibly();</span><br><span class="line">    <span class="keyword">try</span> &#123;  </span><br><span class="line">     <span class="comment">//.....</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">finally</span> &#123;</span><br><span class="line">        lock.unlock();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>ReentrantLock，意思是“可重入锁”，ReentrantLock是唯一实现了Lock接口的类，并且ReentrantLock提供了更多的方法。以下给出一个ReentrantLock的运行实例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> ArrayList&lt;Integer&gt; arrayList = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</span><br><span class="line">    <span class="keyword">private</span> Lock lock = <span class="keyword">new</span> ReentrantLock();    <span class="comment">//注意这个地方，声明为类的属性</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span>  </span>&#123;</span><br><span class="line">        <span class="keyword">final</span> Test test = <span class="keyword">new</span> Test();</span><br><span class="line">         </span><br><span class="line">        <span class="keyword">new</span> Thread()&#123;</span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">                test.insert(Thread.currentThread());</span><br><span class="line">            &#125;;</span><br><span class="line">        &#125;.start();</span><br><span class="line">         <span class="comment">//可以用Java箭头函数特性改写上述冗余代码：</span></span><br><span class="line">         <span class="comment">// new Thread()&#123;()-&gt;Thread.currentThread&#125;.start();</span></span><br><span class="line">        <span class="keyword">new</span> Thread()&#123;</span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">                test.insert(Thread.currentThread());</span><br><span class="line">            &#125;;</span><br><span class="line">        &#125;.start();</span><br><span class="line">    &#125;  </span><br><span class="line">     </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">insert</span><span class="params">(Thread thread)</span> </span>&#123;</span><br><span class="line">        lock.lock();</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            System.out.println(thread.getName()+<span class="string">"得到了锁"</span>);</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">5</span>;i++) &#123;</span><br><span class="line">                arrayList.add(i);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            <span class="comment">// <span class="doctag">TODO:</span> handle exception</span></span><br><span class="line">        &#125;<span class="keyword">finally</span> &#123;</span><br><span class="line">            System.out.println(thread.getName()+<span class="string">"释放了锁"</span>);</span><br><span class="line">            lock.unlock();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上文中提到了Lock接口以及对象，使用它，很优雅的控制了竞争资源的安全访问，但是这种锁不区分读写，称这种锁为普通锁。为了提高性能，Java提供了读写锁，在读的地方使用读锁，在写的地方使用写锁，灵活控制，如果没有写锁的情况下，读是无阻塞的,在一定程度上提高了程序的执行效率。Java中读写锁有个接口java.util.concurrent.locks. ReadWriteLock，也有具体的实现ReentrantReadWriteLock，因而会有下面的提问：</p>
+<ol start="2">
+<li>ReadWriteLock是什么？</li>
+</ol>
+<p>读写锁：分为读锁和写锁，多个读锁不互斥，读锁与写锁互斥，这是由jvm自己控制的，我们只要上好相应的锁即可。如果你的代码只读数据，可以很多人同时读，但不能同时写，那就上读锁；如果你的代码修改数据，只能有一个人在写，且不能同时读取，那就上写锁。总之，读的时候上读锁，写的时候上写锁！读写锁接口：<strong>ReadWriteLock</strong>，它的具体实现类为：<strong>ReentrantReadWriteLock</strong>。</p>
+<p>《<a href="https://www.cnblogs.com/liang1101/p/6475555.html?utm_source=itdadao&amp;utm_medium=referral" target="_blank" rel="noopener">ReadWriteLock场景应用</a>》：在多线程的环境下，对同一份数据进行读写，会涉及到线程安全的问题。比如在一个线程读取数据的时候，另外一个线程在写数据，而导致前后数据的不一致性；一个线程在写数据的时候，另一个线程也在写，同样也会导致线程前后看到的数据的不一致性。这时候可以在读写方法中加入互斥锁，任何时候只能允许一个线程的一个读或写操作，而不允许其他线程的读或写操作，这样是可以解决这样以上的问题，但是效率却大打折扣了。因为在真实的业务场景中，一份数据，读取数据的操作次数通常高于写入数据的操作，而线程与线程间的读读操作是不涉及到线程安全的问题，没有必要加入互斥锁，只要在读-写，写-写期间上锁就行了。</p>
+<ol start="3">
+<li>锁机制有什么用</li>
+</ol>
+<p>有些业务逻辑在执行过程中要求对数据进行<strong>排他性</strong>的访问，于是需要通过一些机制保证在此过程中数据被锁住不会被外界修改，这就是所谓的锁机制。</p>
+<ol start="4">
+<li>什么是乐观锁（Optimistic Locking）？如何实现乐观锁？如何避免ABA问题</li>
+</ol>
+<p>悲观锁(Pessimistic Lock), 顾名思义，就是很悲观，每次去拿数据的时候都认为别人会修改，所以每次在拿数据的时候都会上锁，这样别人想拿这个数据就会block直到它拿到锁。传统的关系型数据库里边就用到了很多这种锁机制，比如行锁，表锁等，读锁，写锁等，都是在做操作之前先上锁。乐观锁(Optimistic Lock), 顾名思义，就是很乐观，每次去拿数据的时候都认为别人不会修改，所以不会上锁，但是在更新的时候会判断一下在此期间别人有没有去更新这个数据，可以使用版本号等机制。乐观锁适用于<strong>多读</strong>的应用类型，这样可以提高吞吐量，像数据库如果提供类似于write_condition机制的其实都是提供的乐观锁。</p>
+<ol start="5">
+<li>解释以下名词：重排序，自旋锁，偏向锁，轻量级锁，可重入锁，公平锁，非公平锁，乐观锁，悲观锁</li>
+</ol>
+<p><strong>重入锁（ReentrantLock）</strong>是一种递归无阻塞的同步机制。重入锁，也叫做递归锁，指的是同一线程外层函数获得锁之后，内层递归函数仍然有获取该锁的代码，但不受影响。在JAVA环境下 ReentrantLock 和synchronized 都是可重入锁。</p>
+<p><strong>自旋锁</strong>，由于自旋锁使用者一般保持锁时间非常短，因此选择自旋而不是睡眠是非常必要的，自旋锁的效率远高于互斥锁。如何旋转呢？何为自旋锁，就是如果发现锁定了，不是睡眠等待，而是采用让当前线程不停地的在循环体内执行实现的，当循环的条件被其他线程改变时 才能进入临界区。</p>
+<p><strong>偏向锁</strong>(Biased Locking)是Java6引入的一项多线程优化，它会偏向于<strong>第一个访问锁的线程</strong>，如果在运行过程中，同步锁只有一个线程访问，不存在多线程争用的情况，则线程是不需要触发同步的，这种情况下，就会给线程加一个偏向锁。如果在运行过程中，遇到了其他线程抢占锁，则持有偏向锁的线程会被挂起，JVM会消除它身上的偏向锁，将锁恢复到标准的轻量级锁。</p>
+<p><strong>轻量级锁</strong>是由偏向所升级来的，偏向锁运行在一个线程进入同步块的情况下，当第二个线程加入锁争用的时候，偏向锁就会升级为轻量级锁。</p>
+<p><strong>公平锁</strong>，就是很公平，在并发环境中，每个线程在获取锁时会先查看此锁维护的等待队列，如果为空，或者当前线程线程是等待队列的第一个，就占有锁，否则就会加入到等待队列中，以后会按照FIFO的规则从队列中取到自己</p>
+<p><strong>非公平锁</strong>比较粗鲁，上来就直接尝试占有锁，如果尝试失败，就再采用类似公平锁那种方式。</p>
+<ol start="6">
+<li>什么时候应该使用可重入锁？</li>
+</ol>
+<p>场景1：如果已加锁，则不再重复加锁。a、忽略重复加锁。b、用在界面交互时点击执行较长时间请求操作时，防止多次点击导致后台重复执行（忽略重复触发）。以上两种情况多用于进行非重要任务防止重复执行，（如：清除无用临时文件，检查某些资源的可用性，数据备份操作等）</p>
+<p>场景2：如果发现该操作已经在执行，则尝试等待一段时间，等待超时则不执行（尝试等待执行）这种其实属于场景2的改进，等待获得锁的操作有一个时间的限制，如果超时则放弃执行。用来防止由于资源处理不当长时间占用导致死锁情况（大家都在等待资源，导致线程队列溢出）。</p>
+<p>场景3：如果发现该操作已经加锁，则等待一个一个加锁（同步执行，类似synchronized）这种比较常见大家也都在用，主要是防止资源使用冲突，保证同一时间内只有一个操作可以使用该资源。但与synchronized的明显区别是性能优势（伴随jvm的优化这个差距在减小）。同时Lock有更灵活的锁定方式，公平锁与不公平锁，而synchronized永远是公平的。这种情况主要用于对资源的争抢（如：文件操作，同步消息发送，有状态的操作等）</p>
+<p>场景4：可中断锁。synchronized与Lock在默认情况下是不会响应中断(interrupt)操作，会继续执行完。lockInterruptibly()提供了可中断锁来解决此问题。（场景3的另一种改进，没有超时，只能等待中断或执行完毕）这种情况主要用于取消某些操作对资源的占用。如：（取消正在同步运行的操作，来防止不正常操作长时间占用造成的阻塞）</p>
+<ol start="7">
+<li>简述锁的等级方法锁、对象锁、类锁</li>
+</ol>
+<p><strong>方法锁</strong>（synchronized修饰方法时）通过在方法声明中加入 synchronized关键字来声明 synchronized 方法。synchronized 方法控制对类成员变量的访问： 每个类实例对应一把锁，每个 synchronized 方法都必须获得调用该方法的类实例的锁方能执行，否则所属线程阻塞，方法一旦执行，就独占该锁，直到从该方法返回时才将锁释放，此后被阻塞的线程方能获得该锁，重新进入可执行状态。这种机制确保了同一时刻对于每一个类实例，其所有声明为 synchronized 的成员函数中至多只有一个处于可执行状态，从而有效避免了类成员变量的访问冲突。</p>
+<p><strong>对象锁</strong>（synchronized修饰方法或代码块）当一个对象中有synchronized method或synchronized block的时候调用此对象的同步方法或进入其同步区域时，就必须先获得对象锁。如果此对象的对象锁已被其他调用者占用，则需要等待此锁被释放。（方法锁也是对象锁）。java的所有对象都含有1个互斥锁，这个锁由JVM自动获取和释放。线程进入synchronized方法的时候获取该对象的锁，当然如果已经有线程获取了这个对象的锁，那么当前线程会等待；synchronized方法正常返回或者抛异常而终止，JVM会自动释放对象锁。这里也体现了用synchronized来加锁的1个好处，方法抛异常的时候，锁仍然可以由JVM来自动释放。　</p>
+<p><strong>类锁</strong>(synchronized修饰<strong>静态</strong>的方法或代码块)，由于一个class不论被实例化多少次，其中的静态方法和静态变量在内存中都只有一份。所以，一旦一个静态的方法被申明为synchronized。此类所有的实例化对象在调用此方法，共用同一把锁，我们称之为类锁。对象锁是用来控制实例方法之间的同步，类锁是用来控制静态方法（或静态变量互斥体）之间的同步。类锁只是一个概念上的东西，并不是真实存在的，它只是用来帮助我们理解锁定实例方法和静态方法的区别的。java类可能会有很多个对象，但是只有1个Class对象，也就是说类的不同实例之间共享该类的Class对象。Class对象其实也仅仅是1个java对象，只不过有点特殊而已。由于每个java对象都有1个互斥锁，而类的静态方法是需要Class对象。所以所谓的类锁，不过是Class对象的锁而已。获取类的Class对象有好几种，最简单的就是［类名.class］的方式。</p>
+<ol start="8">
+<li>Java中活锁和死锁有什么区别？</li>
+</ol>
+<p>死锁：是指两个或两个以上的进程（或线程）在执行过程中，因争夺资源而造成的一种互相等待的现象，若无外力作用，它们都将无法推进下去。此时称系统处于死锁状态或系统产生了死锁，这些永远在互相等待的进程称为死锁进程。死锁发生的<strong>四个条件</strong></p>
 <ul>
-<li>并发编程，能并发的数据结构</li>
-<li>Springboot为什么能做到不配置一些xml？</li>
-<li>1.0版本的智慧教室会遇到哪些问题？并发？底层的哪些不够用了，才会出现这些问题？</li>
-<li>JVM参数调优，怎么做？参数的意义？</li>
-<li>HTTP要了解得更深入一些</li>
-<li>服务器怎么判断是某个用户，用户登录的时候怎么返回该用户的信息，session怎么做安全？</li>
-<li>MySQL建表的时候需要注意什么？long类型在mysql中怎么存？</li>
-<li>Redis适合存一些什么样的数据？在什么场合使用？</li>
-<li>Spring的IOC、AOP需要知道流程，Java基础，NIO等…</li>
-<li>单链表反转，递归，非递归</li>
+<li>互斥条件：线程对资源的访问是<strong>排他性</strong>的，如果一个线程对占用了某资源，那么其他线程必须处于等待状态，直到资源被释放。</li>
+<li>请求和保持条件：线程T1至少已经保持了一个资源R1占用,但又提出对另一个资源R2请求，而此时，资源R2被其他线程T2占用，于是该线程T1也必须等待，但又对自己保持的资源R1不释放。</li>
+<li>不剥夺条件：线程已获得的资源，在未使用完之前，不能被其他线程剥夺，只能在使用完以后由自己释放。</li>
+<li>环路等待条件：在死锁发生时，必然存在一个“进程-资源环形链”，即：{p0,p1,p2,…pn},进程p0（或线程）等待p1占用的资源，p1等待p2占用的资源，pn等待p0占用的资源。（最直观的理解是，p0等待p1占用的资源，而p1而在等待p0占用的资源，于是两个进程就相互等待）</li>
+</ul>
+<p><strong>活锁</strong>：是指线程1可以使用资源，但它很礼貌，让其他线程先使用资源，线程2也可以使用资源，但它很绅士，也让其他线程先使用资源。这样你让我，我让你，最后两个线程都无法使用资源。</p>
+<ol start="9">
+<li>如何确保 N 个线程可以访问 N 个资源同时又不导致死锁？</li>
+</ol>
+<p>预防死锁，预先破坏产生死锁的四个条件。互斥不可能破坏，所以有如下3种方法：</p>
+<ul>
+<li>破坏，请求和保持条件<ul>
+<li>进程等所有要请求的资源都空闲时才能申请资源，这种方法会使资源严重浪费（有些资源可能仅在运行初期或结束时才使用，甚至根本不使用）</li>
+<li>允许进程获取初期所需资源后，便开始运行，运行过程中再逐步释放自己占有的资源。比如有一个进程的任务是把数据复制到磁盘中再打印，前期只需要获得磁盘资源而不需要获得打印机资源，待复制完毕后再释放掉磁盘资源。这种方法比上一种好，会使资源利用率上升。</li>
+</ul>
+</li>
+<li>破坏，不可抢占条件。这种方法代价大，实现复杂</li>
+<li>破坏，循坏等待条件。对各进程请求资源的顺序做一个规定，避免相互等待。这种方法对资源的利用率比前两种都高，但是前期要为设备指定序号，新设备加入会有一个问题，其次对用户编程也有限制</li>
+</ul>
+<ol start="10">
+<li>死锁与饥饿的区别？</li>
+</ol>
+<p><strong>相同点</strong>：二者都是由于竞争资源而引起的。</p>
+<p><strong>不同点</strong>：</p>
+<ul>
+<li>从进程状态考虑，死锁进程都处于等待状态，忙等待(处于运行或就绪状态)的进程并非处于等待状态，但却可能被饿死；</li>
+<li>死锁进程等待永远不会被释放的资源，饿死进程等待会被释放但却不会分配给自己的资源，表现为等待时限没有上界(排队等待或忙式等待)；</li>
+<li>死锁一定发生了循环等待，而饿死则不然。这也表明通过资源分配图可以检测死锁存在与否，但却不能检测是否有进程饿死；</li>
+<li>死锁一定涉及多个进程，而饥饿或被饿死的进程可能只有一个。</li>
+<li>在饥饿的情形下，系统中有至少一个进程能正常运行，只是饥饿进程得不到执行机会。而死锁则可能会最终使整个系统陷入死锁并崩溃</li>
+</ul>
+<ol start="11">
+<li>怎么检测一个线程是否拥有锁？</li>
+</ol>
+<p>java.lang.Thread中有一个方法叫<strong>holdsLock()</strong>，它返回true如果当且仅当当前线程拥有某个具体对象的锁</p>
+<ol start="12">
+<li>如何实现分布式锁？</li>
+</ol>
+<ul>
+<li>基于数据库实现分布式锁</li>
+<li>基于缓存（redis，memcached，tair）实现分布式锁</li>
+<li>基于Zookeeper实现分布式锁</li>
+</ul>
+<p>可以参考详情《<a href="http://www.hollischuang.com/archives/1716" target="_blank" rel="noopener">分布式锁的几种实现方式</a>》、《<a href="https://www.cnblogs.com/rwxwsblog/p/6046034.html" target="_blank" rel="noopener">分布式锁的3种方式</a>》</p>
+<ol start="13">
+<li>Executors类是什么？ Executor和Executors的区别</li>
+</ol>
+<p>正如上面所说，这三者均是 Executor 框架中的一部分。Java 开发者很有必要学习和理解他们，以便更高效的使用 Java 提供的不同类型的线程池。总结一下这三者间的区别，以便大家更好的理解：</p>
+<ul>
+<li>Executor 和 ExecutorService 这两个接口主要的区别是：ExecutorService 接口继承了 Executor 接口，是 Executor 的子接口</li>
+<li>Executor 和 ExecutorService 第二个区别是：Executor 接口定义了 execute()方法用来接收一个Runnable接口的对象，而 ExecutorService 接口中的 submit()方法可以接受Runnable和Callable接口的对象。</li>
+<li>Executor 和 ExecutorService 接口第三个区别是 Executor 中的 execute() 方法不返回任何结果，而 ExecutorService 中的 submit()方法可以通过一个 Future 对象返回运算结果。</li>
+<li>Executor 和 ExecutorService 接口第四个区别是除了允许客户端提交一个任务，ExecutorService 还提供用来控制线程池的方法。比如：调用 shutDown() 方法终止线程池。可以通过 《Java Concurrency in Practice》 一书了解更多关于关闭线程池和如何处理 pending 的任务的知识。</li>
+<li>Executors 类提供工厂方法用来创建不同类型的线程池。比如: newSingleThreadExecutor() 创建一个只有一个线程的线程池，newFixedThreadPool(int numOfThreads)来创建固定线程数的线程池，newCachedThreadPool()可以根据需要创建新的线程，但如果已有线程是空闲的会重用已有线程。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Executor</th>
+<th style="text-align:left">ExecutorService</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Executor 是 Java 线程池的核心接口，用来并发执行提交的任务</td>
+<td style="text-align:left">ExecutorService 是 Executor 接口的扩展，提供了异步执行和关闭线程池的方法</td>
+</tr>
+<tr>
+<td style="text-align:left">提供execute()方法用来提交任务</td>
+<td style="text-align:left">提供submit()方法用来提交任务</td>
+</tr>
+<tr>
+<td style="text-align:left">execute()方法无返回值</td>
+<td style="text-align:left">submit()方法返回Future对象，可用来获取任务执行结果</td>
+</tr>
+<tr>
+<td style="text-align:left">不能取消任务</td>
+<td style="text-align:left">可以通过Future.cancel()取消pending中的任务</td>
+</tr>
+<tr>
+<td style="text-align:left">没有提供和关闭线程池有关的方法</td>
+<td style="text-align:left">提供了关闭线程池的方法</td>
+</tr>
+</tbody>
+</table>
+<ol start="14">
+<li>什么是Java线程转储(Thread Dump)，如何得到它？</li>
+</ol>
+<p>线程转储是一个JVM活动线程的列表，它对于分析系统瓶颈和死锁非常有用。</p>
+<p>有很多方法可以获取线程转储——使用Profiler，Kill -3命令，jstack工具等等。我更喜欢jstack工具，因为它容易使用并且是JDK自带的。由于它是一个基于终端的工具，所以我们可以编写一些脚本去定时的产生线程转储以待分析。</p>
+<ol start="15">
+<li>如何在Java中获取线程堆栈？</li>
+</ol>
+<p>Java虚拟机提供了线程转储（thread dump）的后门，通过这个后门可以把线程堆栈打印出来。通常我们将堆栈信息重定向到一个文件中，便于我们分析，由于信息量太大，很可能超出控制台缓冲区的最大行数限制造成信息丢失。这里介绍一个jdk自带的打印线程堆栈的工具，jstack用于打印出给定的Java进程ID或core file或远程调试服务的Java堆栈信息。（<a href="https://blog.csdn.net/weiweicao0429/article/details/53185999" target="_blank" rel="noopener">Java问题定位之Java线程堆栈分析</a>）</p>
+<pre><code>示例：$jstack –l 23561 &gt;&gt; xxx.dump
+命令 : $jstack [option] pid &gt;&gt; 文件 
+</code></pre><p>>&gt;表示输出到文件尾部，实际运行中，往往一次dump的信息，还不足以确认问题，建议产生三次dump信息，如果每次dump都指向同一个问题，我们才确定问题的典型性。</p>
+<ol start="16">
+<li>说出 3 条在 Java 中使用线程的最佳实践</li>
+</ol>
+<ul>
+<li>给你的线程起个有意义的名字。这样可以方便找bug或追踪。OrderProcessor, QuoteProcessor or TradeProcessor这种名字比Thread-1. Thread-2 and Thread-3好多了，给线程起一个和它要完成的任务相关的名字，所有的主要框架甚至JDK都遵循这个最佳实践。</li>
+<li>避免锁定和缩小同步的范围锁花费的代价高昂且上下文切换更耗费时间空间，试试最低限度的使用同步和锁，缩小临界区。因此相对于同步方法我更喜欢同步块，它给我拥有对锁的绝对控制权。</li>
+<li>多用同步类少用wait和notify，首先，CountDownLatch, Semaphore, CyclicBarrier和Exchanger这些同步类简化了编码操作，而用wait和notify很难实现对复杂控制流的控制。其次，这些类是由最好的企业编写和维护在后续的JDK中它们还会不断优化和完善，使用这些更高等级的同步工具你的程序可以不费吹灰之力获得优化。</li>
+<li>多用并发集合少用同步集合，这是另外一个容易遵循且受益巨大的最佳实践，并发集合比同步集合的可扩展性更好，所以在并发编程时使用并发集合效果更好。如果下一次你需要用到map，你应该首先想到用ConcurrentHashMap。</li>
 </ul>
 
       
@@ -533,7 +676,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="blog.jiangdongyu.space/2018/03/28/搜狐智能媒体研发中心/" title="搜狐智能媒体研发中心">blog.jiangdongyu.space/2018/03/28/搜狐智能媒体研发中心/</a>
+    <a href="blog.jiangdongyu.space/2018/07/31/Java锁机制/" title="Java锁机制">blog.jiangdongyu.space/2018/07/31/Java锁机制/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -548,7 +691,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Java/" rel="tag"><i class="fa fa-tag"></i> Java</a>
+            <a href="/tags/多线程/" rel="tag"><i class="fa fa-tag"></i> 多线程</a>
+          
+            <a href="/tags/锁/" rel="tag"><i class="fa fa-tag"></i> 锁</a>
           
         </div>
       
@@ -561,8 +706,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/23/搜狐汽车/" rel="next" title="搜狐汽车">
-                <i class="fa fa-chevron-left"></i> 搜狐汽车
+              <a href="/2018/07/30/Java多线程基础/" rel="next" title="Java多线程基础">
+                <i class="fa fa-chevron-left"></i> Java多线程基础
               </a>
             
           </div>
@@ -570,10 +715,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/03/30/蚂蚁金服/" rel="prev" title="蚂蚁金服">
-                蚂蚁金服 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
