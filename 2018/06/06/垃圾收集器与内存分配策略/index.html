@@ -85,7 +85,7 @@
 
 
 
-  <meta name="keywords" content="JVM,Java," />
+  <meta name="keywords" content="Java,JVM," />
 
 
 
@@ -99,7 +99,7 @@
 
 
 <meta name="description" content="垃圾回收主要是对Java堆、方法区内存的回收 对象已死吗堆中存放着几乎所有的对象实例，回收前，需要对对象是否存活进行确定，判断是否能进行回收 引用计数算法 给对象添加一个引用计数器 引用则加1 引用失效，则减1 计数器为0的对象就可以被回收  优点：实现简单，效率高">
-<meta name="keywords" content="JVM,Java">
+<meta name="keywords" content="Java,JVM">
 <meta property="og:type" content="article">
 <meta property="og:title" content="垃圾收集器与内存分配策略">
 <meta property="og:url" content="blog.jiangdongyu.space/2018/06/06/垃圾收集器与内存分配策略/index.html">
@@ -416,16 +416,6 @@
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/06/06/垃圾收集器与内存分配策略/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/06/06/垃圾收集器与内存分配策略/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
           
 
           
@@ -737,9 +727,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/JVM/" rel="tag"><i class="fa fa-tag"></i> JVM</a>
-          
             <a href="/tags/Java/" rel="tag"><i class="fa fa-tag"></i> Java</a>
+          
+            <a href="/tags/JVM/" rel="tag"><i class="fa fa-tag"></i> JVM</a>
           
         </div>
       
@@ -792,14 +782,6 @@
 
 
           
-
-  
-    <div class="comments" id="comments">
-      
-        <div onclick="showGitment()" id="gitment-display-button">显示 Gitment 评论</div>
-        <div id="gitment-container" style="display:none"></div>
-      
-    </div>
 
   
 
@@ -1168,52 +1150,6 @@
 
 
 
-
-
-<!-- LOCAL: You can save these files to your site and update links -->
-    
-        
-        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
-        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
-    
-<!-- END LOCAL -->
-
-    
-      <style>
-        a.gitment-editor-footer-tip { display: none; }
-        .gitment-container.gitment-footer-container { display: none; }
-      </style>
-    
-
-    
-      <script type="text/javascript">
-      function renderGitment(){
-        var gitment = new Gitmint({
-            id: window.location.pathname, 
-            owner: '12301068JiangDongyu',
-            repo: '12301068JiangDongyu.github.io',
-            
-            lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
-            
-            oauth: {
-            
-            
-                client_secret: 'c52fa72283c1a59993097b4b3b48badec76a2048',
-            
-                client_id: '2b3e8f73fd5f90f351d0'
-            }});
-        gitment.render('gitment-container');
-      }
-
-      
-      function showGitment(){
-        document.getElementById("gitment-display-button").style.display = "none";
-        document.getElementById("gitment-container").style.display = "block";
-        renderGitment();
-      }
-      
-      </script>
-    
 
 
 
