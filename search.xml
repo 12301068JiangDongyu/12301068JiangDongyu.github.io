@@ -35,8 +35,8 @@
         <category>锁</category>
       </categories>
       <tags>
-        <tag>多线程</tag>
         <tag>锁</tag>
+        <tag>多线程</tag>
       </tags>
   </entry>
   <entry>
@@ -48,8 +48,8 @@
         <category>锁</category>
       </categories>
       <tags>
-        <tag>多线程</tag>
         <tag>锁</tag>
+        <tag>多线程</tag>
       </tags>
   </entry>
   <entry>
@@ -439,8 +439,8 @@
         <category>自动内存管理机制</category>
       </categories>
       <tags>
-        <tag>Java</tag>
         <tag>JVM</tag>
+        <tag>Java</tag>
       </tags>
   </entry>
   <entry>
@@ -454,8 +454,8 @@
         <category>自动内存管理机制</category>
       </categories>
       <tags>
-        <tag>Java</tag>
         <tag>JVM</tag>
+        <tag>Java</tag>
       </tags>
   </entry>
   <entry>
@@ -574,8 +574,8 @@
         <category>LeetCode Category</category>
       </categories>
       <tags>
-        <tag>BFS</tag>
         <tag>BinaryTree</tag>
+        <tag>BFS</tag>
       </tags>
   </entry>
   <entry>
@@ -629,9 +629,9 @@
         <category>LeetCode Category</category>
       </categories>
       <tags>
-        <tag>BFS</tag>
-        <tag>BinaryTree</tag>
         <tag>DFS</tag>
+        <tag>BinaryTree</tag>
+        <tag>BFS</tag>
       </tags>
   </entry>
   <entry>
