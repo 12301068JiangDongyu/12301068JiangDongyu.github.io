@@ -629,9 +629,9 @@
         <category>LeetCode Category</category>
       </categories>
       <tags>
-        <tag>DFS</tag>
         <tag>BFS</tag>
         <tag>BinaryTree</tag>
+        <tag>DFS</tag>
       </tags>
   </entry>
   <entry>
