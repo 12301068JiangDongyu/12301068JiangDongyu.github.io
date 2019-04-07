@@ -106,7 +106,7 @@
 <meta property="og:site_name" content="J&amp;DY">
 <meta property="og:description" content="Keep Java 开发实习生 面试">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-20T12:10:58.976Z">
+<meta property="og:updated_time" content="2019-04-07T12:32:52.818Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Keep">
 <meta name="twitter:description" content="Keep Java 开发实习生 面试">
@@ -424,7 +424,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  946 字
+                  1,092 字
                 </span>
               
 
@@ -440,7 +440,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3 分钟
+                  4 分钟
                 </span>
               
             </div>
@@ -507,7 +507,11 @@
 </ul>
 </li>
 <li>为什么Eden: Survivor: Survivor是8:1:1 ?</li>
-<li>IOC，IOC的初始化过程？</li>
+<li>IOC，IOC的初始化过程？<ul>
+<li>低级容器 加载配置文件（从 XML，数据库，Applet），并解析成 BeanDefinition 到低级容器中。</li>
+<li>加载成功后，高级容器启动高级功能，例如接口回调，监听器，自动实例化单例，发布事件等等功能。</li>
+</ul>
+</li>
 <li>AOP，AOP的动态代理怎么做？ <ul>
 <li>InvocationHandler接口</li>
 </ul>
@@ -515,6 +519,11 @@
 <li>concurrent包里有些啥？</li>
 <li><strong>ThreadPoolExecutor类得看源码</strong></li>
 <li>Java锁机制，Java怎么实现CAS的？多线程i++问题？AtomicInteger？UnSafe类？</li>
+</ul>
+<p>IoC 在 Spring 里，只需要低级容器就可以实现，2 个步骤：</p>
+<ul>
+<li>加载配置文件，解析成 BeanDefinition 放在 Map 里。</li>
+<li>调用 getBean 的时候，从 BeanDefinition 所属的 Map 里，拿出 Class 对象进行实例化，同时，如果有依赖关系，将递归调用 getBean 方法 —— 完成依赖注入。</li>
 </ul>
 
       
@@ -827,7 +836,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">111.6k</span>
+    <span title="Site words total count">111.7k</span>
   
 </div>
 
